@@ -35,6 +35,7 @@ aria = "GitHub Profile"
 key = 1
 name = "linkedin"
 url = "https://www.linkedin.com/in/bijilsubhash/"
+target = "_blank"
 aria = "LinkedIn Profile"
 
 [[params.social]]
