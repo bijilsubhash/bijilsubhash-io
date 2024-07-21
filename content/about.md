@@ -9,7 +9,7 @@ author = "Bijil Subhash"
 I am a data engineer who specialise in building robust and scalable data products, empowering businesses to generate value from their data. Few years ago, after finishing my doctorate in chemical engineering, my passion for data and engineering has led me to starting my career as a data scientist which later evolved into data engineering.
 
 ## My Expertise
-I specialise in building data products across the modern data stack, encompassing data ingestion, data modelling, data visualisation, and data governance. I collaborate closely with other data professionals, including data analysts and data scientists, and place great emphasis on open communication with end users i.e. business leaders, stakeholders, and customers.
+My key area of focus is on building reliable modern data infrastructure, encompassing data ingestion, data modelling, data visualisation, and data governance. Furthermore, I also collaborate closely with other data professionals, including data analysts and data scientists, and place great emphasis on open communication with end users i.e. business leaders, stakeholders, and customers.
 
 ## My Approach
 I consider myself to be a pragmatic engineer who is not afraid to fail and always willing to learn from my mistakes. In my role, I often have to make decisions that are both functional and cost-effective while keeping in mind that generating a positive ROI as early as possible is a win for everyone. I am a strong advocate for clean and efficient code, and I always aim to deliver high-quality solutions that exceed expectations.
