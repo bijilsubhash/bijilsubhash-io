@@ -1,0 +1,44 @@
+baseURL = 'https://bijilsubhash.io/'
+languageCode = 'en-us'
+theme = "nightfall"
+
+[menu]
+  [[menu.header]]
+    name = "blog"
+    weight = 0
+    url = "blog"
+  [[menu.header]]
+    name = "about"
+    weight = 1
+    url = "about"
+
+[params]
+user = "hello"
+hostname = "bijilsubhash.io"
+footerHtml = '© 2024 Bijil Subhash'
+  [params.author]
+    name = "Bijil Subhash"  # Website and RSS feed author
+    email = "bijil.subhash@gmail.com"  # RSS feed email address
+
+
+readingTime = true  # Show reading time on post page
+published = true  # Show published data on post page
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/bijilsubhash"
+target = "_blank"
+aria = "GitHub Profile"
+
+[[params.social]]
+key = 1
+name = "linkedin"
+url = "https://www.linkedin.com/in/bijilsubhash/"
+aria = "LinkedIn Profile"
+
+[[params.social]]
+key = 2
+name = "email"
+url = "mailto:bijil.subhash@gmail.com"
+aria = "My e-Mail Address"
