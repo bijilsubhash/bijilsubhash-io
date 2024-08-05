@@ -1,5 +1,5 @@
 +++
-title = "Exploring the Capabilties of Data Load Tool (DLT) for Data Ingestion"
+title = "Exploring the Capabilties of Data Load Tool (DLT)"
 date = "2024-08-04"
 aliases = ["exploring-dlt-for-data-ingestion"]
 author = "Bijil Subhash"
