@@ -3,6 +3,6 @@
 	url = https://github.com/LordMathis/hugo-theme-nightfall
 	ignore = dirty
 [submodule "themes/mermaid"]
-	path = mermaid
+	path = themes/mermaid
 	url = https://github.com/hugomods/mermaid
 	ignore = dirty
