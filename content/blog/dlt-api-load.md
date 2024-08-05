@@ -1,7 +1,7 @@
 +++
-title = "Exploring the Capabilties of Data Load Tool (DLT)"
+title = "Exploring the Capabilties of Data Load Tool (DLT) for Data Ingestion"
 date = "2024-08-04"
-aliases = ["exploring-dlt"]
+aliases = ["exploring-dlt-for-data-ingestion"]
 author = "Bijil Subhash"
 tags = ["data ingestion", "open source"]
 +++
