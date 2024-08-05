@@ -11,7 +11,7 @@ source = 'img'
 target = 'static/img'
 
 [[module.imports]]
-path = "mermaid"
+path = "themes/mermaid"
 
 [menu]
   [[menu.header]]
