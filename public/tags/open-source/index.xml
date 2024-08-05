@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on </title>
+    <link>http://localhost:60367/tags/open-source/</link>
+    <description>Recent content in Open Source on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
+    <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
+    <lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:60367/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
+      <link>http://localhost:60367/blog/dlt-api-load/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
+      <guid>http://localhost:60367/blog/dlt-api-load/</guid>
+      <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
+    </item>
+  </channel>
+</rss>

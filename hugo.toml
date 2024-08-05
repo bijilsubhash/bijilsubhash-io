@@ -2,6 +2,17 @@ baseURL = 'https://bijilsubhash.io/'
 languageCode = 'en-us'
 theme = "nightfall"
 
+[[module.mounts]]
+source = 'static'
+target = 'static'
+
+[[module.mounts]]
+source = 'img'
+target = 'static/img'
+
+[[module.imports]]
+path = "mermaid"
+
 [menu]
   [[menu.header]]
     name = "blog"
@@ -19,6 +30,8 @@ footerHtml = '© 2024 Bijil Subhash'
   [params.author]
     name = "Bijil Subhash"  # Website and RSS feed author
     email = "bijil.subhash@gmail.com"  # RSS feed email address
+  [params.mermaid]
+    js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
 
 
 readingTime = true  # Show reading time on post page

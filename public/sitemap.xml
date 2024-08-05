@@ -2,18 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:52974/</loc>
+    <loc>http://localhost:60367/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/tags/data-ingestion/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/blog/dlt-api-load/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/tags/index/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/tags/open-source/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/blog/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/tags/</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:60367/about/</loc>
     <lastmod>2024-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:52974/about/</loc>
-    <lastmod>2024-07-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:52974/categories/</loc>
-  </url><url>
-    <loc>http://localhost:52974/tags/index/</loc>
-  </url><url>
-    <loc>http://localhost:52974/blog/</loc>
-  </url><url>
-    <loc>http://localhost:52974/tags/</loc>
+    <loc>http://localhost:60367/categories/</loc>
   </url>
 </urlset>
