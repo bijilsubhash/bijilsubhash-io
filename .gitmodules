@@ -2,7 +2,7 @@
 	path = themes/nightfall
 	url = https://github.com/LordMathis/hugo-theme-nightfall
 	ignore = dirty
-[submodule "mermaid"]
+[submodule "themes/mermaid"]
 	path = mermaid
 	url = https://github.com/hugomods/mermaid
 	ignore = dirty
