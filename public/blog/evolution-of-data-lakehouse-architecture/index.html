@@ -1,10 +1,263 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</title>
-    <link rel="canonical" href="http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/">
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/">
-  </head>
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+Evolution of Data Lakehouse Architecture | Bijil Subhash
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.123.3">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/" >
+
+
+
+
+<link href="/css/style.min.d23c1980faa61c0d6b331a0cd9dbc34fb7dade9e294067f1108fb8f26bd7796c.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let mermaidTheme = 'dark';
+    let mermaidConfig = {
+        theme: mermaidTheme,
+        logLevel: 'fatal',
+        securityLevel: 'strict',
+        startOnLoad: true,
+        arrowMarkerAbsolute: false,
+
+        er: {
+            diagramPadding: 20,
+            layoutDirection: 'TB',
+            minEntityWidth: 100,
+            minEntityHeight: 75,
+            entityPadding: 15,
+            stroke: 'gray',
+            fill: 'honeydew',
+            fontSize: 12,
+            useMaxWidth: true,
+        },
+        flowchart: {
+            diagramPadding: 8,
+            htmlLabels: true,
+            curve: 'basis',
+            padding: 50,
+            align: 'center',
+            fontFamily: '"Open-Sans", "sans-serif"',
+
+        },
+        sequence: {
+            diagramMarginX: 50,
+            diagramMarginY: 10,
+            actorMargin: 50,
+            width: 150,
+            height: 65,
+            boxMargin: 10,
+            boxTextMargin: 5,
+            noteMargin: 10,
+            messageMargin: 35,
+            messageAlign: 'center',
+            mirrorActors: true,
+            bottomMarginAdj: 1,
+            useMaxWidth: true,
+            rightAngles: false,
+            showSequenceNumbers: false,
+        },
+        gantt: {
+            titleTopMargin: 25,
+            barHeight: 20,
+            barGap: 4,
+            topPadding: 50,
+            leftPadding: 75,
+            gridLineStartPadding: 35,
+            fontSize: 11,
+            fontFamily: '"Open-Sans", "sans-serif"',
+            numberSectionStyles: 4,
+            axisFormat: '%Y-%m-%d',
+            topAxis: false,
+        },
+    };
+    mermaid.initialize(mermaidConfig);
+</script>
+<style>
+    .postDate {
+        float: right;
+        color: #f8f8ff;
+    }
+    .listHeader {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .postDate {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .postTitle {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .listHeader {
+            float: none;
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+</style>
+
+<header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a class="terminal" href="http://localhost:1313/">
+                <span>hello@bijilsubhash.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/blog</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Evolution of Data Lakehouse Architecture</h1>
+    
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/data-warehouse/">#Data Warehouse</a><span></span>
+    <a href="/tags/data-lake/">#Data Lake</a><span></span>
+    <a href="/tags/data-lakehouse/">#Data Lakehouse</a></dd>
+            
+            
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2024-08-25">August 25, 2024</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>10 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it. At first, none of it made much sense but as I started to get more hands on with the lakehouse concepts alongside a handful of fruitful conversations with senior engineers and a deep dive into the literature on the topic, it started to connect. More broadly, I have developed a deep appreciation behind the creativity, rigour, and collaboration that fueled the incremental progress towards lakehouse architecture.</p>
+<p>I spent some time learning about the history of data architectures, following the evolution in data management technologies that led to the lakehouse architecture. I am using this blog as an outlet to consolidate my research on lakehouse architecture, which is fast becoming a standard for many modern data platforms. We will start with a brief overview on data warehouse and data lake systems, followed by a discussion how these two paradigms led to the emergence of data lakehouse architecture we have today.</p>
+<h1 id="data-warehouse">Data Warehouse</h1>
+<p><!-- raw HTML omitted -->Data warehouse systems were introduced in the late 1980s as a response to the growing need of businesses to perform sophisticated data analysis, which is not supported by traditional database systems that were solely designed to support daily business operations<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted -->. In a nutshell, a data warehouse is a central repository that stores data from a variety of sources in a pre-defined schema and structure that supports business intelligence (BI) activities such as identifying trends and correlations, tracking key performance indicators and more. A standard data warehouse reference architecture is shown in Figure 1. The fixed schema and rigorous data models within these repositories ensure that the data in them are optimised for downstream BI consumption. As such, it is important to define all of the technical requirements and benefits to the end users of the system prior to the design of a data warehouse. The introduction of data warehouse systems has provided the business a powerful utility to make data driven decisions in a timely manner.</p>
+<p><img src="/img/data-warehouse-schema.png" alt="mad">
+<em>Figure 1: Data Warehouse Reference Architecture</em></p>
+<p>Over the years, data warehouse systems have matured and their implementation benefited a number of industry sectors such as supply chain management, financial operations, telecommunications, health services and more. <!-- raw HTML omitted -->We have also witnessed the modification of the underlying data warehouse concepts for specific niche use cases, resulting in the development of temporal, spatial, graph and mobility data warehouses<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted -->. However, the emergence of big data brought with it a new set of challenges that data warehouses were unable to withstand. The rigid data models and fixed schema of data warehouse systems were not compatible with the high volume, velocity, and variety in big data, rendering these systems incapable of meeting the requirements in the modern business context. Furthermore, data warehouse systems were restricted to answering a set of predefined requirements, which puts additional constraints on businesses that have an agile approach to developing data use cases. The constraints imposed by data warehouse systems mobilised data practitioners to re-imagine how data platforms were built.</p>
+<h1 id="data-lake">Data Lake</h1>
+<p><!-- raw HTML omitted -->In 2010, to address the limitations of data warehouse systems, data lake as a concept was first introduced into the industry by Pentaho CTO James Dixon<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><!-- raw HTML omitted -->. According to Dixon:</p>
+<blockquote>
+<p>Think of a data warehouse as a store of bottled water that is cleansed and packaged and structured for easy consumption and data lake on the other hand is a large body of water in a more natural state.</p>
+</blockquote>
+<p>In other words, data lake was proposed as an alternative where raw data regardless of its type (parquet, json, images, videos etc) is stored in a centralised repository, which at a later point will be processed and analysed based on business needs. The versatility offered by data lake meant that businesses now have the opportunity to tap into unrealised value in semi-structured and unstructured data alongside structured counterpart using a combination of BI, artificial intelligence (AI) and machine learning (ML). Additionally, organisations can now readily onboard new data sources, bringing flexibility to the organisation as the business and/or data needs evolve. Functionally, both data lake and data warehouse operate differently. When it comes to storage, data warehouse conforms to schema-on write strategy, whereas data lake is based on schema-on read. Similarly, there are also differences in how data ingestion is undertaken, a data warehouse employs Extract Transform Load (ETL) where data is transformed to a format that is ready for analysis and loaded into the warehouse. On the other hand, data lake follows the Extract Load and Transform (ELT) paradigm where data is stored in their raw format and transformations are applied during analysis.</p>
+<p><!-- raw HTML omitted -->Over the years, the data lake architecture has evolved significantly as a result of growing business demands for increased agility, flexibility, and ease of data accessibility<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><!-- raw HTML omitted -->. In a typical data lake architecture, as shown in Figure 2, both data lake and data warehouse co-exist, presenting the data practitioners with the versatility and flexibility in data types while keeping features from data warehouses such as ACID transactions, indexing, and versioning. <a href="https://hadoop.apache.org/">Apache Hadoop</a> laid the foundation of the early implementation of data lake architecture, using Hadoop File System (HDFS). ETL frameworks were developed within these architecture to transform and load the structured and/or semi-structured data from the data lake to data warehouses while AI and ML workloads could access the unstructured data from the data lake directly. <!-- raw HTML omitted -->Although Hadoop ecosystem presented a step change in how big data was managed, the tightly coupled compute and storage architecture of Apache Hadoop meant that resource utilisation for both I/O and storage was highly imbalanced. Furthermore, uneven distribution of data in a Hadoop cluster introduced additional challenges for ETL orchestrations<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><!-- raw HTML omitted -->.</p>
+<p><img src="/img/data-lake-schema.png" alt="mad">
+<em>Figure 2: Data Lake Reference Architecture</em></p>
+<p>As a result of this growing list of frustrations and with the increased market penetration of cloud platforms, data lake architectures shifted away from HDFS into cheaper, reliable, and durable cloud object for storage. Moreover, using cloud object storage for data lake was an attractive alternative to HDFS as it facilitates the decoupling of compute and storage resources. <!-- raw HTML omitted -->As such, the data lake architecture, leveraging cloud object storage is widely implemented across many Fortune 500 enterprises<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. One of the growing concerns in this architecture is the inability to enforce data quality constraints, which gets exacerbated by the lack of controls in place for efficient data governance. Furthermore, the demand for advanced analytics using established imperative frameworks such as <a href="https://pytorch.org/">PyTorch</a>, <a href="https://www.tensorflow.org/">Tensorflow</a> etc are not compatible with SQL-based data warehouses.  Consequently, data scientists and data analysts have to run queries against cloud storage systems that are by design not meant to support enterprise-scale data management features such as ACID transactions, high performance, and strong consistency<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup><!-- raw HTML omitted -->. Lastly, there is a financial cost for maintaining the engineering efforts for continuously duplicating the data from cloud storage to data warehouses for downstream BI. Taken together, there is a pressing need to develop a robust solution that can efficiently harness the potential of data lakes in data management.</p>
+<h1 id="data-lakehouse">Data Lakehouse</h1>
+<p><!-- raw HTML omitted -->In 2021, data lakehouse as a concept was introduced by Armbust and colleagues in their seminal paper<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> where it was presented as the next generation of data platform to unify data warehousing and advanced analytics<!-- raw HTML omitted -->. With the context presented in the sections above, we can see how this might be a natural evolution of data platforms. Formally, a lakehouse is defined as a data management system based on low-cost cloud object storage that can also provide data management features such as ACID transactions, data versioning, query optimisations, indexing, and caching. Additionally, lakehouse provides an open interface that facilitates the use of multiple engines to query the data directly for data science, real-time analytics and business intelligence use cases. In many ways, lakehouse brings the best of both worlds in data lake and data warehouse to unify data warehousing and big data analytics under one roof.</p>
+<p>Figure 3 shows a reference architecture for the implementation of a data lakehouse. In general, data lake, the central repository for data, is centered around a metadata layer, fulfilled by Log-Structured Tables (LSTs) that are optimised for frequent table updates. <!-- raw HTML omitted -->LSTs generally store file-level statistics, metadata of table updates, and information about table partitions and schema in a commit log, bringing data manipulation operations at the record level and standard database management features to data lakes. LSTs are also used for data quality checks, access control, and audit logging, facilitating governance and data quality enforcement on the data stored in data lakes<sup id="fnref2:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><!-- raw HTML omitted -->. Consequently, data engineers can leverage the metadata layer to store, transform, and govern high quality data in the data lake. Ultimately, this facilitates access to granular and/or aggregated data via dedicated APIs to the underlying object storage, facilitating both BI and advanced analytics from a single data access point.</p>
+<p><img src="/img/data-lakehouse-schema.png" alt="mad">
+<em>Figure 3: Data Lakehouse Reference Architecture</em></p>
+<p>The metadata layer, powered by LSTs, is the brains behind a data lakehouse. Specifically, as discussed earlier, LSTs facilitates the read and write operations, performance optimisations, and data governance in a lakehouse architecture. <a href="https://delta.io/">Delta Lake</a>, <a href="https://iceberg.apache.org/">Apache Iceberg</a> and <a href="https://hudi.apache.org/">Apache Hudi</a> are some of the widely adopted LSTs, developed independently and later open sourced by Databricks, Netflix, and Uber, respectively. Even though their functionality are similar, they have distinct performance characteristics, determined by the underlying algorithm, type of workload, and protocols governing engine interactions. <!-- raw HTML omitted -->Though a lakehouse strategy generally adopts the use of a single LST for the entire data lake, their is a growing demand for enhancing the cross-engine interoperability between LSTs by developing engines that can support multiple LSTs<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup><!-- raw HTML omitted -->. <!-- raw HTML omitted -->There are also active research initiatives from cross-collaborative teams at Google, Microsoft, and Onehouse for developing omni-directional translator that facilitates writing an LST in one format, which could be read in any format of choice, bringing data file reuse and interoperability across engines<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup><!-- raw HTML omitted -->.</p>
+<p>Overall, there has been a steady increase in the adoption of data lakehouse architecture at different organsiations. However, it lacks the maturity of previous architectures and we expect to witness continuous improvement and standardisation of the underlying technologies over the coming years. There will also be a steep learning curve and adaptation period for most organisations that are looking to implement a data lakehouse. The notion of unifying the entire data stack into one platform sounds great in theory but it might not be wise to navigate that territory without an expert or two by your side, which is not always easy to come by for emerging technologies. <!-- raw HTML omitted -->Furthermore, a data lakehouse may not always be a good fit for organisations that are looking for storage systems that are optimised for specific data type such as document store or time series data<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup><!-- raw HTML omitted -->. Lastly, there are a number of established vendors and open-source solutions that supports the implementation of a data lakehouse, which must be carefully assessed to ensure an overall positive return on investment on lakehouse initiatives.</p>
+<h1 id="closing-thoughts">Closing Thoughts</h1>
+<p>As we reflect on the evolution from data warehouses to data lakes and now to data lakehouse architecture, it is clear that the field of data management is in a state of constant innovation. While the lakehouse architecture offers an exciting blend of features from both data warehouses and data lakes, it’s important to remember that there is no one-size-fits-all solution. The choice of architecture should always be aligned with an organisation’s specific needs, considering factors like data types, access patterns, and performance requirements. That said, the lakehouse represents a significant leap forward, providing a unified platform that addresses many of the limitations of previous architectures. As the landscape continues to evolve, we can expect further refinements and new paradigms that will continue to push the boundaries of what’s possible in data management.</p>
+<p><img src="/img/evolution-of-data-lakehouse.png" alt="mad"></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://link.springer.com/book/10.1007/978-3-642-54655-6">Data Warehouse Systems: Design and Implementation</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://jamesdixon.wordpress.com/2010/10/14/pentaho-hadoop-and-data-lakes/">Pentaho, Hadoopp and Data Lakes</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.mdpi.com/2073-431X/13/7/183">Data Lakes: A Survey of Concepts and Architectures</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://juicefs.medium.com/from-hadoop-to-cloud-why-and-how-to-decouple-storage-and-compute-in-big-data-platforms-8e01e47e9ea0">From Hadoop to Cloud: Why and How to Decouple Storage and Compute in Big Data Platforms</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://www.semanticscholar.org/paper/Lakehouse%3A-A-New-Generation-of-Open-Platforms-that-Zaharia-Ghodsi/451cf5fc9786ed4f7e1d9877f08d00f8b1262121">Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://dl.acm.org/doi/10.14778/3415478.3415560">Delta Lake: High Performance ACID Table Storage over Cloud Object Stores</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://docs.starburst.io/">Starburst</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://arxiv.org/abs/2401.09621">XTable in Action: Seamless Interoperability in Data Lakes</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://link.springer.com/article/10.1007/s42979-024-02737-0">The Lakehouse: State of the Art on Concepts and Technologies</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2024 Bijil Subhash</span>
+    
+</footer>
+    </div>
+
+</body>
+
 </html>
