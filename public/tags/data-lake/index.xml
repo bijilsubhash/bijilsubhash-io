@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Posts on </description>
+    <title>Data Lake on </title>
+    <link>http://localhost:1313/tags/data-lake/</link>
+    <description>Recent content in Data Lake on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/data-lake/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Evolution of Data Lakehouse Architecture</title>
       <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
       <description>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it.</description>
-    </item>
-    <item>
-      <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
-      <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
-      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
-      <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
     </item>
   </channel>
 </rss>

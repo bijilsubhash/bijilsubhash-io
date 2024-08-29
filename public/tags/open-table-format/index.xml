@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Table Format on </title>
+    <link>http://localhost:1313/tags/open-table-format/</link>
+    <description>Recent content in Open Table Format on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
+    <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
+    <lastBuildDate>Thu, 22 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/open-table-format/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evolution of Data Lakehouse Architecture</title>
+      <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
+      <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
+      <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
+      <description>The first time I have heard about data lakehouse was 2.5 years ago at the DataEngBytes conference. Back then, I was still in university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and has been working as a data engineer at Mantel Group for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on Databricks.</description>
+    </item>
+  </channel>
+</rss>

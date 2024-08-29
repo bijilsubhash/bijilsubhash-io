@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=65163&amp;path=livereload" data-no-instant defer></script>
     <title>
         Home | Bijil Subhash
     </title>
@@ -13,9 +13,9 @@
 <meta name="generator" content="Hugo 0.123.3">
 
 
-<link rel="canonical" href="https://bijilsubhash.io/" >
-  <link href="https://bijilsubhash.io/index.xml" rel="alternate" type="application/rss+xml" title="" >
-  <link href="https://bijilsubhash.io/index.xml" rel="feed" type="application/rss+xml" title="" >
+<link rel="canonical" href="http://localhost:65163/" >
+  <link href="http://localhost:65163/index.xml" rel="alternate" type="application/rss+xml" title="" >
+  <link href="http://localhost:65163/index.xml" rel="feed" type="application/rss+xml" title="" >
 
 
 
@@ -33,14 +33,13 @@
         <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
     let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let mermaidTheme = (isDark) ? 'dark' : 'default';
+    let mermaidTheme = 'dark';
     let mermaidConfig = {
         theme: mermaidTheme,
         logLevel: 'fatal',
         securityLevel: 'strict',
         startOnLoad: true,
         arrowMarkerAbsolute: false,
-
 
         er: {
             diagramPadding: 20,
@@ -100,11 +99,29 @@
         float: right;
         color: #f8f8ff;
     }
+    .listHeader {
+        text-align: left;
+        margin-left: 20px;
+    }
+
     @media screen and (max-width: 768px) {
-        .postDate, .listHeader {
+        .postDate {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .postTitle {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .listHeader {
             float: none;
             width: 100%;
             text-align: center;
+            margin-left: 0;
         }
     }
 </style>
@@ -112,7 +129,7 @@
 <header class="headerWrapper">
     <div class="header">
         <div>
-            <a class="terminal" href="https://bijilsubhash.io/">
+            <a class="terminal" href="http://localhost:65163/">
                 <span>hello@bijilsubhash.io ~ $</span>
             </a>
         </div>
@@ -122,12 +139,12 @@
             <ul>
                 
                 <li>
-                    <a href="https://bijilsubhash.io/about" title="" >
+                    <a href="http://localhost:65163/about" title="" >
                         ~/about</a>
                 </li>
                 
                 <li>
-                    <a href="https://bijilsubhash.io/blog" title="" >
+                    <a href="http://localhost:65163/blog" title="" >
                         ~/blog</a>
                 </li>
                 
