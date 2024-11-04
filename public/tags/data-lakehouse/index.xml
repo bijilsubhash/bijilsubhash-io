@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Lakehouse on </title>
-    <link>http://localhost:1313/tags/data-lakehouse/</link>
+    <link>http://localhost:58884/tags/data-lakehouse/</link>
     <description>Recent content in Data Lakehouse on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/data-lakehouse/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:58884/tags/data-lakehouse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Evolution of Data Lakehouse Architecture</title>
-      <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
+      <link>http://localhost:58884/blog/evolution-of-data-lakehouse-architecture/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
+      <guid>http://localhost:58884/blog/evolution-of-data-lakehouse-architecture/</guid>
       <description>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it.</description>
     </item>
   </channel>

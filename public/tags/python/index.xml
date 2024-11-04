@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on </title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>http://localhost:58884/tags/python/</link>
     <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Fri, 06 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:58884/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unraveling Python Function Decorators</title>
-      <link>http://localhost:1313/blog/unraveling-python-function-decorators/</link>
+      <link>http://localhost:58884/blog/unraveling-python-function-decorators/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:1313/blog/unraveling-python-function-decorators/</guid>
-      <description>The first time I learnt about programming was in middle school. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++. Though I did considerably well in a academic setting, my abysmal understanding of the underlying programming concepts as a result of rote memorization led me to leave it all behind until much later in graduate school where I had to start using Python for working with data.</description>
+      <guid>http://localhost:58884/blog/unraveling-python-function-decorators/</guid>
+      <description>I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data.</description>
     </item>
   </channel>
 </rss>

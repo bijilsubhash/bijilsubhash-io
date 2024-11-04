@@ -2,19 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Ingestion on </title>
-    <link>http://localhost:1313/tags/data-ingestion/</link>
+    <link>http://localhost:58884/tags/data-ingestion/</link>
     <description>Recent content in Data Ingestion on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
-    <lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/data-ingestion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:58884/tags/data-ingestion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lessons from Building Data Pipelines on DLT</title>
+      <link>http://localhost:58884/blog/building-automated-api-data-ingestion-framework/</link>
+      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
+      <guid>http://localhost:58884/blog/building-automated-api-data-ingestion-framework/</guid>
+      <description>Couple of months ago, I shared my initial experience with Data Load Tool (DLT). Since then, I have been building some small projects with the help of their documentation. I have also been engaging with their community in Slack who have been extremely helpful when it comes to resolving blockers that I encounter. I was drawn to DLT due to its Python-first approach when it comes to data engineering. In addition to developing a deeper sense of appreciation towards idiomatic Python, over the course of the last two months, I have had the opportunity to work with a handful of features in DLT, which I hope to leverage in some real-world projects in the near-future.</description>
+    </item>
     <item>
       <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
-      <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
+      <link>http://localhost:58884/blog/exploring-dlt-for-data-ingestion/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
+      <guid>http://localhost:58884/blog/exploring-dlt-for-data-ingestion/</guid>
       <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
     </item>
   </channel>

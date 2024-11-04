@@ -5,7 +5,6 @@ aliases = ["unraveling-python-function-decorators"]
 author = "Bijil Subhash"
 tags = ["Python", "Programming"]
 draft = true
-
 +++
 
 I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data. Python is a batteries-included beginner friendly language that gave me enough firepower to do exactly what I needed. The relative ease of using Python in practical applications meant that I could get away without ever having to develop a deeper understanding of the powerful features it has to offer. In the interest of closing this gap, I recently embarked on a journey to teach myself some of the advanced topics in Python. In this article, I wanted to unpack one that piqued my interest - function decorators.
