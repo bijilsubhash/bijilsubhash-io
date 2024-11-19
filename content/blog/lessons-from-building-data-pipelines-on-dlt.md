@@ -5,7 +5,7 @@ author = "Bijil Subhash"
 tags = ["Data Ingestion", "DLT"]
 +++
 
-Couple of months ago, I [shared](https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/) my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their [documentation](https://dlthub.com/docs/intro) and the active Slack community. The Python-first approach of DLT greatly appealed to me as a data engineer. Over the past two months, I’ve deepened my appreciation for idiomatic Python while exploring and applying several of DLT’s features, which I am m eager to leverage in real-world projects. In this article, I’ll dive into some key DLT features and the lessons learned from building data pipelines.
+Couple of months ago, I [shared](https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/) my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their [documentation](https://dlthub.com/docs/intro) and the active Slack community. The Python-first approach of DLT greatly appealed to me as a data engineer. Over the past two months, I’ve deepened my appreciation for idiomatic Python while exploring and applying several of DLT’s features, which I am eager to leverage in real-world projects. In this article, I’ll dive into some key DLT features and the lessons learned from building data pipelines.
 
 Note: While this article predominantly refers to the use of RESTful APIs as data sources, DLT's versatility extends to many other options, which I will discuss in future posts.
 
