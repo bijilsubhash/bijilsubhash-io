@@ -1,5 +1,5 @@
 +++
-title = "Lessons from Building Data Pipelines on DLT: Part 1"
+title = "Lessons from Building Data Pipelines on DLT"
 date = "2024-11-03"
 author = "Bijil Subhash"
 tags = ["Data Ingestion", "DLT"]
