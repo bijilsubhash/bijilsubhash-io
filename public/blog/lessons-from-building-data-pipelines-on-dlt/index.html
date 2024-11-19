@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58884&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <title>
 Lessons from Building Data Pipelines on DLT: Part 1 | Bijil Subhash
 </title>
@@ -13,7 +13,7 @@ Lessons from Building Data Pipelines on DLT: Part 1 | Bijil Subhash
 <meta name="generator" content="Hugo 0.123.3">
 
 
-<link rel="canonical" href="http://localhost:58884/blog/lessons-from-building-data-pipelines-on-dlt/" >
+<link rel="canonical" href="http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/" >
 
 
 
@@ -127,7 +127,7 @@ Lessons from Building Data Pipelines on DLT: Part 1 | Bijil Subhash
 <header class="headerWrapper">
     <div class="header">
         <div>
-            <a class="terminal" href="http://localhost:58884/">
+            <a class="terminal" href="http://localhost:1313/">
                 <span>hello@bijilsubhash.io ~ $</span>
             </a>
         </div>
@@ -137,12 +137,12 @@ Lessons from Building Data Pipelines on DLT: Part 1 | Bijil Subhash
             <ul>
                 
                 <li>
-                    <a href="http://localhost:58884/about" title="" >
+                    <a href="http://localhost:1313/about" title="" >
                         ~/about</a>
                 </li>
                 
                 <li>
-                    <a href="http://localhost:58884/blog" title="" >
+                    <a href="http://localhost:1313/blog" title="" >
                         ~/blog</a>
                 </li>
                 
@@ -177,18 +177,26 @@ Lessons from Building Data Pipelines on DLT: Part 1 | Bijil Subhash
             
             
                 <dt>reading time</dt>
-                <dd>3 minutes</dd>
+                <dd>4 minutes</dd>
             
         </dl>
     </section>
     
     <div>
-        <p>Couple of months ago, I <a href="https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/">shared</a> my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their documentation and Slack community. I was drawn to DLT due to its Python-first approach when it comes to data engineering. In addition to developing a deeper sense of appreciation towards idiomatic Python, over the course of the last two months, I have had the opportunity to work with a handful of features in DLT, which I hope to leverage in some real-world projects in the near-future. In this article, I wanted to do a deeper dive into some of the features and lessons that I learnt from building data pipelines using DLT.</p>
-<p>Note, this article predominantly refers to the use of RESTful APIs as data sources even though DLT offers a multitude of other options as well for data sources when it comes to data ingestion.</p>
+        <p>Couple of months ago, I <a href="https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/">shared</a> my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their <a href="https://dlthub.com/docs/intro">documentation</a> and the active Slack community. The Python-first approach of DLT greatly appealed to me as a data engineer. Over the past two months, I’ve deepened my appreciation for idiomatic Python while exploring and applying several of DLT’s features, which I am m eager to leverage in real-world projects. In this article, I’ll dive into some key DLT features and the lessons learned from building data pipelines.</p>
+<p>Note: While this article predominantly refers to the use of RESTful APIs as data sources, DLT&rsquo;s versatility extends to many other options, which I will discuss in future posts.</p>
 <h1 id="restclient">RESTClient</h1>
-<p>DLT offers <a href="https://dlthub.com/docs/devel/dlt-ecosystem/verified-sources/rest_api/basic">REST API source</a>, which is a declarative framework to define API endpoints, handling pagination, and authentication. Though it is completely appropriate to use this for most use cases, I found it more intuitive to work with <a href="https://dlthub.com/docs/devel/general-usage/http/rest-client">RESTClient</a> which is the underlying class used for REST API source. It might have been due to my inability to keep up with the lengthy json structure used to define API endpoints in the former. RESTClient on the other hand was slightly more Pythonic, at least that was my impression of it. It also comes with built-in paginators and authentication strategies even though I ended up building a few custom paginators and authentication classes for my use cases. Boiler plate code for custom paginators and authentication can be found in the documentation. I would say that the built-in options would likely cover a large number of use cases. I was dealing with particularly challenging endpoints, and hence I chose to build a few custom modules. In addition to the paginators and authentication strategies, you can also pass <a href="https://github.com/h2non/jsonpath-ng?tab=readme-ov-file#jsonpath-syntax">JSONPath</a> selector as a parameter to specify how data should be extracted from the JSON response.  Overall, building a foundation with RESTClient has allowed me to look under the hood of REST API source, providing some additional context and confidence to work with REST API source directly in the future.</p>
+<p>DLT offers <a href="https://dlthub.com/docs/devel/dlt-ecosystem/verified-sources/rest_api/basic">REST API source</a>, which is a declarative framework to define API endpoints that has dedicated configuration parameter for handling pagination and authentication. REST API source is powered by <a href="https://dlthub.com/docs/devel/general-usage/http/rest-client">RESTClient</a> class, which has a paginate method for fetching data from API responses. Generally, if you were building an ingestion pipeline using Python, you are likely writing a custom method for handling pagination and authentication. Luckily, DLT has a few immensely flexible classes that allows you to handle these scenarios elegantly. At the same time, you also have the option to build custom paginators and authenticators if there is a need for it. Additionally, you have the option to pass <a href="https://github.com/h2non/jsonpath-ng?tab=readme-ov-file#jsonpath-syntax">JSONPath</a> selectors as a parameter to specify what data should be extracted from deeply nested responses.  Overall, working with RESTClient gives you the opportunity to build reliable pipelines seamlessly.</p>
 <h1 id="incremental-load">Incremental Load</h1>
-<p>We live in a world where we have cheap cloud storage but the compute cost remains high. It is, therefore, in our best interest to optimize the data ingestion pipelines such that the amount of compute required to process the data is minimized. To this end, a strategy that is commonly implemented is to load the data incrementally i.e. only ingest new data as opposed to full load when a pipeline is triggered. Fortunately, DLT supports <a href="https://dlthub.com/docs/general-usage/incremental-loading#incremental-loading-with-a-cursor-field">incremental load with a cursor field</a>.</p>
+<p>We live in a world where we have cheap cloud storage but the compute cost remains high. It is, therefore, in our best interest to optimize the data ingestion pipelines such that the amount of compute required to process the data is minimized. To this end, a strategy that is commonly implemented is to load the data incrementally i.e. only ingest new data as opposed to full load when a pipeline is triggered. Fortunately, DLT supports <a href="https://dlthub.com/docs/general-usage/incremental-loading#incremental-loading-with-a-cursor-field">incremental load with a cursor field</a>, which in a nutshell uses a field (usually a date field) from the response to track the state and is made available on the next pipeline run to extract only the most recent values. I highly recommend playing around with this feature to get a thorough understanding of all the nuances associated with setting up incremental load in DLT.</p>
+<h1 id="destination">Destination</h1>
+<p>We have a few options when it comes to <a href="https://dlthub.com/docs/dlt-ecosystem/destinations/">destinations</a> in DLT, such as Google BigQuery, Databricks, Cloud Storage to name a few. You can also write custom destinations if you wish. For most of my use cases revolved around populating a data lake in cloud storage. As such, I have made use of Azure Blob Storage as my destination for storing the data extracted from API responses. In the definition of a destination, you can specify what write disposition strategy to use, table name, path layout if it is a file system, and file format. DLT also stores the information about the pipeline state at this destination along with your data, which is used for performing incremental load.</p>
+<h1 id="transformers">Transformers</h1>
+<p>Have you come across a use case where you needed to get an ID from a endpoint, for instance ID of a customer, and use that to lookup details about the customer in a different endpoint. This is precisely the usage pattern where you would make use of <a href="https://dlthub.com/docs/general-usage/resource#process-resources-with-dlttransformer">transformers</a>, allowing you to feed data from one resource into another, which is quite powerful when dealing with standard RESTful APIs.</p>
+<h1 id="optimization">Optimization</h1>
+<p>Building a functional pipeline is a goal for many data engineers. However, functionality alone is not sufficient to make them reliable in production. First and foremost, the pipelines need be compatible with the available memory. Secondly, as previously discussed, it is important to optimize the use of compute resources, meaning we must parallelize as much as possible without compromising the overall performance. In DLT, you can optimize the performance of the pipeline, both its memory usage and parallelism, simply by turning the knobs on a handful of <a href="https://dlthub.com/docs/reference/performance">configurations</a> such as enabling file rotations, enabling/disabling file compressions, controlling the number of workers and more. Unfortunately, there are no magic formula for setting these parameters, and it is up to the engineers to iterate through them to figure out the most optimal configuration based on the business needs and resource availability. My recommendation here will be to familiarize yourself with these options while remembering to take into consideration about the different compute configuration that will be available to you in the local and production environment.</p>
+<h1 id="closing-thoughts">Closing Thoughts</h1>
+<p>My perspective on DLT remains optimistic. I foresee a future where DLT will be utilized by many organizations that are seeking control on building reliable and cost-efficient data pipelines. While there will always be cases where DLT’s current features might not fit specific needs, its Python-first design ensures extensibility. I’m excited to see how DLT evolves and how its adoption can empower more flexible data engineering solutions.</p>
 
     </div>
 </div>

@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>http://localhost:58884/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Sun, 03 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:58884/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Ingestion</title>
-      <link>http://localhost:58884/tags/data-ingestion/</link>
+      <link>http://localhost:1313/tags/data-ingestion/</link>
       <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/data-ingestion/</guid>
+      <guid>http://localhost:1313/tags/data-ingestion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DLT</title>
+      <link>http://localhost:1313/tags/dlt/</link>
+      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
+      <guid>http://localhost:1313/tags/dlt/</guid>
       <description></description>
     </item>
     <item>
       <title>Index</title>
-      <link>http://localhost:58884/tags/index/</link>
+      <link>http://localhost:1313/tags/index/</link>
       <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/index/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RESTAPI</title>
-      <link>http://localhost:58884/tags/restapi/</link>
-      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/restapi/</guid>
+      <guid>http://localhost:1313/tags/index/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:58884/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:58884/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Lake</title>
-      <link>http://localhost:58884/tags/data-lake/</link>
+      <link>http://localhost:1313/tags/data-lake/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/data-lake/</guid>
+      <guid>http://localhost:1313/tags/data-lake/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Lakehouse</title>
-      <link>http://localhost:58884/tags/data-lakehouse/</link>
+      <link>http://localhost:1313/tags/data-lakehouse/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/data-lakehouse/</guid>
+      <guid>http://localhost:1313/tags/data-lakehouse/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Warehouse</title>
-      <link>http://localhost:58884/tags/data-warehouse/</link>
+      <link>http://localhost:1313/tags/data-warehouse/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/data-warehouse/</guid>
+      <guid>http://localhost:1313/tags/data-warehouse/</guid>
       <description></description>
     </item>
     <item>
       <title>Open Source</title>
-      <link>http://localhost:58884/tags/open-source/</link>
+      <link>http://localhost:1313/tags/open-source/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/tags/open-source/</guid>
+      <guid>http://localhost:1313/tags/open-source/</guid>
       <description></description>
     </item>
   </channel>

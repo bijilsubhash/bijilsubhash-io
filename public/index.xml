@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:58884/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Sun, 03 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:58884/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lessons from Building Data Pipelines on DLT: Part 1</title>
-      <link>http://localhost:58884/blog/lessons-from-building-data-pipelines-on-dlt/</link>
+      <link>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</link>
       <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/blog/lessons-from-building-data-pipelines-on-dlt/</guid>
-      <description>Couple of months ago, I shared my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their documentation and Slack community. I was drawn to DLT due to its Python-first approach when it comes to data engineering. In addition to developing a deeper sense of appreciation towards idiomatic Python, over the course of the last two months, I have had the opportunity to work with a handful of features in DLT, which I hope to leverage in some real-world projects in the near-future.</description>
+      <guid>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</guid>
+      <description>Couple of months ago, I shared my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their documentation and the active Slack community. The Python-first approach of DLT greatly appealed to me as a data engineer. Over the past two months, I’ve deepened my appreciation for idiomatic Python while exploring and applying several of DLT’s features, which I am m eager to leverage in real-world projects.</description>
     </item>
     <item>
       <title>Unraveling Python Function Decorators</title>
-      <link>http://localhost:58884/blog/unraveling-python-function-decorators/</link>
+      <link>http://localhost:1313/blog/unraveling-python-function-decorators/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/blog/unraveling-python-function-decorators/</guid>
+      <guid>http://localhost:1313/blog/unraveling-python-function-decorators/</guid>
       <description>I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data.</description>
     </item>
     <item>
       <title>Evolution of Data Lakehouse Architecture</title>
-      <link>http://localhost:58884/blog/evolution-of-data-lakehouse-architecture/</link>
+      <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/blog/evolution-of-data-lakehouse-architecture/</guid>
+      <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
       <description>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it.</description>
     </item>
     <item>
       <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
-      <link>http://localhost:58884/blog/exploring-dlt-for-data-ingestion/</link>
+      <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/blog/exploring-dlt-for-data-ingestion/</guid>
+      <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
       <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
     </item>
     <item>
       <title>About Me</title>
-      <link>http://localhost:58884/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
-      <guid>http://localhost:58884/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>Hello, I&amp;rsquo;m Bijil 👋 I am a data engineer who specialise in building robust and scalable data products, empowering businesses to generate value from their data. Few years ago, after finishing my doctorate in chemical engineering, my passion for data and engineering has led me to starting my career as a data scientist which later evolved into data engineering.&#xA;My Expertise I specialise on building and maintaining modern data infrastructure, encompassing data ingestion, data modelling, data visualisation, and data governance.</description>
     </item>
   </channel>
