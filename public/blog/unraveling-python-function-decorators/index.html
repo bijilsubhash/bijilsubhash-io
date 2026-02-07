@@ -1,10 +1,429 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>http://localhost:1313/blog/unraveling-python-function-decorators/</title>
-    <link rel="canonical" href="http://localhost:1313/blog/unraveling-python-function-decorators/">
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=http://localhost:1313/blog/unraveling-python-function-decorators/">
-  </head>
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+Unraveling Python Function Decorators | Bijil Subhash
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.155.2">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/unraveling-python-function-decorators/" >
+
+
+
+
+<link href="/css/style.min.d23c1980faa61c0d6b331a0cd9dbc34fb7dade9e294067f1108fb8f26bd7796c.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let mermaidTheme = 'dark';
+    let mermaidConfig = {
+        theme: mermaidTheme,
+        logLevel: 'fatal',
+        securityLevel: 'strict',
+        startOnLoad: true,
+        arrowMarkerAbsolute: false,
+
+        er: {
+            diagramPadding: 20,
+            layoutDirection: 'TB',
+            minEntityWidth: 100,
+            minEntityHeight: 75,
+            entityPadding: 15,
+            stroke: 'gray',
+            fill: 'honeydew',
+            fontSize: 12,
+            useMaxWidth: true,
+        },
+        flowchart: {
+            diagramPadding: 8,
+            htmlLabels: true,
+            curve: 'basis',
+            padding: 50,
+            align: 'center',
+            fontFamily: '"Open-Sans", "sans-serif"',
+
+        },
+        sequence: {
+            diagramMarginX: 50,
+            diagramMarginY: 10,
+            actorMargin: 50,
+            width: 150,
+            height: 65,
+            boxMargin: 10,
+            boxTextMargin: 5,
+            noteMargin: 10,
+            messageMargin: 35,
+            messageAlign: 'center',
+            mirrorActors: true,
+            bottomMarginAdj: 1,
+            useMaxWidth: true,
+            rightAngles: false,
+            showSequenceNumbers: false,
+        },
+        gantt: {
+            titleTopMargin: 25,
+            barHeight: 20,
+            barGap: 4,
+            topPadding: 50,
+            leftPadding: 75,
+            gridLineStartPadding: 35,
+            fontSize: 11,
+            fontFamily: '"Open-Sans", "sans-serif"',
+            numberSectionStyles: 4,
+            axisFormat: '%Y-%m-%d',
+            topAxis: false,
+        },
+    };
+    mermaid.initialize(mermaidConfig);
+</script>
+<style>
+    .postDate {
+        float: right;
+        color: #f8f8ff;
+    }
+    .listHeader {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .postDate {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .postTitle {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .listHeader {
+            float: none;
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+</style>
+
+<header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a class="terminal" href="http://localhost:1313/">
+                <span>hello@bijilsubhash.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/blog</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Unraveling Python Function Decorators</h1>
+    
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/python/">#Python</a><span></span>
+    <a href="/tags/programming/">#Programming</a></dd>
+            
+            
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2024-09-06">September 6, 2024</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>9 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data. Python is a batteries-included beginner friendly language that gave me enough firepower to do exactly what I needed. The relative ease of using Python in practical applications meant that I could get away without ever having to develop a deeper understanding of the powerful features it has to offer. In the interest of closing this gap, I recently embarked on a journey to teach myself some of the advanced topics in Python. In this article, I wanted to unpack one that piqued my interest - function decorators.</p>
+<p><!-- raw HTML omitted -->Function decorators in Python fit the general description of decorators in Design Patterns, where a decorator attaches additional responsibilities to an object dynamically<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted -->. In fact, searching for <a href="https://www.google.com/search?q=python+function+decorators"><em>Python Function Decorators</em></a> on Google yield results with similar flavour, which suggests that function decorators are a construct that can be used to modify functions or methods. I do not come from a functional programming background. As such, I did not find the abstract definitions of a decorator to be intuitive at first. Instead, I studied the examples, read text books, and spent some time building/breaking decorators from scratch. This has helped me put together individual components that powered decorators in Python, some of which I will be sharing in the upcoming sections.</p>
+<p>Before we get started with decorators, we need to lay the foundation on couple of concepts, starting with scopes. In Python, an object is only available in the region it is created i.e. within its scope. We will go through a series of examples to understand different types of scopes in Python, starting with Example 1 below.</p>
+<p>Example 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of b:&#34;</span>, b)
+</span></span></code></pre></div><p>Output from Example 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 8, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Value of b:&#34;</span>, b<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NameError: name <span style="color:#e6db74">&#39;b&#39;</span> is not defined
+</span></span></code></pre></div><p>The output from Example 1 prints the value for <em>a</em> but <em>b</em> is undefined. This is because <em>a</em> is defined in the global scope and hence accessible globally whereas <em>b</em> is defined locally to the function <em>func</em> and is therefore not accessible globally. In that case, could we access an object that is available globally inside the function <em>func</em>?</p>
+<p>Example 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of b in func:&#34;</span>, b)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of b outside func:&#34;</span>, b)
+</span></span></code></pre></div><p>Output from Example 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a in func: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Value of b in func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a outside func: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 11, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Value of b outside func:&#34;</span>, b<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NameError: name <span style="color:#e6db74">&#39;b&#39;</span> is not defined
+</span></span></code></pre></div><p>In Example 2, we were able to print both <em>a</em> and <em>b</em> inside the <em>func</em> but only <em>a</em> was accessible outside the <em>func</em>, implying that the function can access  objects that are available both in the global and local scope. Would it be possible to access an object that is locally accessible to function in another function?</p>
+<p>Example 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func_1</span>():
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func_1:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of b in func_1:&#34;</span>, b)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func_2</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func_2:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of b in func_2:&#34;</span>, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func_1()
+</span></span><span style="display:flex;"><span>func_2()
+</span></span></code></pre></div><p>Output from Example 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a in func_1: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Value of b in func_1: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a in func_2: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 14, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    func_2<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 11, in func_2
+</span></span><span style="display:flex;"><span>    print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Value of b in func_2:&#34;</span>, b<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NameError: name <span style="color:#e6db74">&#39;b&#39;</span> is not defined
+</span></span></code></pre></div><p>Our results in Example 3 shows that we are limited to local scopes within its boundary. So far, we have established the concept of global and local scope. But could we modify behaviour of global objects locally within a function?</p>
+<p>Example 4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func :&#34;</span>, a)
+</span></span></code></pre></div><p>Output from Example 4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a in func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a outside func : <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><p>Based on the results from Example 4, though we can assign a new value to <em>a</em>, it does not seem to modify the value of <em>a</em> in the global scope. However, in Python, we have a <em>global</em> keyword that can be used to inform the Python interpreter that <em>a</em> is a global object, as shown in Example 5 below.</p>
+<p>Example 5:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> a
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func :&#34;</span>, a)
+</span></span></code></pre></div><p>Output from Example 5:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a in func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a outside func : <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p>With <em>global</em> keyword, we can therefore modify the behaviour of objects in the global scope. There is an interesting edge case here, which brings an important understanding about how scopes are determined during compile time. If we modify the order of declaration of <em>a</em> inside the function <em>func</em> and print the value of <em>a</em> before the declaration as shown in Example 6, we encounter an error which states that local variable <em>a</em> was referenced before assignment, implying that during compilation, the scope of each variable is determined in advance. As such, despite declaring <em>a</em> globally, inside the function <em>func</em>, the interpreter expected <em>a</em> to be in the local scope, resulting in the error we see here when <em>print</em> was called on an undefined variable.</p>
+<p>Example 6:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span></code></pre></div><p>Output from Example 6:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 8, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    func<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;scopes.py&#34;</span>, line 4, in func
+</span></span><span style="display:flex;"><span>    print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Value of a in func:&#34;</span>, a<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>UnboundLocalError: local variable <span style="color:#e6db74">&#39;a&#39;</span> referenced before assignment
+</span></span></code></pre></div><p>So far, we have seen the global and local scope. There is a third variant, which goes by the name non-local scope. To understand the non-local scope, let us review a nested function as shown in Example 7.</p>
+<p>Example 7:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a before func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and before inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_func</span>():
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Value of a in inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    inner_func()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and after inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func :&#34;</span>, a)
+</span></span></code></pre></div><p>Output from Example 7:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a before func: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Value of a in func and before inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a in inner_func: <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>Value of a in func and after inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a outside func : <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><p>The output from Example 7 behaves as expected, where <em>a</em> defined globally has the value of 10, <em>a</em> inside <em>func</em> but outside has the value of 20, and <em>a</em> inside <em>inner_func</em> has a value of 30. <em>a</em> within <em>func</em> and <em>inner_func</em> is in their respective local scope and <em>a</em> outside is in the global scope. What if we remove the declaration of <em>a</em> inside <em>inner_func</em>?</p>
+<p>Example 8:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a before func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and before inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_func</span>():
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Value of a in inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    inner_func()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and after inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func :&#34;</span>, a)
+</span></span></code></pre></div><p>Output from Example 8:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a before func: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Value of a in func and before inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a in inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a in func and after inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a outside func : <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><p>In Example 8, the value of <em>a</em> inside <em>inner_func</em> is the same as value of <em>a</em> inside <em>func</em>. But <em>a</em> is neither in the global scope nor in local scope inside <em>inner_func</em>. Instead, in Python this is called a non-local scope, which is used to define a variable that belongs to the enclosing function&rsquo;s scope. Inside the <em>inner_func</em>, you can use the keyword <em>nonlocal</em> to modify the behaviour of objects in non-local scope as shown in Example 9, where the value of <em>a</em> in <em>func</em> was changed to 30 after the execution of <em>inner_func</em>.</p>
+<p>Example 9:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a before func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and before inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_func</span>():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">nonlocal</span> a
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Value of a in inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    inner_func()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Value of a in func and after inner_func:&#34;</span>, a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Value of a outside func :&#34;</span>, a)
+</span></span></code></pre></div><p>Output from Example 9:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Value of a before func: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Value of a in func and before inner_func: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Value of a in inner_func: <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>Value of a in func and after inner_func: <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>Value of a outside func : <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h2 id="what-does-a-decorator-do">What does a decorator do?</h2>
+<p>Let&rsquo;s start with an example decorator and its corresponding output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(fn):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>():
+</span></span><span style="display:flex;"><span>        start <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>        fn()
+</span></span><span style="display:flex;"><span>        end <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Executed the </span><span style="color:#e6db74">{</span>fn<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74"> in </span><span style="color:#e6db74">{</span>(end <span style="color:#f92672">-</span> start) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span><span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> milliseconds&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> inner 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@logger</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_func</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Function finished running&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    test_func()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; Function finished running 
+</span></span><span style="display:flex;"><span>&gt;&gt; Executed test_func in 0.062 milliseconds
+</span></span></code></pre></div><p>In our example, we are decorating <code>test_func</code> with a <code>logger</code> function so that when <code>test_func</code> is called, we are able to record the time it took to run it  while also executing the contents within <code>test_func</code>. A scenario where this might be useful is when you need a logging mechanism for tracking the runtime performance of the functions in an application but does not explicitly want to capture that logic in the functions themselves. In the example provided here, we are using the short form variant, using <code>@logger</code> to decorate <code>test_func</code>. You can also rewrite the decorator using the long form where <code>test_func</code> is passed as a parameter to the <code>logger</code> as shown below. In other words, a decorator is simply a callable that takes another function as its parameter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(fn):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>():
+</span></span><span style="display:flex;"><span>        start <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>        fn()
+</span></span><span style="display:flex;"><span>        end <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Executed the </span><span style="color:#e6db74">{</span>fn<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74"> in </span><span style="color:#e6db74">{</span>(end <span style="color:#f92672">-</span> start) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span><span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> milliseconds&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> inner 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_func</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Function finished running&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    logger(test_func)
+</span></span></code></pre></div><p>Another observation to note here is that our original <code>test_func</code> was modified using a nested-function, achieved by returning <code>inner</code> from <code>logger</code>. This is a standard implementation pattern for decorators where the goal is to modify the behaviour of the decorated function. Referring to variables (<code>fn</code>) that are outside the scope of <code>inner</code> is achieved through closures and</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.oreilly.com/library/view/design-patterns-elements/0201633612/">Design Patterns: Elements of Reusable Object-Oriented Software</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2024 Bijil Subhash</span>
+    
+</footer>
+    </div>
+
+</body>
+
 </html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+Hands-On with dbt Agent Skills | Bijil Subhash
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.155.2">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/dbt-agent-skills/" >
+
+
+
+
+<link href="/css/style.min.d23c1980faa61c0d6b331a0cd9dbc34fb7dade9e294067f1108fb8f26bd7796c.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+    let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let mermaidTheme = 'dark';
+    let mermaidConfig = {
+        theme: mermaidTheme,
+        logLevel: 'fatal',
+        securityLevel: 'strict',
+        startOnLoad: true,
+        arrowMarkerAbsolute: false,
+
+        er: {
+            diagramPadding: 20,
+            layoutDirection: 'TB',
+            minEntityWidth: 100,
+            minEntityHeight: 75,
+            entityPadding: 15,
+            stroke: 'gray',
+            fill: 'honeydew',
+            fontSize: 12,
+            useMaxWidth: true,
+        },
+        flowchart: {
+            diagramPadding: 8,
+            htmlLabels: true,
+            curve: 'basis',
+            padding: 50,
+            align: 'center',
+            fontFamily: '"Open-Sans", "sans-serif"',
+
+        },
+        sequence: {
+            diagramMarginX: 50,
+            diagramMarginY: 10,
+            actorMargin: 50,
+            width: 150,
+            height: 65,
+            boxMargin: 10,
+            boxTextMargin: 5,
+            noteMargin: 10,
+            messageMargin: 35,
+            messageAlign: 'center',
+            mirrorActors: true,
+            bottomMarginAdj: 1,
+            useMaxWidth: true,
+            rightAngles: false,
+            showSequenceNumbers: false,
+        },
+        gantt: {
+            titleTopMargin: 25,
+            barHeight: 20,
+            barGap: 4,
+            topPadding: 50,
+            leftPadding: 75,
+            gridLineStartPadding: 35,
+            fontSize: 11,
+            fontFamily: '"Open-Sans", "sans-serif"',
+            numberSectionStyles: 4,
+            axisFormat: '%Y-%m-%d',
+            topAxis: false,
+        },
+    };
+    mermaid.initialize(mermaidConfig);
+</script>
+<style>
+    .postDate {
+        float: right;
+        color: #f8f8ff;
+    }
+    .listHeader {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .postDate {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .postTitle {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+
+        .listHeader {
+            float: none;
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+</style>
+
+<header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a class="terminal" href="http://localhost:1313/">
+                <span>hello@bijilsubhash.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/blog</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Hands-On with dbt Agent Skills</h1>
+    
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/dbt/">#Dbt</a><span></span>
+    <a href="/tags/ai-agents/">#AI Agents</a><span></span>
+    <a href="/tags/data-engineering/">#Data Engineering</a></dd>
+            
+            
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2026-02-07">February 7, 2026</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>6 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>Last week, dbt-agent-skills were released to augment the behaviour of your coding agents to follow some of the best practices that are expected of a collaborator in your dbt project. I have been using agents for coding in some capacity with mixed results, and truthfully given the amount of dbt work I engage in, I was waiting for some opinionated framework that can be used to enhance this new way of working. That&rsquo;s why when dbt labs announced the release last week, I was quite eager to try it out and share some of my early findings.</p>
+<p>I am not going to dive into the details of what is included in the release, which you can read in detail <a href="https://docs.getdbt.com/blog/dbt-agent-skills">here</a> and instead focus on some of the results that came out of the experiment.</p>
+<h1 id="setup">Setup</h1>
+<p>To replicate this on your end, I have created a <a href="https://github.com/bijilsubhash/jaffle-beans">repository</a> with a bootstrap dbt project, which can be used to spin up a dbt project to test out these skills on your own. The hard restriction is that it is limited to BigQuery and Claude Code. The repository will give you a basic structure of a dbt project with a few models, an opinionated Claude configuration file (<code>claude.md</code>), and a readme with some instructions on how to set up the project. It also comes with the dbt-agent plugin out of the box i.e. you do not have to install it and it will be picked up by Claude Code.</p>
+<h1 id="analytics-engineering">Analytics Engineering</h1>
+<p>Out of the box, you get access to <code>using-dbt-for-analytics-engineering</code> skill which is a loaded set of instructions, captured in the markdown files <a href="https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/using-dbt-for-analytics-engineering/references">here</a>. Given its broad scope, I have noticed that it gets invoked frequently when working with dbt-agent-skills. However, what stood out the most when compared to using vanilla Claude Code is that the agent is less compliant, asks more questions, considers trade-offs, follows some of the fundamental principles of dbt diligently and prioritises data quality and integrity across the pipeline.</p>
+<p>Here are a couple of snippets in action from the model creation workflow. In the first example, we are creating an intermediate model to enrich orders at line item level.</p>
+<p><img src="/img/1_model_creation_intermediate.gif" alt="model creation - intermediate">
+<em>Figure 1: Creating an intermediate model to enrich orders at line item level</em></p>
+<p>Before building the model, the agent validates the ask by checking whether the existing <code>int_orders</code> table can sufficiently address the requirement by checking its grain, followed by exploring the data in the source table before writing the query and building the model. Additionally, the agent also goes to great lengths to ensure that data integrity is maintained by checking the row count post materialisation. What is not shown here is that the final query also contained a couple of specific formulas to calculate <code>line_total</code> and <code>line_cost</code>, which was not provided as context, but to my surprise was gleaned as a requirement by the agent. Whether that decision is appropriate or not is ultimately a judgement call that only a human can make. Alternatively, I could have also tried being more specific with my initial instructions.</p>
+<p>In the second example, we are creating a mart table, and the agent follows a similar pattern to the above.</p>
+<p><img src="/img/2_model_creation_mart.gif" alt="model creation - mart">
+<em>Figure 2: Creating a mart table from intermediate models</em></p>
+<p>One thing that stood out to me here is that skills do not yield a perfect result. There was a situation where an error was caused by an invalid <code>dbt show</code> command. The agent was able to recover from it, but I have since updated the Claude configuration file to ensure that it does not happen in the future.</p>
+<p>In both scenarios, the process followed by the agent closely mirrors what an analytics engineer would do in practice. With appropriate oversight and feedback from the community, it is safe to assume that dbt-agent-skills represents a step-change in improving the development experience for analytics engineers. It is worth noting here that I had to update the Claude configuration a few times to ensure that the agent was, in fact, checking for available skills before starting dbt-related tasks. In the short-term, I am expecting teams that are starting to incorporate these tools into their workflow to maintain the agent configuration more closely based on their needs.</p>
+<h1 id="unit-tests">Unit Tests</h1>
+<p>The ability to unit test models is key to building and maintaining reliable and trustworthy datasets. To that end, I wanted to validate a specific transformation by asking the agent to write a unit test that compares the equality between <code>item_total</code> and <code>net_payment</code>, providing a mechanism to catch any unexpected behaviour from the applied formula in one of the common table expressions.</p>
+<p>Below is the result from the request provided to the agent.</p>
+<p><img src="/img/3_test_intermediate.gif" alt="testing intermediate models"></p>
+<p>As expected, the agent was able to resolve the prompt to the appropriate skill; <a href="https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/adding-dbt-unit-test">adding-dbt-unit-test</a>, drafting the test configuration in the designated folder and invoking the test to ensure it works as expected. I am not big on getting agents to write tests and the last thing we want is a swamp full of unwarranted tests. That said, there might be some value in doing so with sufficient context and supervision. The skill does provide an opinionated set of guidelines on this topic, but it is healthy to assume that the output is not always going to be deterministic. So in addition to monitoring the testing logic, analytics engineers working with these tools should also become familiar with these guidelines and testing best practices to ensure the output from the agents are appropriate.</p>
+<h1 id="natural-language-querying">Natural Language Querying</h1>
+<p>Using natural language to query data is a hot topic and I wanted to explore this with the agent, supported by the skill; <a href="https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/answering-natural-language-questions-with-dbt">answering-natural-language-questions-with-dbt</a>. Here is an example where I am asking for the average order value by store:</p>
+<p><img src="/img/4_natural_language_query.gif" alt="natural language query"></p>
+<p>Truthfully, I will not rely on this for any high-stakes decision making, and would much rather write the SQL myself or at least validate the SQL generated by the agent. But it is certainly a plausible option if you want to give a quick answer to the business with the caveat that it will need to be validated at a later date. However, I do appreciate the hierarchical nature of how the answer is fetched (see <a href="https://github.com/dbt-labs/dbt-agent-skills/blob/main/skills/answering-natural-language-questions-with-dbt/SKILL.md">docs</a>), which, in the presence of appropriate semantic layer and metric definitions, could be useful. I am assuming a use case for this might manifest in dbt-cloud where non-technical stakeholders can get insights from the underlying semantic models through natural language queries.</p>
+<h1 id="closing-thoughts">Closing Thoughts</h1>
+<p>Although I have not tested the entire suite of skills that were made available via dbt-agent-skills, experimenting with a few reveals a consistent pattern that can guide generalised agents to be more systematic when it comes to being a collaborator in dbt projects. More importantly, it also revealed that skills are far from perfect, but with appropriate human intervention and opinionated agent configuration, we are able to steer the agent closer to the expected outcome. In the coming weeks and months, with more adoption and feedback, we are likely going to witness improvements that can dramatically enhance the experience for the next generation of analytics engineers.</p>
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2024 Bijil Subhash</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>

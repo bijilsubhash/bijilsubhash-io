@@ -4,7 +4,7 @@
     <title>Open Source on </title>
     <link>http://localhost:1313/tags/open-source/</link>
     <description>Recent content in Open Source on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
@@ -15,7 +15,7 @@
       <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
-      <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
+      <description>&lt;p&gt;By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
