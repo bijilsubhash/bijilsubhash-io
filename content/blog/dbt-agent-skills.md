@@ -5,7 +5,7 @@ author = "Bijil Subhash"
 tags = ["dbt", "AI Agents", "Data Engineering"]
 +++
 
-Last week, dbt-agent-skills were released, augmenting the behaviour of your coding agents to follow some of the best practices that are expected of a collaborator in your dbt project. I have been using agents for coding in some capacity with mixed results, and truthfully given the amount of dbt work I engage in, I was waiting for some opinionated framework that can be used to enhance this new way of working. That's why when dbt labs announced the release last week, I was quite eager to try it out and share some of my early findings.
+Last week, dbt-agent-skills was released, augmenting the behaviour of your coding agents to follow some of the best practices that are expected of a collaborator in your dbt project. I have been using agents for coding in some capacity with mixed results, and truthfully given the amount of dbt work I engage in, I was waiting for some opinionated framework that can be used to enhance this new way of working. That's why when dbt labs announced the release last week, I was quite eager to try it out and share some of my early findings.
 <!--more-->
 I am not going to dive into the details of what is included in the release, which you can read in detail [here](https://docs.getdbt.com/blog/dbt-agent-skills) and instead focus on some of the results that came out of the experiment.
 
