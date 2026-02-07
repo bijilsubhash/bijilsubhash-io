@@ -26,10 +26,10 @@ path = "mermaid"
 [params]
 user = "hello"
 hostname = "bijilsubhash.io"
-footerHtml = '© 2024 Bijil Subhash'
+footerHtml = '© 2026 Bijil Subhash'
   [params.author]
     name = "Bijil Subhash"  # Website and RSS feed author
-    email = "bijil.subhash@gmail.com"  # RSS feed email address
+    email = "bijil@nimblestax.com"  # RSS feed email address
   [params.mermaid]
     js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
 
