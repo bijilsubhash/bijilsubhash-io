@@ -15,7 +15,7 @@ To replicate this on your end, I have created a [repository](https://github.com/
 
 # Analytics Engineering
 
-Out of the box, you get access to `using-dbt-for-analytics-engineering` skill which is a loaded set of instructions, captured in the markdown files [here](https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/using-dbt-for-analytics-engineering/references). Given its broad scope, I have noticed that it gets invoked frequently when working with dbt-agent-skills. However, what stood out the most when compared to using vanilla Claude Code is that the agent is less compliant, asks more questions, considers trade-offs, follows some of the fundamental principles of dbt diligently and prioritises data quality and integrity across the pipeline.
+Out of the box, you get access to `using-dbt-for-analytics-engineering` skill which is a loaded set of instructions, captured in the markdown files [here](https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/using-dbt-for-analytics-engineering/references). Given its broad scope, I have noticed that it gets invoked frequently when working with dbt-related tasks. However, what stood out the most when compared to using vanilla Claude Code is that the agent is less agreeable, asks more questions, considers trade-offs, follows some of the fundamental principles of dbt diligently and prioritises data quality and integrity across the pipeline.
 
 Here are a couple of snippets in action from the model creation workflow. In the first example, we are creating an intermediate model to enrich orders at line item level.
 
@@ -31,7 +31,7 @@ In the second example, we are creating a mart table, and the agent follows a sim
 
 One thing that stood out to me here is that skills do not yield a perfect result. There was a situation where an error was caused by an invalid `dbt show` command. The agent was able to recover from it, but I have since updated the Claude configuration file to ensure that it does not happen in the future.
 
-In both scenarios, the process followed by the agent closely mirrors what an analytics engineer would do in practice. With appropriate oversight and feedback from the community, it is safe to assume that dbt-agent-skills represents a step-change in improving the development experience for analytics engineers. It is worth noting here that I had to update the Claude configuration a few times to ensure that the agent was, in fact, checking for available skills before starting dbt-related tasks. In the short-term, I am expecting teams that are starting to incorporate these tools into their workflow to maintain the agent configuration more closely based on their needs.
+In both scenarios, the process followed by the agent closely mirrors what an analytics engineer would do in practice. With appropriate oversight and feedback from the community, it is safe to assume that dbt-agent-skills represents a step-change in improving the development experience for analytics engineers. It is worth noting here that I had to update the Claude configuration a few times to ensure that the agent was checking for available skills before starting dbt-related tasks. In the short-term, I am expecting teams that are starting to incorporate these tools into their workflow to maintain the agent configuration more closely based on their needs.
 
 # Unit Tests
 
@@ -41,7 +41,7 @@ Below is the result from the request provided to the agent.
 
 ![testing intermediate models](/img/3_test_intermediate.gif)
 
-As expected, the agent was able to resolve the prompt to the appropriate skill; [adding-dbt-unit-test](https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/adding-dbt-unit-test), drafting the test configuration in the designated folder and invoking the test to ensure it works as expected. I am not big on getting agents to write tests and the last thing we want is a swamp full of unwarranted tests. That said, there might be some value in doing so with sufficient context and supervision. The skill does provide an opinionated set of guidelines on this topic, but it is healthy to assume that the output is not always going to be deterministic. So in addition to monitoring the testing logic, analytics engineers working with these tools should also become familiar with these guidelines and testing best practices to ensure the output from the agents are appropriate.
+As expected, the agent was able to resolve the prompt to the appropriate skill; [adding-dbt-unit-test](https://github.com/dbt-labs/dbt-agent-skills/tree/main/skills/adding-dbt-unit-test), drafting the test configuration in the designated folder and invoking the test to ensure it works as expected. I am not big on getting agents to write tests and the last thing we want is a swamp full of unwarranted tests. That being said, there might be some value in doing so with sufficient context and supervision. The skill also provides an opinionated set of guidelines on this topic, but it is healthy to assume that the output is not always going to be deterministic. So in addition to monitoring the testing logic, analytics engineers working with these tools are advised to be familiar with these guidelines and testing best practices to ensure they are able to assess the output.
 
 # Natural Language Querying
 
