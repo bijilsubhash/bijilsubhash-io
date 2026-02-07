@@ -4,7 +4,7 @@
     <title>Data Lakehouse on </title>
     <link>http://localhost:1313/tags/data-lakehouse/</link>
     <description>Recent content in Data Lakehouse on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
@@ -15,7 +15,7 @@
       <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
-      <description>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it.</description>
+      <description>&lt;p&gt;The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it. At first, none of it made much sense but as I started to get more hands on with the lakehouse concepts alongside a handful of fruitful conversations with senior engineers and a deep dive into the literature on the topic, it started to connect. More broadly, I have developed a deep appreciation behind the creativity, rigour, and collaboration that fueled the incremental progress towards lakehouse architecture.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

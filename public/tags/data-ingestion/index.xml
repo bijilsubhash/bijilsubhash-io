@@ -4,25 +4,25 @@
     <title>Data Ingestion on </title>
     <link>http://localhost:1313/tags/data-ingestion/</link>
     <description>Recent content in Data Ingestion on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
     <lastBuildDate>Sun, 03 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/data-ingestion/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Lessons from Building Data Pipelines on DLT: Part 1</title>
+      <title>Lessons from Building Data Pipelines on DLT</title>
       <link>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</link>
       <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</guid>
-      <description>Couple of months ago, I shared my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their documentation and Slack community. I was drawn to DLT due to its Python-first approach when it comes to data engineering. In addition to developing a deeper sense of appreciation towards idiomatic Python, over the course of the last two months, I have had the opportunity to work with a handful of features in DLT, which I hope to leverage in some real-world projects in the near-future.</description>
+      <description>&lt;p&gt;Couple of months ago, I&#xA;&lt;a href=&#34;https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/&#34;&gt;shared&lt;/a&gt; my&#xA;initial experience with Data Load Tool (DLT). Since then, I have built a few&#xA;projects with the help of their &lt;a href=&#34;https://dlthub.com/docs/intro&#34;&gt;documentation&lt;/a&gt;&#xA;and an incredibly supportive Slack community. I was immediately drawn towards&#xA;DLT for its Python-first approach when it comes to building data pipelines. Over&#xA;the past two months, I’ve deepened my appreciation for idiomatic Python while&#xA;exploring and applying several of DLT’s features, which I am eager to leverage&#xA;in real-world projects. In this article, I’ll dive into some key DLT features&#xA;and the lessons learned from building data pipelines.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
       <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
-      <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
+      <description>&lt;p&gt;By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

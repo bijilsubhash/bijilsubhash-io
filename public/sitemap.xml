@@ -3,7 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai-agents/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-engineering/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dbt/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/dbt-agent-skills/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/index/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-02-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/data-ingestion/</loc>
     <lastmod>2024-11-03T00:00:00+00:00</lastmod>
@@ -11,16 +32,7 @@
     <loc>http://localhost:1313/tags/dlt/</loc>
     <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/index/</loc>
-    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</loc>
-    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/programming/</loc>

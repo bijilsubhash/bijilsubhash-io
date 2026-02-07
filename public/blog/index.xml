@@ -4,39 +4,46 @@
     <title>Posts on </title>
     <link>http://localhost:1313/blog/</link>
     <description>Recent content in Posts on </description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>bijil.subhash@gmail.com (Bijil Subhash)</managingEditor>
     <webMaster>bijil.subhash@gmail.com (Bijil Subhash)</webMaster>
-    <lastBuildDate>Sun, 03 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Lessons from Building Data Pipelines on DLT: Part 1</title>
+      <title>Hands-On with dbt Agent Skills</title>
+      <link>http://localhost:1313/blog/dbt-agent-skills/</link>
+      <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
+      <guid>http://localhost:1313/blog/dbt-agent-skills/</guid>
+      <description>&lt;p&gt;Last week, dbt-agent-skills were released to augment the behaviour of your coding agents to follow some of the best practices that are expected of a collaborator in your dbt project. I have been using agents for coding in some capacity with mixed results, and truthfully given the amount of dbt work I engage in, I was waiting for some opinionated framework that can be used to enhance this new way of working. That&amp;rsquo;s why when dbt labs announced the release last week, I was quite eager to try it out and share some of my early findings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lessons from Building Data Pipelines on DLT</title>
       <link>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</link>
       <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/lessons-from-building-data-pipelines-on-dlt/</guid>
-      <description>Couple of months ago, I shared my initial experience with Data Load Tool (DLT). Since then, I have been building some projects with the help of their documentation and the active Slack community. The Python-first approach of DLT greatly appealed to me as a data engineer. Over the past two months, I’ve deepened my appreciation for idiomatic Python while exploring and applying several of DLT’s features, which I am m eager to leverage in real-world projects.</description>
+      <description>&lt;p&gt;Couple of months ago, I&#xA;&lt;a href=&#34;https://bijilsubhash.io/blog/exploring-dlt-for-data-ingestion/&#34;&gt;shared&lt;/a&gt; my&#xA;initial experience with Data Load Tool (DLT). Since then, I have built a few&#xA;projects with the help of their &lt;a href=&#34;https://dlthub.com/docs/intro&#34;&gt;documentation&lt;/a&gt;&#xA;and an incredibly supportive Slack community. I was immediately drawn towards&#xA;DLT for its Python-first approach when it comes to building data pipelines. Over&#xA;the past two months, I’ve deepened my appreciation for idiomatic Python while&#xA;exploring and applying several of DLT’s features, which I am eager to leverage&#xA;in real-world projects. In this article, I’ll dive into some key DLT features&#xA;and the lessons learned from building data pipelines.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unraveling Python Function Decorators</title>
       <link>http://localhost:1313/blog/unraveling-python-function-decorators/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/unraveling-python-function-decorators/</guid>
-      <description>I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data.</description>
+      <description>&lt;p&gt;I learnt about programming when I was in middle school as one of the mandatory subjects. A good chunk of my early exposure into programming had me writing recursive functions for calculating factorials or printing the fibonacci series in C++ and Java. Though I did reasonably well in an academic setting, my abysmal understanding of the underlying concepts as a result of rote learning led me to leaving it all behind until much later in graduate school where I had to start using Python for working with data. Python is a batteries-included beginner friendly language that gave me enough firepower to do exactly what I needed. The relative ease of using Python in practical applications meant that I could get away without ever having to develop a deeper understanding of the powerful features it has to offer. In the interest of closing this gap, I recently embarked on a journey to teach myself some of the advanced topics in Python. In this article, I wanted to unpack one that piqued my interest - function decorators.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Evolution of Data Lakehouse Architecture</title>
       <link>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/evolution-of-data-lakehouse-architecture/</guid>
-      <description>The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it.</description>
+      <description>&lt;p&gt;The first time I have heard about data lakehouse was 2.5 years ago at a conference. Back then, I was still at the university and most of the content of the day went over my head. Fast forward to 2024, I have since graduated and have been working as a data engineer for nearly 1.5 years now. Just over a month ago, I came across data lakehouse again as I was starting to get myself ready for some upcoming projects on it. At first, none of it made much sense but as I started to get more hands on with the lakehouse concepts alongside a handful of fruitful conversations with senior engineers and a deep dive into the literature on the topic, it started to connect. More broadly, I have developed a deep appreciation behind the creativity, rigour, and collaboration that fueled the incremental progress towards lakehouse architecture.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Capabilties of Data Load Tool (DLT)</title>
       <link>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>bijil.subhash@gmail.com (Bijil Subhash)</author>
       <guid>http://localhost:1313/blog/exploring-dlt-for-data-ingestion/</guid>
-      <description>By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.</description>
+      <description>&lt;p&gt;By and large, there is no shortage of data products coming into the market. Below is a snapshot of 2024 Machine Learning, AI and Data landscape, which has 2011 logos in total. It is incredibly difficult to pinpoint what is good amongst all of this. However, every now and then, there is a team behind a product that attempts to do something different. This article is about one such tool that I believe has a strong case to make an impact in its category.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
