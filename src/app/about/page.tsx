@@ -7,7 +7,7 @@ import styles from './about.module.css'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: `About ${site.name} — forward deployed data engineer in Sydney, focused on Databricks and the modern data stack.`,
+  description: `About ${site.name} – forward deployed data engineer in Sydney, focused on Databricks and the modern data stack.`,
   alternates: { canonical: '/about' },
 }
 

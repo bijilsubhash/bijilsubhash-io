@@ -1,7 +1,7 @@
 import { site } from '@/lib/site'
 import styles from './Footer.module.css'
 
-/** Footer — design.md §5. No RSS link (the site has no feed). */
+/** Footer – design.md §5. No RSS link (the site has no feed). */
 export default function Footer() {
   return (
     <footer className={styles.footer}>

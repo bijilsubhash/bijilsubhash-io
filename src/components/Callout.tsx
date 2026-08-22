@@ -10,7 +10,7 @@ const LABELS: Record<Variant, string> = {
 }
 
 /**
- * Callout with note / tip / warning variants — design.md §5.
+ * Callout with note / tip / warning variants – design.md §5.
  * Usage in MDX: <Callout type="tip">...</Callout>
  */
 export default function Callout({

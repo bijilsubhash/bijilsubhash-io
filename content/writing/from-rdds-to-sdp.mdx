@@ -2,7 +2,7 @@
 title: "From RDDs to SDP: Spark's Declarative Turn"
 date: "2026-07-30"
 tags: [spark, sdp, databricks, data engineering]
-description: "What happens when data engineering stops telling Spark how, and starts telling it what — a look at Spark Declarative Pipelines (SDP), the components that make it up, and where it fits alongside Lakeflow Declarative Pipelines and dbt."
+description: "What happens when data engineering stops telling Spark how, and starts telling it what: a look at Spark Declarative Pipelines (SDP), the components that make it up, and where it fits alongside Lakeflow Declarative Pipelines and dbt."
 ---
 
 {/* Hero image / thumbnail to be added */}
@@ -70,9 +70,9 @@ def weekly_sales():
 
 When you work with SDP, you will encounter three different types of materializations:
 
-- **Streaming table** — an unbounded table where each new record is appended as a new row.
-- **Materialized view** — computes and persists the query results into a physical table.
-- **Temporary view** — a session-scoped virtual table that does not persist results but instead saves a query definition, run against the source table when queried.
+- **Streaming table**: an unbounded table where each new record is appended as a new row.
+- **Materialized view**: computes and persists the query results into a physical table.
+- **Temporary view**: a session-scoped virtual table that does not persist results but instead saves a query definition, run against the source table when queried.
 
 </Callout>
 
@@ -95,7 +95,7 @@ None of the above looks new. Vanilla PySpark and Spark SQL can produce both of t
 
 To get the same two tables into production without SDP, you would also write a checkpoint location for the streaming read and manage it across environments, an orchestrator DAG encoding that the weekly sales table runs after the raw sales table, and retry and failure-handling configuration on each task. You would also be on the hook for deciding whether weekly sales is rebuilt or appended and writing the code to enforce it, plus whatever monitoring you have around all of it. None of that is transformation logic. All of it is mechanics that you need to maintain.
 
-In the SDP version, the dependency is declared in a single place — the weekly sales table reads the raw sales table — and that reference is the graph. The pipeline analyses the objects you've defined and works out execution order and parallelisation from them. Materialisation semantics follow from the decorator, and the checkpoint is the framework's problem, not yours.
+In the SDP version, the dependency is declared in a single place, the weekly sales table reads the raw sales table, and that reference is the graph. The pipeline analyses the objects you've defined and works out execution order and parallelisation from them. Materialisation semantics follow from the decorator, and the checkpoint is the framework's problem, not yours.
 
 That is the actual shift: not a new way to express transformations, but the removal of everything you previously had to express around them.
 
@@ -120,20 +120,20 @@ SDP also comes with its own CLI to scaffold, validate, and run pipelines locally
 Putting it all together, here is a representation of an end-to-end SDP:
 
 ```mermaid caption="An end-to-end Spark Declarative Pipeline"
-flowchart LR
-    CLI[SDP CLI · scaffold / validate / run] --> PIPE
+flowchart TD
+    CLI["SDP CLI<br/>scaffold, validate, run"] --> PIPE
     subgraph PIPE[Pipeline]
-        direction LR
-        CFG[(Pipeline config)] -.-> SRC
-        SRC[Source files · .py / .sql] --> RS
+        direction TB
+        CFG[("Pipeline<br/>config")] -.-> SRC
+        SRC["Source files<br/>(.py / .sql)"] --> RS
         subgraph DS[Datasets]
-            direction LR
-            RS[Streaming table · raw_sales]
-            WS[Materialized view · weekly_sales]
+            direction TB
+            RS["Streaming table<br/>raw_sales"]
+            WS["Materialized view<br/>weekly_sales"]
         end
         RS -->|flow| WS
     end
-    PIPE --> OUT[(Tables in catalog)]
+    PIPE --> OUT[("Tables in<br/>catalog")]
 ```
 
 ## Is it Ready for Production?

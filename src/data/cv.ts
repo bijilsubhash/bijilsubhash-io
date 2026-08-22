@@ -1,5 +1,5 @@
 /**
- * CV data — source for /cv (design.md §5, §7). Public contact is work email
+ * CV data – source for /cv (design.md §5, §7). Public contact is work email
  * only; phone and personal email are intentionally omitted.
  * See docs/adr and the grill session that produced this page.
  */
@@ -30,10 +30,10 @@ export type CertGroup = {
 
 export const cv = {
   name: 'Bijil Subhash',
-  headline: 'Data engineer · Sydney',
+  headline: 'Data engineer – Sydney',
   email: 'bijil@nimblestax.com',
   summary:
-    'Forward deployed data engineer with 5+ years building modern data platforms — scalable, reliable, and maintainable. Track record across batch and streaming ingestion, data modelling and transformation, governance, analytics, infrastructure as code, and DataOps, with a focus on measurable business outcomes and enabling AI adoption.',
+    'Forward deployed data engineer with 5+ years building modern data platforms – scalable, reliable, and maintainable. Track record across batch and streaming ingestion, data modelling and transformation, governance, analytics, infrastructure as code, and DataOps, with a focus on measurable business outcomes and enabling AI adoption.',
 
   experience: [
     {
@@ -43,7 +43,7 @@ export const cv = {
       dates: 'Nov 2025 – Present',
       bullets: [
         'Grew a key strategic account to $2M AUD in 8 months, embedded client-side to architect, build, and productionise end-to-end solutions on a native GCP stack (BigQuery, Cloud Storage, Cloud Run) while shaping the account roadmap.',
-        'Lead the enterprise data platform build for a geopolitical risk advisory firm — state-aware batch and streaming ingestion, an asset-driven orchestration layer, and a modular transformation framework with end-to-end monitoring and alerting.',
+        'Lead the enterprise data platform build for a geopolitical risk advisory firm – state-aware batch and streaming ingestion, an asset-driven orchestration layer, and a modular transformation framework with end-to-end monitoring and alerting.',
         'Designed and built a state-driven micro-payments platform for advisor remuneration, retiring a 15-year-old manual process, removing a compliance exposure, and saving 100+ hours annually.',
         'Implemented event-driven integrations combining a Pub/Sub queue and webhook listeners for real-time propagation with Dagster-orchestrated batch reconciliation to catch drift.',
         'Designed the streaming ingestion architecture behind a business-critical AI product, and a near-real-time pipeline transforming live CMS updates into RAG-ready output.',
@@ -60,7 +60,7 @@ export const cv = {
         'Delivered multi-day Snowflake and dbt training to 100+ engineers and analytics practitioners, running hands-on labs for enterprise cohorts of up to 25.',
         'Took teams from fundamentals to production practice: incremental models, snapshots, macros, testing, CI/CD, query optimisation, and advanced SQL.',
         'Spearheaded the AI engineering curriculum, teaching teams to build pipelines and semantic models using Claude Code, Snowflake Cortex, dbt Wizard, agent harnesses, and MCP.',
-        'Built the IaC framework provisioning training environments end to end — dbt Cloud accounts and projects alongside Snowflake schemas, roles, and compute via Terraform.',
+        'Built the IaC framework provisioning training environments end to end – dbt Cloud accounts and projects alongside Snowflake schemas, roles, and compute via Terraform.',
       ],
     },
     {
@@ -71,7 +71,7 @@ export const cv = {
       bullets: [
         'Developed a config-driven Python ingestion framework covering 150+ API endpoints with dlt, cutting ingestion costs by ~95% and migrating a client off low/no-code tooling.',
         'Migrated a client from unorchestrated AWS Lambda pipelines to a governed, modular platform on MotherDuck, Dagster, and dbt, establishing observability and deployment practice from day one.',
-        'Built an end-to-end platform on MotherDuck and DuckDB for a seed-stage startup — ingestion (dlt), transformation (dbt), orchestration, and infrastructure (Terraform) on GCP.',
+        'Built an end-to-end platform on MotherDuck and DuckDB for a seed-stage startup – ingestion (dlt), transformation (dbt), orchestration, and infrastructure (Terraform) on GCP.',
         'Built an Azure Databricks platform applying modelling, transformation, DataOps, and IaC across Python, dbt, and Terraform to migrate a client off Snowflake.',
         'Designed a Unity Catalog–enabled Databricks architecture entirely through IaC, managing 3 workspaces from a central config-driven Terraform framework.',
         'Delivered LLM and analytics workloads on GCP (BigQuery, Cloud Run, Cloud Functions, Looker Studio) for a mid-tier organisation.',
@@ -83,7 +83,7 @@ export const cv = {
       location: 'Sydney, Australia',
       dates: 'Aug 2025 – Jan 2026',
       bullets: [
-        'Founding data engineer at a Series A startup, owning the entire platform end to end — ingestion, transformation, orchestration, analytics, and governance — built from scratch.',
+        'Founding data engineer at a Series A startup, owning the entire platform end to end – ingestion, transformation, orchestration, analytics, and governance – built from scratch.',
         'Designed an event-driven architecture on GCP (Pub/Sub, Cloud Run, Cloud SQL, BigQuery) ingesting ~300M rows daily to power a virtual power plant monitoring distributed renewable assets in real time.',
         'Built a production Python ingestion framework for time-series telemetry from residential IoT devices and CRM data via REST APIs.',
         'Deployed a hybrid Dagster instance as the single orchestration layer, using declarative automation, asset checks, and factory patterns.',

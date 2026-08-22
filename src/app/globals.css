@@ -1,5 +1,5 @@
 /*
- * bijilsubhash.io — global design tokens + base styles.
+ * bijilsubhash.io – global design tokens + base styles.
  * Tokens are transcribed verbatim from docs/design/design.md (the source of truth).
  * See docs/adr/0004-plain-css-modules-over-tailwind.md
  */
@@ -347,7 +347,7 @@ a {
   color: var(--color-text-body);
 }
 
-/* Lede — About opening paragraph only (design.md §3) */
+/* Lede – About opening paragraph only (design.md §3) */
 .lede-first .prose > p:first-of-type {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -404,10 +404,10 @@ a {
   color: var(--color-text-faint);
 }
 .prose blockquote cite::before {
-  content: '— ';
+  content: '– ';
 }
 
-/* Footnotes (design.md §5) — remark-gfm output */
+/* Footnotes (design.md §5) – remark-gfm output */
 .prose .footnotes {
   margin-top: 40px;
   padding-top: 22px;

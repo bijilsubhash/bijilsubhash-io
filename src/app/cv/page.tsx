@@ -6,7 +6,7 @@ import styles from './cv.module.css'
 
 export const metadata: Metadata = {
   title: 'CV',
-  description: `Professional record for ${cv.name} — experience, skills, education, and certifications.`,
+  description: `Professional record for ${cv.name} – experience, skills, education, and certifications.`,
   alternates: { canonical: '/cv' },
 }
 
@@ -17,7 +17,7 @@ export default function CvPage() {
         <div className={styles.headText}>
           <h1 className="t-page-title">{cv.name}</h1>
           <p className={`t-meta ${styles.headline}`}>
-            {cv.headline} ·{' '}
+            {cv.headline} –{' '}
             <a href={`mailto:${cv.email}`} className={styles.headLink}>
               {cv.email}
             </a>
