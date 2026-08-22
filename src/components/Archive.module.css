@@ -1,0 +1,11 @@
+.group {
+  margin-bottom: 40px;
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.group h2 {
+  margin-bottom: 8px;
+}

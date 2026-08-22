@@ -1,0 +1,526 @@
+/*
+ * bijilsubhash.io — global design tokens + base styles.
+ * Tokens are transcribed verbatim from docs/design/design.md (the source of truth).
+ * See docs/adr/0004-plain-css-modules-over-tailwind.md
+ */
+
+:root {
+  /* --- Color (design.md §2) --- */
+  --color-bg: #fafaf8;
+  --color-surface: #f3f1ea;
+  --color-code-bg: #f5f3ec;
+  --color-text: #1a1a1a;
+  --color-text-body: #38362f;
+  --color-text-muted: #6b6862;
+  --color-text-faint: #9b978e;
+  --color-accent: #24625f;
+  --color-accent-hover: #1a4a47;
+  --color-accent-soft: #cfe0de;
+  --color-border: #e4e2db;
+  --color-hair: #eae7df;
+  --color-verify: #cfe0de;
+  --color-selection: #cfe0de;
+
+  /* Callout variants */
+  --callout-note-rule: #24625f;
+  --callout-note-fill: #f3f1ea;
+  --callout-note-label: #24625f;
+  --callout-tip-rule: #4a7c3f;
+  --callout-tip-fill: #f1f4ec;
+  --callout-tip-label: #3f6b36;
+  --callout-warning-rule: #a3742f;
+  --callout-warning-fill: #f7f2e8;
+  --callout-warning-label: #8a6222;
+
+  /* --- Type families (design.md §3), wired to next/font in fonts.ts --- */
+  --font-serif: var(--font-newsreader), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-jetbrains), 'SF Mono', ui-monospace, 'JetBrains Mono', monospace;
+
+  /* --- Measure, spacing, radii (design.md §4) --- */
+  --measure-prose: 680px;
+  --measure-wide: 760px;
+  --gutter: 32px;
+  --header-pad-y: 34px;
+
+  --radius-chip: 3px;
+  --radius-callout: 4px;
+  --radius-code: 5px;
+
+  /* --- Motion (design.md §6) --- */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-mid: 180ms;
+  --dur-slow: 220ms;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 24px;
+    --header-pad-y: 22px;
+  }
+}
+
+/*
+ * --- Dark theme ---
+ * Warm dark ground mirroring the light palette; the teal accent is lightened
+ * for contrast. Applied when the visitor's OS prefers dark (unless they forced
+ * light) and whenever they explicitly pick dark via the header toggle.
+ * The two selectors carry the same token block by design.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #171613;
+    --color-surface: #201e1a;
+    --color-code-bg: #1c1a16;
+    --color-text: #f4f2ec;
+    --color-text-body: #d6d2c7;
+    --color-text-muted: #a09b8e;
+    --color-text-faint: #736e62;
+    --color-accent: #7cb3ac;
+    --color-accent-hover: #95c5bf;
+    --color-accent-soft: #33514d;
+    --color-border: #302d27;
+    --color-hair: #26231e;
+    --color-verify: #33514d;
+    --color-selection: #33514d;
+    --callout-note-rule: #7cb3ac;
+    --callout-note-fill: #1b1f1e;
+    --callout-note-label: #8fc0ba;
+    --callout-tip-rule: #7aa96b;
+    --callout-tip-fill: #1a1f18;
+    --callout-tip-label: #93bf85;
+    --callout-warning-rule: #c6a05f;
+    --callout-warning-fill: #211c14;
+    --callout-warning-label: #d3ac6b;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #171613;
+  --color-surface: #201e1a;
+  --color-code-bg: #1c1a16;
+  --color-text: #f4f2ec;
+  --color-text-body: #d6d2c7;
+  --color-text-muted: #a09b8e;
+  --color-text-faint: #736e62;
+  --color-accent: #7cb3ac;
+  --color-accent-hover: #95c5bf;
+  --color-accent-soft: #33514d;
+  --color-border: #302d27;
+  --color-hair: #26231e;
+  --color-verify: #33514d;
+  --color-selection: #33514d;
+  --callout-note-rule: #7cb3ac;
+  --callout-note-fill: #1b1f1e;
+  --callout-note-label: #8fc0ba;
+  --callout-tip-rule: #7aa96b;
+  --callout-tip-fill: #1a1f18;
+  --callout-tip-label: #93bf85;
+  --callout-warning-rule: #c6a05f;
+  --callout-warning-fill: #211c14;
+  --callout-warning-label: #d3ac6b;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-selection);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Layout containers --- */
+.container {
+  max-width: var(--measure-prose);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.container-wide {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.main {
+  flex: 1 0 auto;
+  padding-top: 34px;
+  padding-bottom: 104px;
+}
+@media (max-width: 767px) {
+  .main {
+    padding-top: 22px;
+    padding-bottom: 80px;
+  }
+}
+
+/* --- Type roles (design.md §3 scale). Cross-cutting, so global. --- */
+.t-display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+}
+.t-page-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+.t-post-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+}
+.t-lede {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+.t-meta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-text-faint);
+}
+.t-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11.5px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.t-nav {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* --- Prose (post + about body) --- */
+.prose {
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.78;
+}
+.prose > * {
+  text-wrap: pretty;
+}
+.prose p {
+  margin-bottom: 22px;
+  text-wrap: pretty;
+}
+.prose h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin-top: 48px;
+  margin-bottom: 14px;
+  scroll-margin-top: 90px;
+}
+.prose h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--color-text);
+  margin-top: 36px;
+  margin-bottom: 12px;
+  scroll-margin-top: 90px;
+}
+.prose h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.prose ul,
+.prose ol {
+  margin-bottom: 22px;
+  padding-left: 26px;
+}
+.prose li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+.prose li::marker {
+  color: var(--color-text-faint);
+}
+.prose strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+.prose em {
+  font-style: italic;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 40px 0;
+}
+.prose a {
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent-soft);
+  transition: border-color var(--dur-mid) var(--ease-out);
+}
+.prose a:hover {
+  border-bottom-color: var(--color-accent);
+}
+.prose cite {
+  font-style: italic;
+  color: var(--color-text-body);
+}
+
+/* Lede — About opening paragraph only (design.md §3) */
+.lede-first .prose > p:first-of-type {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin-bottom: 26px;
+}
+@media (max-width: 767px) {
+  .lede-first .prose > p:first-of-type {
+    font-size: 19px;
+  }
+}
+
+/* Inline code (design.md §5) */
+.prose :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+  background: var(--color-surface);
+  padding: 2px 5px;
+  border-radius: var(--radius-chip);
+}
+
+/* Block spacing for rich content inside prose */
+.prose figure,
+.prose pre,
+.prose blockquote {
+  margin-bottom: 30px;
+}
+
+/* Blockquote (design.md §5) */
+.prose blockquote {
+  border-left: 2px solid var(--color-accent-soft);
+  padding-left: 22px;
+  margin-top: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+.prose blockquote p {
+  margin-bottom: 12px;
+}
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+.prose blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--color-text-faint);
+}
+.prose blockquote cite::before {
+  content: '— ';
+}
+
+/* Footnotes (design.md §5) — remark-gfm output */
+.prose .footnotes {
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-hair);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+.prose .footnotes h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11.5px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 16px;
+}
+.prose .footnotes ol {
+  margin-bottom: 0;
+}
+.prose .footnotes li {
+  margin-bottom: 9px;
+}
+.prose .footnotes li:last-child {
+  margin-bottom: 0;
+}
+.prose sup a,
+.prose .footnotes a[data-footnote-backref] {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent);
+  border-bottom: none;
+}
+
+/* --- Mobile type (design.md §3) --- */
+@media (max-width: 767px) {
+  body {
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+  .t-display {
+    font-size: 32px;
+  }
+  .t-page-title {
+    font-size: 30px;
+  }
+  .t-post-title {
+    font-size: 28px;
+  }
+  .prose {
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+  .prose h2 {
+    font-size: 21px;
+  }
+  .prose h3 {
+    font-size: 18px;
+  }
+}
+
+/* --- Entrance animation (design.md §6) --- */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.reveal {
+  animation: reveal-up var(--dur-slow) var(--ease-out) both;
+}
+
+/* Dual-theme syntax highlighting: swap to the dark token colors in dark mode.
+   rehype-pretty-code emits --shiki-light / --shiki-dark on each token span. */
+:root[data-theme='dark'] pre code span {
+  color: var(--shiki-dark) !important;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) pre code span {
+    color: var(--shiki-dark) !important;
+  }
+}
+
+/* --- Print (design.md §7): the CV page is the résumé --- */
+@media print {
+  body {
+    background: #ffffff;
+  }
+  header,
+  footer {
+    display: none !important;
+  }
+  .main {
+    padding: 0 !important;
+  }
+  .reveal {
+    animation: none !important;
+  }
+}
+
+/* --- Reduced motion (design.md §6) --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

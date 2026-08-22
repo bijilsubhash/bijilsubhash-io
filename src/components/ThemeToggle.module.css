@@ -1,0 +1,43 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--dur-mid) var(--ease-out);
+}
+
+.toggle:hover {
+  color: var(--color-text);
+}
+
+/* Default (light): show the moon (click -> dark). */
+.sun {
+  display: none;
+}
+.moon {
+  display: inline-flex;
+}
+
+/* Explicit dark. */
+:global(:root[data-theme='dark']) .sun {
+  display: inline-flex;
+}
+:global(:root[data-theme='dark']) .moon {
+  display: none;
+}
+
+/* System dark (unless the visitor forced light). */
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .sun {
+    display: inline-flex;
+  }
+  :global(:root:not([data-theme='light'])) .moon {
+    display: none;
+  }
+}
