@@ -6,7 +6,7 @@
 .diagram {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-code);
-  background: #ffffff;
+  background: var(--color-code-bg);
   padding: 22px;
   display: flex;
   justify-content: center;

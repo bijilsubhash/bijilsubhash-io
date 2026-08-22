@@ -4,10 +4,10 @@ import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode, { type Options as PrettyCodeOptions } from 'rehype-pretty-code'
 import { remarkMermaid } from './remark-mermaid'
 import { rehypeUnwrapImages } from './rehype-unwrap-images'
-import { codeTheme } from './shiki-theme'
+import { codeTheme, codeThemeDark } from './shiki-theme'
 
 const prettyCodeOptions: PrettyCodeOptions = {
-  theme: codeTheme as unknown as PrettyCodeOptions['theme'],
+  theme: { light: codeTheme, dark: codeThemeDark } as unknown as PrettyCodeOptions['theme'],
   keepBackground: false,
   defaultLang: 'text',
   bypassInlineCode: true,
