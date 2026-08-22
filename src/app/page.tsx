@@ -10,7 +10,7 @@ export default function Home() {
       <section className={`${styles.intro} reveal`}>
         <h1 className="t-display">Bijil Subhash</h1>
         <p className={styles.blurb}>
-          Forward deployed data engineer in Sydney. I embed with client teams to
+          Forward deployed data engineer from Sydney, Australia. I embed with client teams to
           design, build, and run data platforms end to end, most often on
           Databricks and across the modern data stack. This is where I write
           things down as I come across them, what I&apos;m learning, my take on
