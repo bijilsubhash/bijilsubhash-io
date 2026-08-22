@@ -119,20 +119,17 @@ SDP also comes with its own CLI to scaffold, validate, and run pipelines locally
 
 Putting it all together, here is a representation of an end-to-end SDP:
 
-```mermaid caption="An end-to-end Spark Declarative Pipeline"
-flowchart TD
-    CLI[SDP CLI · scaffold / validate / run] --> PIPE
-    subgraph PIPE[Pipeline]
-        direction TB
-        SRC[Source files · .py / .sql] --> RS
-        CFG[(Pipeline config)] -.-> SRC
-        subgraph DS[Datasets]
-            RS[Streaming table · raw_sales]
-            WS[Materialized view · weekly_sales]
-        end
+```mermaid caption="A pipeline resolves a graph of datasets, each produced by a flow that reads a source and writes a target"
+flowchart LR
+    SRC[("Source<br/>sales.raw_sales")]
+    subgraph P [Pipeline]
+        direction LR
+        RS["Streaming table<br/>raw_sales"]
+        WS["Materialized view<br/>weekly_sales"]
         RS -->|flow| WS
     end
-    PIPE --> OUT[(Tables in catalog)]
+    SRC -->|flow| RS
+    WS --> OUT[("Downstream<br/>BI · sink")]
 ```
 
 ## Is it Ready for Production?
