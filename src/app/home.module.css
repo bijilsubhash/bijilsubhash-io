@@ -1,0 +1,43 @@
+.intro {
+  margin-bottom: 56px;
+}
+
+.intro h1 {
+  margin-bottom: 20px;
+}
+
+.blurb {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--color-text-body);
+  max-width: 620px;
+  text-wrap: pretty;
+}
+
+.recent h2 {
+  margin-bottom: 16px;
+}
+
+.all {
+  display: inline-block;
+  margin-top: 26px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent-soft);
+  transition: border-color var(--dur-mid) var(--ease-out);
+}
+
+.all:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+@media (max-width: 767px) {
+  .blurb {
+    font-size: 17px;
+  }
+  .intro {
+    margin-bottom: 44px;
+  }
+}

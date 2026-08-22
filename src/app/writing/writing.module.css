@@ -1,0 +1,23 @@
+.head {
+  margin-bottom: 40px;
+}
+
+.head h1 {
+  margin-bottom: 8px;
+}
+
+.sub {
+  color: var(--color-text-faint);
+}
+
+.group {
+  margin-bottom: 40px;
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.group h2 {
+  margin-bottom: 8px;
+}

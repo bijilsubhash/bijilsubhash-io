@@ -1,0 +1,7 @@
+.about {
+  max-width: var(--measure-prose);
+}
+
+.head {
+  margin-bottom: 30px;
+}

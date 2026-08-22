@@ -1,0 +1,25 @@
+/* Figure — design.md §5 */
+.figure {
+  margin: 0 0 30px;
+}
+
+.frame {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-code);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}

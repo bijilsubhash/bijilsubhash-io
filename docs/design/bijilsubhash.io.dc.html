@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --h: 'Newsreader', Georgia, serif;
+    --b: 'Inter', system-ui, sans-serif;
+    --m: 'JetBrains Mono', ui-monospace, monospace;
+    --bg: #fafaf8; --surface: #f3f1ea; --text: #1a1a1a; --muted: #6b6862;
+    --faint: #9b978e; --accent: #24625f; --accent-soft: #cfe0de;
+    --border: #e4e2db; --hair: #eae7df; --code-bg: #f5f3ec;
+  }
+  body { margin: 0; background: #eae8e1; font-family: var(--b); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #1a4a47; }
+  ::selection { background: var(--accent-soft); }
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:104px;padding:72px 80px 140px;background:#eae8e1">
+
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:780px">
+    <div style="font-family:var(--m);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">mockups / v1</div>
+    <h1 style="font-family:var(--h);font-size:46px;font-weight:500;letter-spacing:-0.02em;color:var(--text);margin:0;line-height:1.1">bijilsubhash.io</h1>
+    <p style="font-size:17px;line-height:1.7;color:var(--muted);margin:0;text-wrap:pretty">Six artboards at 1:1 — desktop 1120px and mobile 390px per screen, motion notes in the right column. The build spec lives beside this in <span style="font-family:var(--m);font-size:15px;color:var(--accent)">design.md</span>.</p>
+  </div>
+
+  <section data-screen-label="01 Home" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>01</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">Home</span><span>intro + recent posts</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:680px;margin:0 auto;padding:0 32px">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;letter-spacing:-0.01em;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:2px">writing</a>
+              <a href="#" style="color:var(--muted)" style-hover="color:var(--text)">about</a>
+              <a href="#" style="color:var(--muted)" style-hover="color:var(--text)">cv</a>
+            </nav>
+          </header>
+          <div style="padding:60px 0 0">
+            <h1 style="font-family:var(--h);font-size:44px;font-weight:500;line-height:1.1;letter-spacing:-0.025em;color:var(--text);margin:0 0 26px">Bijil Subhash</h1>
+            <p style="font-size:18px;line-height:1.75;color:#38362f;margin:0 0 18px;text-wrap:pretty">Forward deployed data engineer in Sydney. I build data platforms — ingestion, modelling, orchestration, governance — and write about how the pieces actually fit together in production.</p>
+            <p style="font-size:18px;line-height:1.75;color:var(--muted);margin:0;text-wrap:pretty">Mostly dbt, dlt, Dagster and BigQuery, with a bias toward decisions that survive the second year.</p>
+          </div>
+          <div style="padding:66px 0 0">
+            <h2 style="font-family:var(--m);font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px">recent</h2>
+            <div style="display:flex;flex-direction:column">
+              <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)">
+                <span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">2026-07-14</span>
+                <span style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text);line-height:1.35">The config-driven ingestion framework that replaced our no-code stack</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)">
+                <span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">2026-06-02</span>
+                <span style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text);line-height:1.35">Asset-driven orchestration: what Dagster changes about dbt</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)">
+                <span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">2026-04-19</span>
+                <span style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text);line-height:1.35">Partitioning BigQuery for 300 million rows a day</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)">
+                <span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">2026-03-08</span>
+                <span style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text);line-height:1.35">State-aware ingestion, or why your backfill keeps lying to you</span>
+              </a>
+              <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:15px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)">
+                <span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">2026-01-27</span>
+                <span style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text);line-height:1.35">A modular transformation framework for teams of one</span>
+              </a>
+            </div>
+            <a href="#" style="display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--m);font-size:13px;color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:3px;transition:border-color 180ms ease-out" style-hover="border-color:var(--accent)">all writing <span>&#8594;</span></a>
+          </div>
+          <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:104px;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px">
+              <a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="padding:0 24px">
+          <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 0">
+            <a href="#" style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <div style="display:flex;flex-direction:column;gap:5px;width:20px">
+              <span style="height:1.5px;background:var(--text)"></span><span style="height:1.5px;background:var(--text)"></span>
+            </div>
+          </header>
+          <div style="padding:34px 0 0">
+            <h1 style="font-family:var(--h);font-size:32px;font-weight:500;line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin:0 0 18px">Bijil Subhash</h1>
+            <p style="font-size:16px;line-height:1.7;color:#38362f;margin:0;text-wrap:pretty">Forward deployed data engineer in Sydney. I build data platforms and write about how the pieces fit together in production.</p>
+          </div>
+          <div style="padding:42px 0 0">
+            <h2 style="font-family:var(--m);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px">recent</h2>
+            <div style="display:flex;flex-direction:column">
+              <a href="#" style="display:flex;flex-direction:column;gap:5px;padding:14px 0;border-top:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">2026-07-14</span>
+                <span style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text);line-height:1.35">The config-driven ingestion framework that replaced our no-code stack</span>
+              </a>
+              <a href="#" style="display:flex;flex-direction:column;gap:5px;padding:14px 0;border-top:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">2026-06-02</span>
+                <span style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text);line-height:1.35">Asset-driven orchestration: what Dagster changes about dbt</span>
+              </a>
+              <a href="#" style="display:flex;flex-direction:column;gap:5px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">2026-04-19</span>
+                <span style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text);line-height:1.35">Partitioning BigQuery for 300 million rows a day</span>
+              </a>
+            </div>
+            <a href="#" style="display:inline-flex;gap:8px;margin-top:20px;font-family:var(--m);font-size:12.5px;color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:3px">all writing <span>&#8594;</span></a>
+          </div>
+          <footer style="display:flex;flex-direction:column;gap:12px;margin-top:60px;padding:22px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:11.5px;color:var(--faint)">
+            <div style="display:flex;gap:16px">
+              <a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a>
+            </div>
+            <span>&#169; 2026 Bijil Subhash</span>
+          </footer>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; ON LOAD</span><span>Intro: opacity 0&#8594;1, translateY 8&#8594;0. 220ms ease-out.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; STAGGER</span><span>Post rows same transition, 40ms apart, from 120ms.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; ROW HOVER</span><span>translateX 4px, 180ms ease-out; title &#8594; accent, date stays muted.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; NAV</span><span>Underline scaleX 0&#8594;1 from left, 200ms ease-out.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; LAYOUT</span><span>Measure 680px. Footer 104px below content.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="02 Writing" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>02</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">Writing</span><span>archive, grouped by year &#183; same layout serves tag pages</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:680px;margin:0 auto;padding:0 32px">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:2px">writing</a>
+              <a href="#" style="color:var(--muted)">about</a><a href="#" style="color:var(--muted)">cv</a>
+            </nav>
+          </header>
+          <div style="padding:56px 0 0">
+            <h1 style="font-family:var(--h);font-size:38px;font-weight:500;line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin:0 0 14px">Writing</h1>
+            <p style="font-size:17px;line-height:1.7;color:var(--muted);margin:0">Everything, newest first. 14 posts.</p>
+          </div>
+          <div style="padding:56px 0 0;display:flex;flex-direction:column;gap:40px">
+
+            <div>
+              <div style="font-family:var(--m);font-size:12px;letter-spacing:0.1em;color:var(--faint);padding-bottom:8px">2026</div>
+              <div style="display:flex;flex-direction:column">
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">07-14</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">The config-driven ingestion framework that replaced our no-code stack</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">06-02</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Asset-driven orchestration: what Dagster changes about dbt</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">04-19</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Partitioning BigQuery for 300 million rows a day</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">03-08</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">State-aware ingestion, or why your backfill keeps lying to you</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">01-27</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">A modular transformation framework for teams of one</span></a>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-family:var(--m);font-size:12px;letter-spacing:0.1em;color:var(--faint);padding-bottom:8px">2025</div>
+              <div style="display:flex;flex-direction:column">
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">11-30</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Event-driven onboarding with Pub/Sub and a reconciliation job</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">09-15</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Dagster asset checks are the tests you were skipping</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">07-02</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">MotherDuck and DuckDB for a seed-stage data platform</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">05-11</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Terraform patterns for multi-workspace Databricks</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">02-24</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">800 dbt models later: notes from a Teradata migration</span></a>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-family:var(--m);font-size:12px;letter-spacing:0.1em;color:var(--faint);padding-bottom:8px">2024</div>
+              <div style="display:flex;flex-direction:column">
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">10-08</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Unity Catalog, entirely through infrastructure as code</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">06-19</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">What dlt gets right about incremental loading</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">03-27</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">A Kubernetes operator for data product status</span></a>
+                <a href="#" style="display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:baseline;padding:13px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:transform 180ms ease-out" style-hover="transform:translateX(4px)"><span style="font-family:var(--m);font-size:12.5px;color:var(--faint)">01-14</span><span style="font-family:var(--h);font-size:18px;font-weight:500;color:var(--text);line-height:1.35">Leaving low-code ingestion behind</span></a>
+              </div>
+            </div>
+          </div>
+          <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:96px;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="padding:0 24px">
+          <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 0">
+            <a href="#" style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <div style="display:flex;flex-direction:column;gap:5px;width:20px"><span style="height:1.5px;background:var(--text)"></span><span style="height:1.5px;background:var(--text)"></span></div>
+          </header>
+          <div style="padding:32px 0 0">
+            <h1 style="font-family:var(--h);font-size:30px;font-weight:500;letter-spacing:-0.02em;color:var(--text);margin:0 0 10px">Writing</h1>
+            <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">Everything, newest first. 14 posts.</p>
+          </div>
+          <div style="padding:36px 0 0;display:flex;flex-direction:column;gap:30px">
+            <div>
+              <div style="font-family:var(--m);font-size:11px;letter-spacing:0.1em;color:var(--faint);padding-bottom:6px">2026</div>
+              <div style="display:flex;flex-direction:column">
+                <a href="#" style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">07-14</span><span style="font-family:var(--h);font-size:16.5px;font-weight:500;color:var(--text);line-height:1.35">The config-driven ingestion framework that replaced our no-code stack</span></a>
+                <a href="#" style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">06-02</span><span style="font-family:var(--h);font-size:16.5px;font-weight:500;color:var(--text);line-height:1.35">Asset-driven orchestration: what Dagster changes about dbt</span></a>
+                <a href="#" style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">04-19</span><span style="font-family:var(--h);font-size:16.5px;font-weight:500;color:var(--text);line-height:1.35">Partitioning BigQuery for 300 million rows a day</span></a>
+              </div>
+            </div>
+            <div>
+              <div style="font-family:var(--m);font-size:11px;letter-spacing:0.1em;color:var(--faint);padding-bottom:6px">2025</div>
+              <div style="display:flex;flex-direction:column">
+                <a href="#" style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">11-30</span><span style="font-family:var(--h);font-size:16.5px;font-weight:500;color:var(--text);line-height:1.35">Event-driven onboarding with Pub/Sub and a reconciliation job</span></a>
+                <a href="#" style="display:flex;flex-direction:column;gap:4px;padding:12px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">09-15</span><span style="font-family:var(--h);font-size:16.5px;font-weight:500;color:var(--text);line-height:1.35">Dagster asset checks are the tests you were skipping</span></a>
+              </div>
+            </div>
+          </div>
+          <footer style="display:flex;flex-direction:column;gap:12px;margin-top:56px;padding:22px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:11.5px;color:var(--faint)">
+            <div style="display:flex;gap:16px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+            <span>&#169; 2026 Bijil Subhash</span>
+          </footer>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; ROWS</span><span>Date column fixed 96px so titles align. No excerpts, no tags.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; YEAR HEADS</span><span>Mono 12px, letterspaced. Sticky offset not used &#8212; plain flow.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; STAGGER</span><span>Rows fade+rise 40ms apart, capped at 12 rows then instant.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; TAG PAGE</span><span>Same component. H1 becomes <span style="color:var(--accent)">#dbt</span>, subtitle counts matches, plus a &#8220;clear filter&#8221; link.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Post" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>03</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">Post</span><span>kitchen sink &#183; every content type in the library</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:680px;margin:0 auto;padding:0 32px">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:2px">writing</a>
+              <a href="#" style="color:var(--muted)">about</a><a href="#" style="color:var(--muted)">cv</a>
+            </nav>
+          </header>
+
+          <article style="padding:52px 0 0">
+            <h1 style="font-family:var(--h);font-size:40px;font-weight:500;line-height:1.14;letter-spacing:-0.025em;color:var(--text);margin:0 0 18px;text-wrap:pretty">State-aware ingestion, or why your backfill keeps lying to you</h1>
+            <div style="display:flex;align-items:center;gap:10px;font-family:var(--m);font-size:12.5px;color:var(--faint);margin-bottom:14px">
+              <span>2026-03-08</span><span>&#183;</span><span>11 min read</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:44px">
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px;transition:background 180ms ease-out" style-hover="background:var(--accent-soft)">dlt</a>
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px;transition:background 180ms ease-out" style-hover="background:var(--accent-soft)">ingestion</a>
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px;transition:background 180ms ease-out" style-hover="background:var(--accent-soft)">bigquery</a>
+            </div>
+
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 22px;text-wrap:pretty">Every incremental pipeline carries a small piece of mutable state: the cursor that says where the last run stopped. Most of the failures I get called into are not failures of the extract or the load. They are failures of that cursor &#8212; a value written before the load committed, a timezone that shifted under a filter, a source that backdates records after you have already moved past them.</p>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 22px;text-wrap:pretty">The fix is rarely more compute. It is making the state explicit, versioned, and inspectable, so a backfill is a decision rather than a gamble. This post walks through how <a href="#" style="border-bottom:1px solid var(--accent-soft);transition:border-color 180ms ease-out" style-hover="border-color:var(--accent)">dlt</a> models incremental state, where it breaks, and what to put around it.</p>
+
+            <h2 style="font-family:var(--h);font-size:27px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--text);margin:48px 0 14px">Where the cursor comes from</h2>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 22px;text-wrap:pretty">A cursor is a promise about ordering. If the source cannot honour that promise, no amount of retry logic will save the load. Start by asking what guarantee the API actually gives you.</p>
+
+            <div style="border:1px solid var(--border);border-radius:5px;overflow:hidden;margin:0 0 26px;background:var(--code-bg)">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--border);background:var(--surface)">
+                <span style="font-family:var(--m);font-size:11.5px;color:var(--muted)">pipelines/orders.py</span>
+                <button style="font-family:var(--m);font-size:11px;color:var(--muted);background:none;border:1px solid var(--border);border-radius:3px;padding:3px 8px;cursor:pointer;transition:color 180ms ease-out,border-color 180ms ease-out" style-hover="color:var(--accent);border-color:var(--accent-soft)">copy</button>
+              </div>
+              <pre style="margin:0;padding:16px 18px;font-family:var(--m);font-size:13.5px;line-height:1.72;color:#2f2d28;overflow-x:auto"><span style="color:#8a7f6d">@dlt</span>.resource(write_disposition=<span style="color:#24625f">"merge"</span>, primary_key=<span style="color:#24625f">"id"</span>)
+<span style="color:#8a7f6d">def</span> <span style="color:#1a1a1a">orders</span>(
+    updated_at=dlt.sources.incremental(
+        <span style="color:#24625f">"updated_at"</span>,
+        initial_value=pendulum.datetime(<span style="color:#a35c3a">2024</span>, <span style="color:#a35c3a">1</span>, <span style="color:#a35c3a">1</span>, tz=<span style="color:#24625f">"UTC"</span>),
+        lag_seconds=<span style="color:#a35c3a">900</span>,   <span style="color:#9b978e"># absorb late arrivals</span>
+    ),
+):
+    <span style="color:#8a7f6d">yield from</span> client.paginate(<span style="color:#24625f">"/orders"</span>, since=updated_at.last_value)</pre>
+            </div>
+
+            <div style="display:flex;gap:12px;padding:14px 16px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 4px 4px 0;margin:0 0 18px">
+              <span style="font-family:var(--m);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);padding-top:2px;flex:none">note</span>
+              <p style="font-size:16px;line-height:1.65;color:#38362f;margin:0;text-wrap:pretty">A lag window is not a correctness fix. It buys time for late writes and nothing more.</p>
+            </div>
+            <div style="display:flex;gap:12px;padding:14px 16px;border-left:2px solid #4a7c3f;background:#f1f4ec;border-radius:0 4px 4px 0;margin:0 0 18px">
+              <span style="font-family:var(--m);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#3f6b36;padding-top:2px;flex:none">tip</span>
+              <p style="font-size:16px;line-height:1.65;color:#38362f;margin:0;text-wrap:pretty">Persist the cursor after the load commits, never before. Wrap both in the same transaction boundary where the destination allows it.</p>
+            </div>
+            <div style="display:flex;gap:12px;padding:14px 16px;border-left:2px solid #a3742f;background:#f7f2e8;border-radius:0 4px 4px 0;margin:0 0 30px">
+              <span style="font-family:var(--m);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a6222;padding-top:2px;flex:none">warning</span>
+              <p style="font-size:16px;line-height:1.65;color:#38362f;margin:0;text-wrap:pretty">Deleting pipeline state to &#8220;force a full refresh&#8221; also discards the audit trail of what was loaded when. Version it instead.</p>
+            </div>
+
+            <h2 style="font-family:var(--h);font-size:27px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--text);margin:48px 0 14px">The shape of a safe backfill</h2>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 26px;text-wrap:pretty">Treat the backfill as a separate, parameterised run that writes to the same tables through the same merge logic, with its own window and its own state key.</p>
+
+            <figure style="margin:0 0 30px">
+              <div style="border:1px solid var(--border);border-radius:5px;background:var(--code-bg);padding:30px 26px">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--m);font-size:12px;color:#2f2d28">
+                  <div style="display:flex;gap:12px;align-items:center">
+                    <span style="border:1px solid var(--accent);color:var(--accent);background:#fff;padding:8px 14px;border-radius:4px">source api</span>
+                    <span style="color:var(--faint)">&#8594;</span>
+                    <span style="border:1px solid var(--accent);color:var(--accent);background:#fff;padding:8px 14px;border-radius:4px">dlt resource</span>
+                    <span style="color:var(--faint)">&#8594;</span>
+                    <span style="border:1px solid var(--accent);color:var(--accent);background:#fff;padding:8px 14px;border-radius:4px">staging</span>
+                  </div>
+                  <span style="color:var(--faint)">&#8595;</span>
+                  <div style="display:flex;gap:12px;align-items:center">
+                    <span style="border:1px dashed var(--faint);color:var(--muted);background:#fff;padding:8px 14px;border-radius:4px">state store</span>
+                    <span style="color:var(--faint)">&#8594;</span>
+                    <span style="border:1px solid #1a1a1a;color:#1a1a1a;background:#fff;padding:8px 14px;border-radius:4px">merge</span>
+                    <span style="color:var(--faint)">&#8594;</span>
+                    <span style="border:1px solid #1a1a1a;color:#1a1a1a;background:#fff;padding:8px 14px;border-radius:4px">warehouse</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption style="font-family:var(--b);font-size:14.5px;font-style:italic;line-height:1.6;color:var(--muted);margin-top:10px">Mermaid diagram, rendered with palette-keyed strokes and fills &#8212; accent for extract, near-black for load, dashed for state.</figcaption>
+            </figure>
+
+            <blockquote style="margin:0 0 30px;padding:2px 0 2px 22px;border-left:2px solid var(--accent-soft)">
+              <p style="font-family:var(--h);font-size:21px;font-style:italic;line-height:1.6;color:#38362f;margin:0 0 8px;text-wrap:pretty">A pipeline you cannot re-run confidently is not a pipeline. It is an outage with a schedule.</p>
+              <cite style="font-family:var(--m);font-size:12px;font-style:normal;color:var(--faint)">&#8212; a colleague, during an incident review</cite>
+            </blockquote>
+
+            <figure style="margin:0 0 30px">
+              <div style="aspect-ratio:16/9;background:var(--surface);border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--m);font-size:12px;color:var(--faint)">image placeholder &#183; 1600&#215;900</div>
+              <figcaption style="font-family:var(--b);font-size:14.5px;font-style:italic;line-height:1.6;color:var(--muted);margin-top:10px">Dagster asset graph after the split &#8212; the backfill job shares assets with the scheduled run.</figcaption>
+            </figure>
+
+            <figure style="margin:0 0 34px">
+              <div style="position:relative;aspect-ratio:16/9;background:#e7e4dc;border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer">
+                <div style="width:56px;height:40px;border-radius:6px;background:rgba(26,26,26,.82);display:flex;align-items:center;justify-content:center;transition:transform 180ms ease-out" style-hover="transform:scale(1.06)">
+                  <span style="color:#fafaf8;font-size:14px">&#9654;</span>
+                </div>
+                <span style="position:absolute;bottom:10px;left:12px;font-family:var(--m);font-size:11px;color:var(--muted)">youtube facade &#183; loads iframe on click</span>
+              </div>
+              <figcaption style="font-family:var(--b);font-size:14.5px;font-style:italic;line-height:1.6;color:var(--muted);margin-top:10px">Walkthrough of the backfill run, 6 min. Lazy-loaded &#8212; no YouTube request until interaction.</figcaption>
+            </figure>
+
+            <h3 style="font-family:var(--h);font-size:21px;font-weight:600;line-height:1.35;color:var(--text);margin:36px 0 12px">A checklist before you re-run</h3>
+            <ul style="margin:0 0 26px;padding-left:22px;display:flex;flex-direction:column;gap:9px">
+              <li style="font-size:18px;line-height:1.7;color:#38362f">Confirm the merge key is genuinely unique at the grain you load.<sup style="font-family:var(--m);font-size:11px;color:var(--accent)"><a href="#" style="border:none">1</a></sup></li>
+              <li style="font-size:18px;line-height:1.7;color:#38362f">Snapshot the current state value somewhere you can read later.</li>
+              <li style="font-size:18px;line-height:1.7;color:#38362f">Bound the window. An unbounded backfill is a full refresh with extra steps.<sup style="font-family:var(--m);font-size:11px;color:var(--accent)"><a href="#" style="border:none">2</a></sup></li>
+            </ul>
+
+            <div style="display:flex;gap:8px;margin:44px 0 0;padding-top:26px;border-top:1px solid var(--hair)">
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px">dlt</a>
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px">ingestion</a>
+              <a href="#" style="font-family:var(--m);font-size:11.5px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:4px 9px;border-radius:3px">bigquery</a>
+            </div>
+
+            <div style="margin-top:34px;padding-top:20px;border-top:1px solid var(--hair)">
+              <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px">footnotes</h2>
+              <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px">
+                <li style="font-size:15.5px;line-height:1.65;color:var(--muted)">Composite keys are fine. Keys that are unique &#8220;in practice&#8221; are not. <a href="#" style="font-family:var(--m);font-size:12px">&#8617;</a></li>
+                <li style="font-size:15.5px;line-height:1.65;color:var(--muted)">Bounded windows also make cost predictable, which is how you get permission to run it. <a href="#" style="font-family:var(--m);font-size:12px">&#8617;</a></li>
+              </ol>
+            </div>
+          </article>
+
+          <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:80px;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="padding:0 24px">
+          <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 0">
+            <a href="#" style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <div style="display:flex;flex-direction:column;gap:5px;width:20px"><span style="height:1.5px;background:var(--text)"></span><span style="height:1.5px;background:var(--text)"></span></div>
+          </header>
+          <article style="padding:30px 0 0">
+            <h1 style="font-family:var(--h);font-size:28px;font-weight:500;line-height:1.18;letter-spacing:-0.02em;color:var(--text);margin:0 0 14px;text-wrap:pretty">State-aware ingestion, or why your backfill keeps lying to you</h1>
+            <div style="display:flex;gap:8px;font-family:var(--m);font-size:11.5px;color:var(--faint);margin-bottom:12px"><span>2026-03-08</span><span>&#183;</span><span>11 min read</span></div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px">
+              <a href="#" style="font-family:var(--m);font-size:11px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:3px">dlt</a>
+              <a href="#" style="font-family:var(--m);font-size:11px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:3px">ingestion</a>
+              <a href="#" style="font-family:var(--m);font-size:11px;color:var(--accent);background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:3px">bigquery</a>
+            </div>
+            <p style="font-size:16.5px;line-height:1.75;color:#38362f;margin:0 0 18px;text-wrap:pretty">Every incremental pipeline carries a small piece of mutable state: the cursor that says where the last run stopped. Most failures I get called into are failures of that cursor.</p>
+            <h2 style="font-family:var(--h);font-size:21px;font-weight:600;line-height:1.3;color:var(--text);margin:32px 0 10px">Where the cursor comes from</h2>
+            <p style="font-size:16.5px;line-height:1.75;color:#38362f;margin:0 0 20px;text-wrap:pretty">A cursor is a promise about ordering. If the source cannot honour it, retries will not save the load.</p>
+            <div style="border:1px solid var(--border);border-radius:5px;overflow:hidden;margin:0 0 20px;background:var(--code-bg)">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--surface)">
+                <span style="font-family:var(--m);font-size:11px;color:var(--muted)">orders.py</span>
+                <button style="font-family:var(--m);font-size:10.5px;color:var(--muted);background:none;border:1px solid var(--border);border-radius:3px;padding:2px 7px">copy</button>
+              </div>
+              <pre style="margin:0;padding:13px 14px;font-family:var(--m);font-size:11.5px;line-height:1.7;color:#2f2d28;overflow-x:auto"><span style="color:#8a7f6d">@dlt</span>.resource(
+  write_disposition=<span style="color:#24625f">"merge"</span>,
+  primary_key=<span style="color:#24625f">"id"</span>,
+)</pre>
+            </div>
+            <div style="display:flex;gap:10px;padding:12px 14px;border-left:2px solid #a3742f;background:#f7f2e8;border-radius:0 4px 4px 0;margin:0 0 20px">
+              <span style="font-family:var(--m);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#8a6222;padding-top:2px;flex:none">warning</span>
+              <p style="font-size:14.5px;line-height:1.6;color:#38362f;margin:0">Deleting state to force a refresh discards the audit trail. Version it instead.</p>
+            </div>
+            <blockquote style="margin:0;padding:2px 0 2px 18px;border-left:2px solid var(--accent-soft)">
+              <p style="font-family:var(--h);font-size:18px;font-style:italic;line-height:1.6;color:#38362f;margin:0">A pipeline you cannot re-run confidently is not a pipeline. It is an outage with a schedule.</p>
+            </blockquote>
+          </article>
+          <footer style="display:flex;flex-direction:column;gap:12px;margin-top:52px;padding:22px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:11.5px;color:var(--faint)">
+            <div style="display:flex;gap:16px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+            <span>&#169; 2026 Bijil Subhash</span>
+          </footer>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; META LINE</span><span>Date &#183; reading time only. No byline &#8212; single-author site.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; CODE</span><span>Light theme on <span style="color:var(--text)">#f5f3ec</span>. Filename left, copy button right. No line numbers. Copy label swaps to &#8220;copied&#8221; for 1.6s.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; CALLOUTS</span><span>Three variants, 2px left rule, tinted surface. Label in mono caps.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; MERMAID</span><span>Strokes accent / near-black, fills white, dashed for state nodes. Captioned like a figure.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; EMBED</span><span>Facade only. Play chip scales 1.06 on hover, 180ms ease-out; click swaps in the iframe.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; FOOTNOTES</span><span>Superscript &#8594; anchor jump; each note returns with &#8617;. No smooth-scroll under reduced motion.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; PROSE</span><span>18px / 1.78, measure 680px, headings 48px above.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="04 About" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>04</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">About</span><span>narrative &#183; a step warmer than the rest</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:680px;margin:0 auto;padding:0 32px">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--muted)">writing</a>
+              <a href="#" style="color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:2px">about</a>
+              <a href="#" style="color:var(--muted)">cv</a>
+            </nav>
+          </header>
+          <div style="padding:56px 0 0">
+            <h1 style="font-family:var(--h);font-size:38px;font-weight:500;line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin:0 0 34px">About</h1>
+            <p style="font-family:var(--h);font-size:22px;font-weight:400;line-height:1.6;color:#2f2d28;margin:0 0 30px;text-wrap:pretty">I am a data engineer in Sydney. I spend most of my time embedded with teams, building the platforms that turn their raw operational data into something they can actually make decisions with.</p>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 22px;text-wrap:pretty">I did not start here. I finished a PhD in chemical engineering at UNSW in 2023, and for a while I assumed that was the career. What kept pulling my attention was the data underneath the research &#8212; the pipelines, the modelling, the tooling. So I moved into data science, then into data engineering, which is where the work has felt most like engineering: systems that have to keep running when nobody is watching them.</p>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 22px;text-wrap:pretty">Since then I have worked across enterprise migrations, Series A startups building their first platform, and consulting engagements where the brief arrives half-formed. I founded <span style="font-family:var(--m);font-size:16px;color:var(--accent)">NimbleStax</span> in 2023 to do that work directly, and I teach Snowflake, dbt and AI engineering to enterprise cohorts through Breakout Labs.</p>
+            <p style="font-size:18px;line-height:1.78;color:#38362f;margin:0 0 34px;text-wrap:pretty">Most of what I have learned came from maintaining things I built badly the first time. That is what this site is for. I write long posts about the modern data stack &#8212; dbt, dlt, Dagster, BigQuery, the architecture decisions around them &#8212; because the interesting part is never the tool, it is the tradeoff you accepted to use it.</p>
+
+            <div style="padding:14px 0 0;border-top:1px solid var(--hair)">
+              <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:20px 0 12px">elsewhere</h2>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <a href="#" style="display:flex;gap:14px;align-items:baseline;font-family:var(--m);font-size:13px"><span style="width:78px;color:var(--faint);flex:none">github</span><span style="color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:2px">bijilsubhash</span></a>
+                <a href="#" style="display:flex;gap:14px;align-items:baseline;font-family:var(--m);font-size:13px"><span style="width:78px;color:var(--faint);flex:none">linkedin</span><span style="color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:2px">in/bijilsubhash</span></a>
+                <a href="#" style="display:flex;gap:14px;align-items:baseline;font-family:var(--m);font-size:13px"><span style="width:78px;color:var(--faint);flex:none">email</span><span style="color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:2px">bijil@nimblestax.com</span></a>
+              </div>
+            </div>
+          </div>
+          <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:88px;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="padding:0 24px">
+          <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 0">
+            <a href="#" style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <div style="display:flex;flex-direction:column;gap:5px;width:20px"><span style="height:1.5px;background:var(--text)"></span><span style="height:1.5px;background:var(--text)"></span></div>
+          </header>
+          <div style="padding:32px 0 0">
+            <h1 style="font-family:var(--h);font-size:30px;font-weight:500;letter-spacing:-0.02em;color:var(--text);margin:0 0 24px">About</h1>
+            <p style="font-family:var(--h);font-size:19px;line-height:1.6;color:#2f2d28;margin:0 0 22px;text-wrap:pretty">I am a data engineer in Sydney. I spend most of my time embedded with teams, building the platforms that turn raw operational data into decisions.</p>
+            <p style="font-size:16.5px;line-height:1.75;color:#38362f;margin:0 0 18px;text-wrap:pretty">I did not start here. I finished a PhD in chemical engineering at UNSW in 2023, and what kept pulling my attention was the data underneath the research.</p>
+            <p style="font-size:16.5px;line-height:1.75;color:#38362f;margin:0 0 26px;text-wrap:pretty">I founded NimbleStax in 2023 to do that work directly, and I teach Snowflake, dbt and AI engineering to enterprise cohorts.</p>
+            <div style="padding-top:18px;border-top:1px solid var(--hair);display:flex;flex-direction:column;gap:8px">
+              <a href="#" style="display:flex;gap:12px;font-family:var(--m);font-size:12.5px"><span style="width:66px;color:var(--faint)">github</span><span style="color:var(--accent)">bijilsubhash</span></a>
+              <a href="#" style="display:flex;gap:12px;font-family:var(--m);font-size:12.5px"><span style="width:66px;color:var(--faint)">email</span><span style="color:var(--accent)">bijil@nimblestax.com</span></a>
+            </div>
+          </div>
+          <footer style="display:flex;flex-direction:column;gap:12px;margin-top:56px;padding:22px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:11.5px;color:var(--faint)">
+            <div style="display:flex;gap:16px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+            <span>&#169; 2026 Bijil Subhash</span>
+          </footer>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; LEDE</span><span>First paragraph steps up to serif 22px / 1.6 &#8212; the only place body text uses the heading face.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; NO AVATAR</span><span>Text-forward by design. A portrait can slot beside the lede later without changing the measure.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; ELSEWHERE</span><span>Mono key/value rows, 78px label column. Duplicates the footer on purpose.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 CV" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>05</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">CV</span><span>scannable record &#183; print styling in design.md</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:760px;margin:0 auto;padding:0 32px">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--muted)">writing</a><a href="#" style="color:var(--muted)">about</a>
+              <a href="#" style="color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:2px">cv</a>
+            </nav>
+          </header>
+
+          <div style="padding:56px 0 0;display:flex;align-items:flex-start;justify-content:space-between;gap:32px">
+            <div style="max-width:520px">
+              <h1 style="font-family:var(--h);font-size:38px;font-weight:500;line-height:1.15;letter-spacing:-0.02em;color:var(--text);margin:0 0 14px">Curriculum vitae</h1>
+              <p style="font-size:17px;line-height:1.72;color:#38362f;margin:0 0 8px;text-wrap:pretty">Forward deployed data engineer with 5+ years building modern data platforms &#8212; batch and streaming ingestion, modelling, transformation, governance, analytics, IaC and devops.</p>
+              <p style="font-family:var(--m);font-size:12.5px;color:var(--faint);margin:0">Sydney, Australia &#183; bijil@nimblestax.com</p>
+            </div>
+            <a href="#" style="flex:none;display:inline-flex;align-items:center;gap:8px;font-family:var(--m);font-size:12.5px;color:var(--bg);background:var(--accent);border:1px solid var(--accent);padding:9px 15px;border-radius:4px;transition:background 180ms ease-out" style-hover="background:#1a4a47">download PDF <span>&#8595;</span></a>
+          </div>
+
+          <div style="padding:52px 0 0">
+            <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:10px;border-bottom:1px solid var(--border)">experience</h2>
+            <div style="display:flex;flex-direction:column">
+
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:12px;line-height:1.6;color:var(--faint)">Nov 2025 &#8212; Present<br /><span style="color:var(--muted)">Sydney</span></div>
+                <div>
+                  <div style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--text);margin-bottom:2px">Forward Deployed Data Engineer</div>
+                  <div style="font-family:var(--m);font-size:12.5px;color:var(--accent);margin-bottom:10px">Beyond Data Consulting</div>
+                  <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px">
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Grew a key strategic account to $2M AUD in 8 months, embedded client-side to architect and productionise end-to-end solutions on a native GCP stack.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Lead the enterprise platform build for a geopolitical risk advisory firm &#8212; state-aware batch and streaming ingestion, asset-driven orchestration, modular transformation, end-to-end monitoring.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Built a state-driven micro-payments platform for advisor remuneration, retiring a 15-year-old manual process and saving 100+ hours annually.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Defined OKR metrics with C-suite, GTM and analyst stakeholders, saving 200+ hours annually and surfacing $500k+/year in uncaptured revenue.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:12px;line-height:1.6;color:var(--faint)">Jan 2026 &#8212; Present<br /><span style="color:var(--muted)">Sydney</span></div>
+                <div>
+                  <div style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--text);margin-bottom:2px">Partner Instructor &amp; Data Engineer</div>
+                  <div style="font-family:var(--m);font-size:12.5px;color:var(--accent);margin-bottom:10px">Breakout Labs</div>
+                  <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px">
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Delivered multi-day Snowflake and dbt programs to 100+ engineers and analytics practitioners, in cohorts of up to 25.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Spearheaded the firm&#8217;s AI engineering curriculum &#8212; Claude Code, Snowflake Cortex, dbt Wizard, agent harnesses and MCP.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Built the IaC framework provisioning training environments end to end via Terraform.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:12px;line-height:1.6;color:var(--faint)">Nov 2023 &#8212; Present<br /><span style="color:var(--muted)">Sydney</span></div>
+                <div>
+                  <div style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--text);margin-bottom:2px">Founding Data Engineer</div>
+                  <div style="font-family:var(--m);font-size:12.5px;color:var(--accent);margin-bottom:10px">NimbleStax</div>
+                  <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px">
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Developed a config-driven Python ingestion framework covering 150+ API endpoints with dlthub, cutting ingestion costs by ~95%.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Migrated a client from unorchestrated AWS Lambda pipelines to a governed platform on MotherDuck, Dagster and dbt.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Deployed a Unity Catalog&#8211;enabled Databricks architecture entirely through IaC, managing 3 workspaces from a central Terraform framework.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:12px;line-height:1.6;color:var(--faint)">Aug 2025 &#8212; Jan 2026<br /><span style="color:var(--muted)">Sydney</span></div>
+                <div>
+                  <div style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--text);margin-bottom:2px">Data Engineer</div>
+                  <div style="font-family:var(--m);font-size:12.5px;color:var(--accent);margin-bottom:10px">National Renewable Network</div>
+                  <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px">
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Founding data engineer at a Series A startup, owning the platform end to end on cloud-native infrastructure.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Designed an event-driven GCP architecture ingesting ~300M rows daily to power a virtual power plant monitoring distributed renewable assets in real time.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Deployed a hybrid Dagster instance as the single orchestration layer, with declarative automation, asset checks and factory patterns.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:12px;line-height:1.6;color:var(--faint)">Jan 2023 &#8212; Aug 2025<br /><span style="color:var(--muted)">Sydney</span></div>
+                <div>
+                  <div style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--text);margin-bottom:2px">Senior Data Engineer</div>
+                  <div style="font-family:var(--m);font-size:12.5px;color:var(--accent);margin-bottom:6px">Mantel Group</div>
+                  <div style="font-family:var(--m);font-size:11.5px;color:var(--faint);margin-bottom:10px">Data Engineer (Dec 2023) &#183; Associate Data Engineer (Jan 2023)</div>
+                  <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px">
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Developed a Kubernetes operator framework surfacing real-time data product status for one of Australia&#8217;s Big 4 banks, a core component of their enterprise data mesh.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Contributed 800+ dbt models on a national retail chain&#8217;s Teradata-to-BigQuery migration.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Blueprinted the migration of legacy AWS Databricks workspaces to Unity Catalog for Australia&#8217;s largest energy retailer.</li>
+                    <li style="font-size:16px;line-height:1.65;color:#38362f">Implemented a GenAI architecture on Vertex AI turning ~20,000 free-text survey responses into structured insight for leadership.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding:48px 0 0">
+            <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:10px;border-bottom:1px solid var(--border)">core competencies</h2>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">platforms</span><span style="font-size:16px;line-height:1.6;color:#38362f">Databricks, Snowflake, BigQuery, MotherDuck/DuckDB, GCP, Azure, AWS</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">ingestion</span><span style="font-size:16px;line-height:1.6;color:#38362f">dlthub, Fivetran, Polytomic, Pub/Sub, custom Python frameworks, CDC &amp; streaming</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">transformation</span><span style="font-size:16px;line-height:1.6;color:#38362f">dbt, PySpark, Spark SQL, dimensional modelling, semantic layer</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">orchestration</span><span style="font-size:16px;line-height:1.6;color:#38362f">Dagster, Airflow</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">infra &amp; dataops</span><span style="font-size:16px;line-height:1.6;color:#38362f">Terraform, Docker, Kubernetes (GKE), CI/CD (GitHub, GitLab, Azure DevOps, Cloud Build), Pytest</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">ai &amp; analytics</span><span style="font-size:16px;line-height:1.6;color:#38362f">Vertex AI, Snowflake Cortex, Claude Code, MCP, RAG, Looker, Looker Studio, Power BI, Omni</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">governance</span><span style="font-size:16px;line-height:1.6;color:#38362f">Unity Catalog, Cloud IAM</span></div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:13px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:12px;color:var(--faint)">languages</span><span style="font-size:16px;line-height:1.6;color:#38362f">Python, SQL</span></div>
+            </div>
+          </div>
+
+          <div style="padding:48px 0 0">
+            <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:10px;border-bottom:1px solid var(--border)">education</h2>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">2019 &#8212; 2023</span>
+                <div><div style="font-family:var(--h);font-size:18px;font-weight:600;color:var(--text)">PhD, Chemical Engineering</div><div style="font-family:var(--m);font-size:12.5px;color:var(--muted);margin-top:2px">University of New South Wales</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">2015 &#8212; 2019</span>
+                <div><div style="font-family:var(--h);font-size:18px;font-weight:600;color:var(--text)">Bachelor of Chemical Engineering</div><div style="font-family:var(--m);font-size:12.5px;color:var(--muted);margin-top:2px">University of New South Wales</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding:48px 0 0">
+            <h2 style="font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:10px;border-bottom:1px solid var(--border)">certifications</h2>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">Databricks</span>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Professional Data Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Associate ML Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Associate Data Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">Google Cloud</span>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Professional Data Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2023</span></div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Associate Cloud Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">dbt</span>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Cloud Architect</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2026</span></div>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Certified Developer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">Azure</span>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Associate Data Engineer</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">HashiCorp</span>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Terraform Associate</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2023</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">dlt</span>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Advanced ELT Specialist</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:168px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--hair)">
+                <span style="font-family:var(--m);font-size:12px;color:var(--faint)">Neo4j</span>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px"><a href="#" style="font-size:16px;color:#38362f;border-bottom:1px solid var(--accent-soft);padding-bottom:1px">Certified Professional</a><span style="font-family:var(--m);font-size:12px;color:var(--faint);flex:none">2024</span></div>
+              </div>
+            </div>
+          </div>
+
+          <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:80px;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="padding:0 24px">
+          <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 0">
+            <a href="#" style="font-family:var(--h);font-size:17px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <div style="display:flex;flex-direction:column;gap:5px;width:20px"><span style="height:1.5px;background:var(--text)"></span><span style="height:1.5px;background:var(--text)"></span></div>
+          </header>
+          <div style="padding:32px 0 0">
+            <h1 style="font-family:var(--h);font-size:30px;font-weight:500;letter-spacing:-0.02em;color:var(--text);margin:0 0 12px">Curriculum vitae</h1>
+            <p style="font-size:15.5px;line-height:1.7;color:#38362f;margin:0 0 18px;text-wrap:pretty">Forward deployed data engineer with 5+ years building modern data platforms.</p>
+            <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--m);font-size:12px;color:var(--bg);background:var(--accent);padding:9px 14px;border-radius:4px">download PDF <span>&#8595;</span></a>
+          </div>
+          <div style="padding:36px 0 0">
+            <h2 style="font-family:var(--m);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid var(--border)">experience</h2>
+            <div style="display:flex;flex-direction:column">
+              <div style="padding:16px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:11.5px;color:var(--faint);margin-bottom:5px">Nov 2025 &#8212; Present</div>
+                <div style="font-family:var(--h);font-size:17px;font-weight:600;color:var(--text)">Forward Deployed Data Engineer</div>
+                <div style="font-family:var(--m);font-size:12px;color:var(--accent);margin:2px 0 8px">Beyond Data Consulting</div>
+                <ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px">
+                  <li style="font-size:14.5px;line-height:1.6;color:#38362f">Grew a key strategic account to $2M AUD in 8 months on a native GCP stack.</li>
+                  <li style="font-size:14.5px;line-height:1.6;color:#38362f">Lead the enterprise platform build for a geopolitical risk advisory firm.</li>
+                </ul>
+              </div>
+              <div style="padding:16px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:11.5px;color:var(--faint);margin-bottom:5px">Jan 2026 &#8212; Present</div>
+                <div style="font-family:var(--h);font-size:17px;font-weight:600;color:var(--text)">Partner Instructor &amp; Data Engineer</div>
+                <div style="font-family:var(--m);font-size:12px;color:var(--accent);margin:2px 0 8px">Breakout Labs</div>
+                <ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px">
+                  <li style="font-size:14.5px;line-height:1.6;color:#38362f">Delivered Snowflake and dbt programs to 100+ practitioners.</li>
+                </ul>
+              </div>
+              <div style="padding:16px 0;border-bottom:1px solid var(--hair)">
+                <div style="font-family:var(--m);font-size:11.5px;color:var(--faint);margin-bottom:5px">Nov 2023 &#8212; Present</div>
+                <div style="font-family:var(--h);font-size:17px;font-weight:600;color:var(--text)">Founding Data Engineer</div>
+                <div style="font-family:var(--m);font-size:12px;color:var(--accent);margin:2px 0 8px">NimbleStax</div>
+                <ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px">
+                  <li style="font-size:14.5px;line-height:1.6;color:#38362f">Config-driven Python ingestion across 150+ endpoints, ~95% cost reduction.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="padding:30px 0 0">
+            <h2 style="font-family:var(--m);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid var(--border)">competencies</h2>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:flex;flex-direction:column;gap:3px;padding:11px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">platforms</span><span style="font-size:14.5px;line-height:1.55;color:#38362f">Databricks, Snowflake, BigQuery, MotherDuck/DuckDB, GCP, Azure, AWS</span></div>
+              <div style="display:flex;flex-direction:column;gap:3px;padding:11px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">orchestration</span><span style="font-size:14.5px;line-height:1.55;color:#38362f">Dagster, Airflow</span></div>
+              <div style="display:flex;flex-direction:column;gap:3px;padding:11px 0;border-bottom:1px solid var(--hair)"><span style="font-family:var(--m);font-size:11.5px;color:var(--faint)">languages</span><span style="font-size:14.5px;line-height:1.55;color:#38362f">Python, SQL</span></div>
+            </div>
+          </div>
+          <footer style="display:flex;flex-direction:column;gap:12px;margin-top:48px;padding:22px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:11.5px;color:var(--faint)">
+            <div style="display:flex;gap:16px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+            <span>&#169; 2026 Bijil Subhash</span>
+          </footer>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; MEASURE</span><span>Wider than prose &#8212; 760px, to carry the 168px date column plus bullets.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; RHYTHM</span><span>Every section is the same two-column grid. Mono left, content right, hairline between rows.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; PRINT</span><span>Only filled button on the site. @media print hides chrome, drops shadows, forces #fff, avoids breaks inside a role.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; CERTS</span><span>Issuer / name / year, right-aligned year. Verify links attach to the cert name.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="06 404" style="display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--m);font-size:12px;color:var(--faint)">
+      <span>06</span><span style="font-family:var(--h);font-size:23px;color:var(--text)">404</span><span>and the OG share card template</span>
+    </div>
+    <div style="display:flex;gap:34px;align-items:flex-start">
+
+      <div style="width:1120px;flex:none;background:var(--bg);border:1px solid var(--border);box-shadow:0 1px 2px rgba(26,26,26,.04),0 14px 34px rgba(26,26,26,.06)">
+        <div style="max-width:680px;margin:0 auto;padding:0 32px;min-height:560px;display:flex;flex-direction:column">
+          <header style="display:flex;align-items:baseline;justify-content:space-between;padding:34px 0">
+            <a href="#" style="font-family:var(--h);font-size:19px;font-weight:500;color:var(--text)">Bijil Subhash</a>
+            <nav style="display:flex;gap:24px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--muted)">writing</a><a href="#" style="color:var(--muted)">about</a><a href="#" style="color:var(--muted)">cv</a>
+            </nav>
+          </header>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 0">
+            <div style="font-family:var(--m);font-size:12.5px;letter-spacing:0.12em;color:var(--accent);margin-bottom:16px">404</div>
+            <h1 style="font-family:var(--h);font-size:36px;font-weight:500;line-height:1.2;letter-spacing:-0.02em;color:var(--text);margin:0 0 14px">This page does not exist</h1>
+            <p style="font-size:17.5px;line-height:1.72;color:var(--muted);margin:0 0 26px;max-width:460px;text-wrap:pretty">Either it moved, or it never did. The archive is the reliable route.</p>
+            <div style="display:flex;gap:20px;font-family:var(--m);font-size:13px">
+              <a href="#" style="color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:3px">writing</a>
+              <a href="#" style="color:var(--accent);border-bottom:1px solid var(--accent-soft);padding-bottom:3px">home</a>
+            </div>
+          </div>
+          <footer style="display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);font-family:var(--m);font-size:12px;color:var(--faint)">
+            <span>&#169; 2026 Bijil Subhash</span>
+            <div style="display:flex;gap:18px"><a href="#" style="color:var(--muted)">github</a><a href="#" style="color:var(--muted)">linkedin</a><a href="#" style="color:var(--muted)">email</a></div>
+          </footer>
+        </div>
+      </div>
+
+      <div style="width:390px;flex:none;display:flex;flex-direction:column;gap:28px">
+        <div>
+          <div style="font-family:var(--m);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px">og card &#183; 1200&#215;630</div>
+          <div style="width:390px;height:204.75px;background:var(--bg);border:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;box-sizing:border-box">
+            <div style="width:52px;height:3px;background:var(--accent)"></div>
+            <div style="font-family:var(--h);font-size:23px;font-weight:500;line-height:1.22;letter-spacing:-0.02em;color:var(--text);text-wrap:pretty">State-aware ingestion, or why your backfill keeps lying to you</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-family:var(--m);font-size:10.5px;color:var(--faint)">
+              <span style="font-family:var(--h);font-size:13px;font-weight:500;color:var(--text)">Bijil Subhash</span>
+              <span>bijilsubhash.io</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--m);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px">monogram &#183; favicon</div>
+          <div style="display:flex;gap:14px;align-items:flex-end">
+            <div style="width:64px;height:64px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--h);font-size:38px;font-weight:600;color:var(--bg);line-height:1">b.</span></div>
+            <div style="width:32px;height:32px;background:var(--accent);border-radius:5px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--h);font-size:19px;font-weight:600;color:var(--bg);line-height:1">b.</span></div>
+            <div style="width:16px;height:16px;background:var(--accent);border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--h);font-size:10px;font-weight:600;color:var(--bg);line-height:1">b.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-notes="1" style="width:220px;flex:none;display:flex;flex-direction:column;gap:20px;padding-top:6px;font-family:var(--m);font-size:11.5px;line-height:1.65;color:var(--muted)">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; 404</span><span>Same chrome, no nav active state. Content vertically centred in the viewport.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--accent)">&#8594; OG CARD</span><span>Generated per post at 1200&#215;630. 3px accent bar top-left, title clamped to 3 lines at 64px, wordmark and domain on the baseline.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="color:var(--faint)">&#8594; MONOGRAM</span><span>&#8220;b.&#8221; in the heading face, off-white on accent. Radius scales with size; period keeps its own optical weight at 16px.</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headingFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Newsreader&quot;,&quot;Instrument Serif&quot;,&quot;Libre Caslon Text&quot;,&quot;Source Serif 4&quot;,&quot;Inter&quot;],&quot;default&quot;:&quot;Newsreader&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Type&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#24625f&quot;,&quot;#1f4e6b&quot;,&quot;#2f5d4a&quot;,&quot;#3a4a6b&quot;],&quot;default&quot;:&quot;#24625f&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Color&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Canvas&quot;}}">
+class Component extends DCLogic {
+  fonts = {
+    Newsreader: "'Newsreader', Georgia, serif",
+    "Instrument Serif": "'Instrument Serif', Georgia, serif",
+    "Libre Caslon Text": "'Libre Caslon Text', Georgia, serif",
+    "Source Serif 4": "'Source Serif 4', Georgia, serif",
+    Inter: "'Inter', system-ui, sans-serif"
+  };
+  sync() {
+    const r = document.documentElement.style;
+    const f = this.props.headingFont ?? "Newsreader";
+    r.setProperty("--h", this.fonts[f] || this.fonts.Newsreader);
+    const a = this.props.accent ?? "#24625f";
+    r.setProperty("--accent", a);
+    r.setProperty("--accent-soft", this.tint(a));
+    document.querySelectorAll("[data-notes]").forEach(n => {
+      n.style.display = (this.props.showNotes ?? true) ? "flex" : "none";
+    });
+  }
+  tint(hex) {
+    const n = parseInt(hex.slice(1), 16);
+    const mix = c => Math.round(c + (250 - c) * 0.72);
+    return "rgb(" + [mix(n >> 16 & 255), mix(n >> 8 & 255), mix(n & 255)].join(",") + ")";
+  }
+  componentDidMount() {
+    const l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = "https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Libre+Caslon+Text:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap";
+    document.head.appendChild(l);
+    this.sync();
+  }
+  componentDidUpdate() { this.sync(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
