@@ -13,7 +13,7 @@ export default function Home() {
           Forward deployed data engineer in Sydney. I embed with client teams to
           design, build, and run data platforms end to end, most often on
           Databricks and across the modern data stack. This is where I write
-          things down as I come across them: what I&apos;m learning, my take on
+          things down as I come across them, what I&apos;m learning, my take on
           the tools, the occasional opinionated architecture, a rant now and
           then, and whatever else feels worth keeping.
         </p>
