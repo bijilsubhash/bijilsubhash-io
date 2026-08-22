@@ -2,7 +2,7 @@ export const site = {
   name: 'Bijil Subhash',
   title: 'Bijil Subhash',
   description:
-    'Data engineer writing about the modern data stack — dbt, dlt, BigQuery, Python, and data architecture.',
+    'Forward deployed data engineer in Sydney, writing about Databricks, dbt, and building data platforms that hold up in production.',
   url: 'https://bijilsubhash.io',
   location: 'Sydney',
   email: 'bijil@nimblestax.com',

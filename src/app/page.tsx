@@ -10,9 +10,10 @@ export default function Home() {
       <section className={`${styles.intro} reveal`}>
         <h1 className="t-display">Bijil Subhash</h1>
         <p className={styles.blurb}>
-          Data engineer in Sydney and founder of NimbleStax. I write about the
-          modern data stack: dbt, dlt, BigQuery, Python, and the architecture
-          behind data platforms that hold up in production.
+          Forward deployed data engineer in Sydney. I embed with client teams to
+          design, build, and run data platforms end to end, most often on
+          Databricks and across the modern data stack. I write about Databricks,
+          dbt, and the architecture behind platforms that hold up in production.
         </p>
       </section>
 
