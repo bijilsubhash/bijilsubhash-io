@@ -66,13 +66,15 @@ def weekly_sales():
     )
 ```
 
-### Supporting notes
+<Callout type="note">
 
 When you work with SDP, you will encounter three different types of materializations:
 
 - **Streaming table** — an unbounded table where each new record is appended as a new row.
 - **Materialized view** — computes and persists the query results into a physical table.
 - **Temporary view** — a session-scoped virtual table that does not persist results but instead saves a query definition, run against the source table when queried.
+
+</Callout>
 
 In the example shown above, we are using SDP to define two tables: a streaming table (`raw_sales`) and a materialized view (`weekly_sales`). If you prefer SQL, here is the same in SQL:
 
