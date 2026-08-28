@@ -153,8 +153,8 @@ SDP also comes with its own CLI to scaffold, validate, and run pipelines locally
 
 Yes, but not easily, and there are some known gaps[^1]. This mainly boils down to the fact that it is still early days (it's only been ~6 months since GA). One that stood out to me is that a pipeline defined by SDP today is limited to a single trigger mode (`AvailableNow`) for the whole pipeline. Because that trigger drains the available data and then stops, you are effectively forced to run your streaming tables on a batch cadence. The processing is still incremental and checkpointed, but a streaming table only advances when the pipeline is triggered, and there is no continuous, always-on mode the way there is in LDP, so its freshness is capped by how often the whole pipeline runs. There are also some constraints on what knobs are available for managing retries in SDP. Lastly, SDP does not yet have the more efficient materialized view refresh you get in LDP. I see all of these as teething problems, and in fact some are already on the roadmap for future releases[^2].
 
-[^1]: Spark Declarative Pipelines, going further
-[^2]: Spark Declarative Pipelines: Why Data Engineering Needs to Become End-to-End Declarative
+[^1]: [Spark Declarative Pipelines, going further](https://www.waitingforcode.com/apache-spark-structured-streaming/spark-declarative-pipelines-going-further/read)
+[^2]: [Spark Declarative Pipelines: Why Data Engineering Needs to Become End-to-End Declarative](https://www.databricks.com/blog/spark-declarative-pipelines-why-data-engineering-needs-become-end-end-declarative)
 
 As of today, if you are looking to convert your Spark workflows to be declarative, the realistic option is still Databricks. Databricks has had a few years of a head start in this regard and has been refining the product through feedback from teams that are already running thousands of Spark Declarative Pipelines through Databricks Lakeflow. As for SDP, what we have here is the foundation, and I am sure there will be multiple iterations of it in the future that will close the gaps and bring production-ready capabilities to the open-source frontier.
 
