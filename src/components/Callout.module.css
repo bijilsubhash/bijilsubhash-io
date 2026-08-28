@@ -12,7 +12,9 @@
 }
 
 .label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 11px;
@@ -21,6 +23,15 @@
   text-transform: uppercase;
   color: var(--color-text-faint);
   margin-bottom: 10px;
+}
+
+/* Short accent tick before the kicker, in the variant colour. */
+.label::before {
+  content: '';
+  flex: none;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
 }
 
 .body {
