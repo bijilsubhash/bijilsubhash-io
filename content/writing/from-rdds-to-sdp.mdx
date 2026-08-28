@@ -2,12 +2,12 @@
 title: "From RDDs to SDP: Spark's Declarative Turn"
 date: "2026-07-30"
 tags: [spark, sdp, databricks, data engineering]
-description: "What happens when data engineering stops telling Spark how, and starts telling it what: a look at Spark Declarative Pipelines (SDP), the components that make it up, and where it fits alongside Lakeflow Declarative Pipelines and dbt."
+description: "What happens when data engineering stops telling Spark how, and starts telling it what - a look at Spark Declarative Pipelines (SDP), the components that make it up, and where it fits alongside Lakeflow Declarative Pipelines and dbt."
 ---
 
 {/* Hero image / thumbnail to be added */}
 
-I have been a fan of Apache Spark and the community behind it for some time now. It is truly remarkable to see what the project has grown into over the years: the journey from Resilient Distributed Datasets (RDDs) to Spark SQL and Structured Streaming, and on to the most recent evolution, Spark Declarative Pipelines (SDP). It is without doubt one of the most transformative and impactful projects in the data engineering world. A search for SDP turns up multiple articles claiming that it could be the catalyst for a step change that transforms the future of data engineering workflows. As someone who is inquisitive by nature, this has sparked (pun intended) my curiosity, sending me down the path to learn more about it: what it unlocks, how it is used in practice, and what it really means for the industry and the Spark ecosystem.
+I have been a fan of Apache Spark and the community behind it for some time now. It is truly remarkable to see what the project has grown into over the years - the journey from Resilient Distributed Datasets (RDDs) to Spark SQL and Structured Streaming, and on to the most recent evolution, Spark Declarative Pipelines (SDP). It is without doubt one of the most transformative and impactful projects in the data engineering world. If you search for SDP, you will notice articles claiming that it could be the catalyst for a step change that [transforms the future of data engineering workflows](https://www.databricks.com/blog/spark-declarative-pipelines-why-data-engineering-needs-become-end-end-declarative). As someone who is inquisitive by nature, this has sparked (pun intended) my curiosity, sending me down the path to learn more about it - what it unlocks, how it is used in practice, and what it really means for the industry and the Spark ecosystem.
 
 We'll start with a brief discussion on imperative and declarative systems, followed by a deep dive into SDP and the components that make it up, and conclude with a reflection on where this new framework will fit in the modern data stack. The intent here is not to provide an opinionated breakdown of how to optimally structure an SDP project, which will be a subject for the future. This is also not a deep dive into the Spark architecture and its underlying concepts, as that is eloquently covered elsewhere.
 
@@ -15,21 +15,11 @@ We'll start with a brief discussion on imperative and declarative systems, follo
 
 Before we go any further, let us orient on what it means to be declarative in the context of this article.
 
-There are many different programming paradigms, but we'll limit our discussion to the two that are relevant here: imperative and declarative. Imperative, in its purest sense, means you tell a machine what it needs to do by listing a series of steps to get to the desired outcome. Declarative, on the other hand, is simply stating the end state and letting the abstractions under the hood converge to it.
+There are many different programming paradigms, but we'll limit our discussion to the two that are relevant here - imperative and declarative. Imperative, in its purest sense, means you tell a machine what it needs to do by listing a series of steps to get to the desired outcome. Declarative, on the other hand, is simply stating the end state and letting the abstractions under the hood converge to it.
 
 If you have been working in data, you have likely already encountered declarative systems such as SQL, where you define the state of a dataset using DDL or DML statements and let the engine and optimisers under the hood figure out the optimal pathway for execution. Similarly, in the infrastructure world, Terraform lets you define the end state of your infrastructure and has the system handle dependency mapping, state management, and deployments. Given how deeply integrated these systems are in the modern data stack, it is no surprise that their declarative features often go unnoticed. Their simplicity masks the sophistication required to manage datasets at scale in a warehouse, or the ability to seamlessly deploy (or destroy) infrastructure. Naturally, the declarative nature of these systems hides away the details of the implementation, allowing practitioners to focus their efforts on the desired outcome. In practice, this translates to more of the team being equipped with tools that elevate the value of their contributions, effectively creating systems that are scalable, extensible, maintainable, and less error-prone.
 
-```mermaid caption="Imperative specifies the steps; declarative specifies the outcome"
-flowchart LR
-    subgraph Imperative
-        direction LR
-        I1(Step 1) --> I2(Step 2) --> I3(Step 3) --> IO(Outcome)
-    end
-    subgraph Declarative
-        direction LR
-        DS(Desired state) --> EN{{Engine / optimiser}} --> DR(Outcome)
-    end
-```
+![Imperative specifies the steps; declarative specifies the outcome](/img/imperative-vs-declarative.png)
 
 The perks of being declarative are not meant to overshadow the place of imperative systems. In fact, an imperative approach is recommended if you are working on systems that require granular performance optimisations, building bespoke algorithms, and the like. Imperative systems are also great for learning, because they force you to think through the entirety of execution, which over time builds the intuition you need to work on the higher-order abstractions that generally fit into a declarative model.
 
@@ -39,7 +29,7 @@ Taken together, both are valid, but the choice of imperative or declarative depe
 
 Traditionally, Spark has not been declarative. If you have worked with it in the past, you will know that the responsibility is on you to explicitly define the materialization strategy, build and wire up data quality frameworks, handle the order of execution, manage checkpoints, orchestrate retries, build and maintain custom tooling for monitoring and alerting, and more. It is entirely feasible to do all of the above, but as you scale, this mode of operation breaks down, almost becoming the chokepoint for many teams who just want to do productive data engineering work and not be held back by managing custom frameworks and tooling to support their Spark workloads.
 
-Since the early Delta Live Tables (DLT) days, the team at Databricks, also Apache Spark's founding team, has been a great advocate for making Spark more declarative. Though it was generally well received, the proprietary, closed model of DLT meant it was limited to Databricks customers. The learnings and feedback from DLT, however, became the fuel for incorporating those principles into Apache Spark as SDP, improving its general accessibility while also facilitating the rebranding of DLT in Databricks as the new Lakeflow Declarative Pipelines (LDP), which under the hood uses SDP as its primary framework of execution.
+Since the early Delta Live Tables (DLT) days, the team at Databricks, also Apache Spark's founding team, has been a great advocate for pushing Spark to be more declarative. Though it was generally well received, the proprietary, closed model of DLT meant it was limited to Databricks customers. The learnings and feedback from DLT, however, became the fuel for incorporating those principles into Apache Spark as SDP, improving its general accessibility while also facilitating the rebranding of DLT in Databricks as the new Lakeflow Declarative Pipelines (LDP), which under the hood uses SDP as its primary framework of execution.
 
 ## So, What Exactly is SDP?
 
@@ -97,7 +87,7 @@ To get the same two tables into production without SDP, you would also write a c
 
 In the SDP version, the dependency is declared in a single place, the weekly sales table reads the raw sales table, and that reference is the graph. The pipeline analyses the objects you've defined and works out execution order and parallelisation from them. Materialisation semantics follow from the decorator, and the checkpoint is the framework's problem, not yours.
 
-That is the actual shift: not a new way to express transformations, but the removal of everything you previously had to express around them.
+That is the actual shift - not a new way to express transformations, but the removal of everything you previously had to express around them.
 
 Under the hood, SDP has a few components that make this magic happen, namely datasets, flows, pipelines, and a CLI tool.
 
@@ -153,4 +143,4 @@ The most consequential thing about SDP isn't the framework itself, it's that the
 
 Practically, that leaves most teams in one of three places. If you're already on Databricks, LDP remains the answer, and SDP changes nothing about your decision except your confidence in its longevity. If you're running Spark elsewhere at scale, the single-trigger constraint alone is prohibitive for now, but it's worth building a non-critical pipeline in SDP to develop the intuition before the constraints lift. And if you're weighing SDP against dbt, that's the wrong comparison; dbt still wins on ergonomics, community, and the sheer weight of existing projects. LDP is the contender there, not SDP, at least not yet.
 
-What Databricks has effectively done is hand the community the substrate of its own commercial product and bet on being better at productising it than anyone else. That's a confident move, and it's the reason SDP is worth watching even if you don't adopt it this year.
+What Databricks has effectively done is hand the community the substrate of its own commercial product and bet on being better at productising it than anyone else, which is a remarkbly confident move and also the reason SDP is worth watching even if you don't adopt it this year.
