@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styles from './YouTube.module.css'
 
 /**
- * Lazy YouTube facade — no request to YouTube until the viewer clicks
+ * Lazy YouTube facade – no request to YouTube until the viewer clicks
  * (design.md §5). Captioned like a figure.
  */
 export default function YouTube({

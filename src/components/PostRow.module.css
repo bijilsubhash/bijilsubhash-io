@@ -1,4 +1,4 @@
-/* Post list row — design.md §5 */
+/* Post list row – design.md §5 */
 .row {
   display: grid;
   grid-template-columns: 96px 1fr;

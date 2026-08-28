@@ -1,4 +1,4 @@
-/* Figure – design.md §5 */
+/* Self-hosted video figure – design.md §5 (mirrors Figure). */
 .figure {
   margin: 0 0 30px;
 }
@@ -7,12 +7,14 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-code);
   overflow: hidden;
-  background: var(--color-surface);
+  background: #000;
 }
 
-.img {
+.video {
+  display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .caption {

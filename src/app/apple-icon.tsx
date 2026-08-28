@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 export const size = { width: 180, height: 180 }
 export const contentType = 'image/png'
 
-/** Apple touch icon — the "b." monogram (design.md §9). */
+/** Apple touch icon – the "b." monogram (design.md §9). */
 export default function AppleIcon() {
   return new ImageResponse(
     (

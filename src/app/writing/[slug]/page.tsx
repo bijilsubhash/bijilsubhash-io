@@ -52,7 +52,7 @@ export default async function PostPage({
       <header className={`${styles.head} reveal`}>
         <h1 className="t-post-title">{post.title}</h1>
         <p className={`t-meta ${styles.meta}`}>
-          {post.date} · {post.readingTime}
+          {post.date} – {post.readingTime}
         </p>
         {post.tags.length > 0 && (
           <div className={styles.tags}>

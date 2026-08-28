@@ -1,36 +1,38 @@
 /*
- * bijilsubhash.io — global design tokens + base styles.
+ * bijilsubhash.io – global design tokens + base styles.
  * Tokens are transcribed verbatim from docs/design/design.md (the source of truth).
  * See docs/adr/0004-plain-css-modules-over-tailwind.md
  */
 
 :root {
-  /* --- Color (design.md §2) --- */
-  --color-bg: #fafaf8;
-  --color-surface: #f3f1ea;
-  --color-code-bg: #f5f3ec;
-  --color-text: #1a1a1a;
-  --color-text-body: #38362f;
-  --color-text-muted: #6b6862;
-  --color-text-faint: #9b978e;
-  --color-accent: #24625f;
-  --color-accent-hover: #1a4a47;
-  --color-accent-soft: #cfe0de;
-  --color-border: #e4e2db;
-  --color-hair: #eae7df;
-  --color-verify: #cfe0de;
-  --color-selection: #cfe0de;
+  color-scheme: dark;
+
+  /* --- Color (design.md §2, dark ground — the site is dark-only) --- */
+  --color-bg: #171613;
+  --color-surface: #201e1a;
+  --color-code-bg: #1c1a16;
+  --color-text: #f4f2ec;
+  --color-text-body: #d6d2c7;
+  --color-text-muted: #a09b8e;
+  --color-text-faint: #736e62;
+  --color-accent: #7cb3ac;
+  --color-accent-hover: #95c5bf;
+  --color-accent-soft: #33514d;
+  --color-border: #302d27;
+  --color-hair: #26231e;
+  --color-verify: #33514d;
+  --color-selection: #33514d;
 
   /* Callout variants */
-  --callout-note-rule: #24625f;
-  --callout-note-fill: #f3f1ea;
-  --callout-note-label: #24625f;
-  --callout-tip-rule: #4a7c3f;
-  --callout-tip-fill: #f1f4ec;
-  --callout-tip-label: #3f6b36;
-  --callout-warning-rule: #a3742f;
-  --callout-warning-fill: #f7f2e8;
-  --callout-warning-label: #8a6222;
+  --callout-note-rule: #7cb3ac;
+  --callout-note-fill: #1b1f1e;
+  --callout-note-label: #8fc0ba;
+  --callout-tip-rule: #7aa96b;
+  --callout-tip-fill: #1a1f18;
+  --callout-tip-label: #93bf85;
+  --callout-warning-rule: #c6a05f;
+  --callout-warning-fill: #211c14;
+  --callout-warning-label: #d3ac6b;
 
   /* --- Type families (design.md §3), wired to next/font in fonts.ts --- */
   --font-serif: var(--font-newsreader), Georgia, 'Times New Roman', serif;
@@ -59,67 +61,6 @@
     --gutter: 24px;
     --header-pad-y: 22px;
   }
-}
-
-/*
- * --- Dark theme ---
- * Warm dark ground mirroring the light palette; the teal accent is lightened
- * for contrast. Applied when the visitor's OS prefers dark (unless they forced
- * light) and whenever they explicitly pick dark via the header toggle.
- * The two selectors carry the same token block by design.
- */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --color-bg: #171613;
-    --color-surface: #201e1a;
-    --color-code-bg: #1c1a16;
-    --color-text: #f4f2ec;
-    --color-text-body: #d6d2c7;
-    --color-text-muted: #a09b8e;
-    --color-text-faint: #736e62;
-    --color-accent: #7cb3ac;
-    --color-accent-hover: #95c5bf;
-    --color-accent-soft: #33514d;
-    --color-border: #302d27;
-    --color-hair: #26231e;
-    --color-verify: #33514d;
-    --color-selection: #33514d;
-    --callout-note-rule: #7cb3ac;
-    --callout-note-fill: #1b1f1e;
-    --callout-note-label: #8fc0ba;
-    --callout-tip-rule: #7aa96b;
-    --callout-tip-fill: #1a1f18;
-    --callout-tip-label: #93bf85;
-    --callout-warning-rule: #c6a05f;
-    --callout-warning-fill: #211c14;
-    --callout-warning-label: #d3ac6b;
-  }
-}
-
-:root[data-theme='dark'] {
-  --color-bg: #171613;
-  --color-surface: #201e1a;
-  --color-code-bg: #1c1a16;
-  --color-text: #f4f2ec;
-  --color-text-body: #d6d2c7;
-  --color-text-muted: #a09b8e;
-  --color-text-faint: #736e62;
-  --color-accent: #7cb3ac;
-  --color-accent-hover: #95c5bf;
-  --color-accent-soft: #33514d;
-  --color-border: #302d27;
-  --color-hair: #26231e;
-  --color-verify: #33514d;
-  --color-selection: #33514d;
-  --callout-note-rule: #7cb3ac;
-  --callout-note-fill: #1b1f1e;
-  --callout-note-label: #8fc0ba;
-  --callout-tip-rule: #7aa96b;
-  --callout-tip-fill: #1a1f18;
-  --callout-tip-label: #93bf85;
-  --callout-warning-rule: #c6a05f;
-  --callout-warning-fill: #211c14;
-  --callout-warning-label: #d3ac6b;
 }
 
 /* --- Reset --- */
@@ -347,7 +288,7 @@ a {
   color: var(--color-text-body);
 }
 
-/* Lede — About opening paragraph only (design.md §3) */
+/* Lede – About opening paragraph only (design.md §3) */
 .lede-first .prose > p:first-of-type {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -404,10 +345,10 @@ a {
   color: var(--color-text-faint);
 }
 .prose blockquote cite::before {
-  content: '— ';
+  content: '– ';
 }
 
-/* Footnotes (design.md §5) — remark-gfm output */
+/* Footnotes (design.md §5) – remark-gfm output */
 .prose .footnotes {
   margin-top: 40px;
   padding-top: 22px;
@@ -485,15 +426,10 @@ a {
   animation: reveal-up var(--dur-slow) var(--ease-out) both;
 }
 
-/* Dual-theme syntax highlighting: swap to the dark token colors in dark mode.
-   rehype-pretty-code emits --shiki-light / --shiki-dark on each token span. */
-:root[data-theme='dark'] pre code span {
+/* Syntax highlighting: the site is dark-only, so always use the dark token
+   colors. rehype-pretty-code emits --shiki-light / --shiki-dark per span. */
+pre code span {
   color: var(--shiki-dark) !important;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) pre code span {
-    color: var(--shiki-dark) !important;
-  }
 }
 
 /* --- Print (design.md §7): the CV page is the résumé --- */
