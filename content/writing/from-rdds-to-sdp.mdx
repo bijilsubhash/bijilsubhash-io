@@ -37,7 +37,7 @@ In a nutshell, and from the docs:
 
 > Spark Declarative Pipelines (SDP) is a declarative framework for building reliable, maintainable, and testable data pipelines on Apache Spark. SDP simplifies ETL development by allowing you to focus on the transformations you want to apply to your data, rather than the mechanics of pipeline execution.
 
-It's a bit of a mouthful, and without context it may not make a lot of sense, so let's break it down by looking at two tables defined using SDP.
+Let's break that down by looking at what goes inside a SDP, shown below where we defining two tables: a streaming table (`raw_sales`) and a materialized view (`weekly_sales`)
 
 ```python
 from pyspark import pipelines as dp
@@ -62,11 +62,11 @@ When you work with SDP, you will encounter three different types of materializat
 
 - **Streaming table**: an unbounded table where each new record is appended as a new row.
 - **Materialized view**: computes and persists the query results into a physical table.
-- **Temporary view**: a session-scoped virtual table that does not persist results but instead saves a query definition, run against the source table when queried.
+- **View**: a virtual table that does not persist results but instead saves a query definition, run against the source table when queried.
 
 </Callout>
 
-In the example shown above, we are using SDP to define two tables: a streaming table (`raw_sales`) and a materialized view (`weekly_sales`). If you prefer SQL, here is the same in SQL:
+If you prefer SQL, here is the same in SQL:
 
 ```sql
 CREATE STREAMING TABLE raw_sales
@@ -81,7 +81,7 @@ FROM raw_sales
 GROUP BY date_trunc('week', date), store_id;
 ```
 
-None of the above looks new. Vanilla PySpark and Spark SQL can produce both of those tables today, so on the face of it there's little reason to reach for another framework. The difference isn't in what the code does, it's in what the code no longer has to say.
+None of the above looks new. PySpark and Spark SQL can produce both of those tables today, so on the face of it there's little reason to reach for another framework. The difference isn't in what the code does, it's in what the code no longer has to say.
 
 To get the same two tables into production without SDP, you would also write a checkpoint location for the streaming read and manage it across environments, an orchestrator DAG encoding that the weekly sales table runs after the raw sales table, and retry and failure-handling configuration on each task. You would also be on the hook for deciding whether weekly sales is rebuilt or appended and writing the code to enforce it, plus whatever monitoring you have around all of it. None of that is transformation logic. All of it is mechanics that you need to maintain.
 
@@ -93,15 +93,29 @@ Under the hood, SDP has a few components that make this magic happen, namely dat
 
 ### Datasets
 
-A dataset is the object that lands in the database, essentially the physical layer. It can be a streaming table, materialized view, or temporary view (see the supporting notes above). The dataset is defined using a query, either in Python or SQL.
+A dataset is the object that lands in the database, essentially the physical layer. It can be a streaming table, materialized view, or view. The dataset is defined using a query, either in Python or SQL.
 
 ### Flows
 
-A flow defines the semantics of how data is processed into a target dataset. It is generally auto-created, but you do have the option to explicitly define a flow if needed for complex workflows. Depending on the target dataset, the flow determines whether the data is processed incrementally as a stream or via a full refresh of a physical table.
+A flow defines the semantics of how data is processed into a target dataset. It is generally auto-created based on how you define the dataset, but you do have the option to explicitly define a flow if needed for complex workflows. Depending on the target dataset, the flow determines whether the data is processed incrementally as a stream or via a full refresh of a physical table.
 
 ### Pipelines
 
-A pipeline is the unit of development and execution, and it can contain one or more flows. It is a collection of source code files and configuration. The source files (`*.py` or `*.sql`) declare datasets along with the queries and flows that produce them. The execution of a pipeline is managed by a configuration file that specifies how the pipeline runs and where data is stored. With these artefacts in place, the pipeline can infer the dependencies and facilitate the execution of the respective flows as originally intended.
+A pipeline is the unit of development and execution, and it can contain one or more flows. It is a collection of source code files and configuration. The source files (`*.py` or `*.sql`) declare datasets along with the queries and flows that produce them. The execution of a pipeline is managed by a configuration file (pipeline.yml - see below) that specifies how the pipeline runs and where data is stored. With these artefacts in place, the pipeline can infer the dependencies and facilitate the execution of the respective flows as originally intended.
+
+Here is a minimal `pipeline.yml` for the two datasets above. It points the pipeline at the source files, sets where streaming checkpoints live, and names the target catalog and database:
+
+```yaml
+name: sales_pipeline
+libraries:
+  - glob:
+      include: transformations/**
+storage: file:///pipelines/sales/storage
+catalog: sales
+database: analytics
+configuration:
+  spark.sql.shuffle.partitions: "200"
+```
 
 ### Tools
 
