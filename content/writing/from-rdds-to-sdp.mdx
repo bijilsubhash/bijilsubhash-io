@@ -145,6 +145,10 @@ configuration:
   spark.sql.shuffle.partitions: "200"
 ```
 
+### Tools
+
+SDP also comes with its own CLI to scaffold, validate, and run pipelines locally and in production, which is a handy tool for development and for enforcing SDLC practices.
+
 To see it work, here is that exact pipeline running locally end to end, from `spark-pipelines run` through to querying the resulting tables. The full setup is on GitHub as [sdp-sandbox](https://github.com/bijilsubhash/sdp-sandbox) if you want to run it yourself.
 
 <Video
@@ -152,10 +156,6 @@ To see it work, here is that exact pipeline running locally end to end, from `sp
   poster="/video/sdp-end-to-end.jpg"
   caption="Running a Spark Declarative Pipeline locally, end to end."
 />
-
-### Tools
-
-SDP also comes with its own CLI to scaffold, validate, and run pipelines locally and in production, which is a handy tool for development and for enforcing SDLC practices.
 
 ## Is it Ready for Production?
 
