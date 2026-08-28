@@ -6,6 +6,7 @@ import Mermaid from './Mermaid'
 import Figure from './Figure'
 import Callout from './Callout'
 import YouTube from './YouTube'
+import Video from './Video'
 import { MdxLink } from './MdxLink'
 
 const components = {
@@ -17,6 +18,7 @@ const components = {
   Mermaid,
   Callout,
   YouTube,
+  Video,
 }
 
 export async function Mdx({ source }: { source: string }) {

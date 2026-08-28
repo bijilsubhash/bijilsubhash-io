@@ -9,7 +9,7 @@ description: "What happens when data engineering stops telling Spark how, and st
 
 I have been a fan of Apache Spark and the community behind it for some time now. It is truly remarkable to see what the project has grown into over the years - the journey from Resilient Distributed Datasets (RDDs) to Spark SQL and Structured Streaming, and on to the most recent evolution, Spark Declarative Pipelines (SDP). It is without doubt one of the most transformative and impactful projects in the data engineering world. If you search for SDP, you will notice articles claiming that it could be the catalyst for a step change that [transforms the future of data engineering workflows](https://www.databricks.com/blog/spark-declarative-pipelines-why-data-engineering-needs-become-end-end-declarative). As someone who is inquisitive by nature, this has sparked (pun intended) my curiosity, sending me down the path to learn more about it - what it unlocks, how it is used in practice, and what it really means for the industry and the Spark ecosystem.
 
-We'll start with a brief discussion on imperative and declarative systems, followed by a deep dive into SDP and the components that make it up, and conclude with a reflection on where this new framework will fit in the modern data stack. The intent here is not to provide an opinionated breakdown of how to optimally structure an SDP project, which will be a subject for the future. This is also not a deep dive into the Spark architecture and its underlying concepts, as that is eloquently covered elsewhere.
+We'll start with a brief discussion on imperative and declarative systems, followed by a deep dive into SDP and the components that make it up, and conclude with a reflection on where this new framework will fit in the modern data stack. The intent here is not to provide an opinionated breakdown of how to optimally structure an SDP project, which will be a subject for the future. This is also not a deep dive into the Spark architecture and its underlying concepts, as that is eloquently covered elsewhere. I also want to be clear this is about SDP, and not Lakeflow Declarative Pipeline (LDP), which is a feature in Databricks that was built on top of SDP. 
 
 ## Some Basics
 
@@ -144,6 +144,14 @@ database: analytics
 configuration:
   spark.sql.shuffle.partitions: "200"
 ```
+
+To see it work, here is that exact pipeline running locally end to end, from `spark-pipelines run` through to querying the resulting tables. The full setup is on GitHub as [sdp-sandbox](https://github.com/bijilsubhash/sdp-sandbox) if you want to run it yourself.
+
+<Video
+  src="/video/sdp-end-to-end.mp4"
+  poster="/video/sdp-end-to-end.jpg"
+  caption="Running a Spark Declarative Pipeline locally, end to end."
+/>
 
 ### Tools
 
