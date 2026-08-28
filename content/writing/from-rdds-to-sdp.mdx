@@ -41,6 +41,7 @@ Let's break that down by looking at what goes inside a SDP using an example wher
 
 ```python
 from pyspark import pipelines as dp
+from pyspark.sql.functions import col, date_trunc, sum
 
 @dp.table()
 def raw_sales():
@@ -88,6 +89,8 @@ To get the same two tables into production without SDP, you would also write a c
 To make the contrast concrete, the two decorators above unfold into a Structured Streaming job and a batch job that you own outright, checkpoints, triggers, and write semantics included:
 
 ```python
+from pyspark.sql.functions import col, date_trunc, sum
+
 # raw_sales - a streaming job, checkpoint and trigger and all
 (
     spark.readStream.table("sales.raw_sales")
