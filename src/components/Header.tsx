@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { nav, site } from '@/lib/site'
-import ThemeToggle from './ThemeToggle'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -33,8 +32,6 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
-          <ThemeToggle />
 
           <button
             type="button"
