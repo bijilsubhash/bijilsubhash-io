@@ -15,6 +15,11 @@
   text-wrap: pretty;
 }
 
+.dives {
+  margin-bottom: 56px;
+}
+
+.dives h2,
 .recent h2 {
   margin-bottom: 16px;
 }

@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
+import { getAllDeepDives } from '@/lib/deep-dives'
 import PostList from '@/components/PostList'
+import DiveCard from '@/components/DiveCard'
 import styles from './home.module.css'
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5)
+  const dives = getAllDeepDives().slice(0, 3)
   return (
     <div className="container">
       <section className={`${styles.intro} reveal`}>
@@ -18,6 +21,28 @@ export default function Home() {
           then, and whatever else feels worth keeping.
         </p>
       </section>
+
+      {dives.length > 0 && (
+        <section
+          className={`${styles.dives} reveal`}
+          style={{ animationDelay: '120ms' }}
+        >
+          <h2 className="t-label">deep dives</h2>
+          <div>
+            {dives.map((dive, i) => (
+              <DiveCard
+                key={dive.slug}
+                dive={dive}
+                showUpdated={false}
+                style={{ animationDelay: `${160 + i * 40}ms` }}
+              />
+            ))}
+          </div>
+          <Link href="/deep-dives" className={styles.all}>
+            all deep dives →
+          </Link>
+        </section>
+      )}
 
       <section
         className={`${styles.recent} reveal`}

@@ -1,0 +1,58 @@
+/*
+ * Lesson page. Single column up to the breakpoint (sidebar renders as a
+ * disclosure above the header); two columns above it, with the reading column
+ * held at the prose measure and the sidebar in the left gutter.
+ */
+.layout {
+  max-width: var(--measure-prose);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    max-width: 1012px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, var(--measure-prose));
+    column-gap: 48px;
+    align-items: start;
+  }
+}
+
+.main {
+  min-width: 0;
+}
+
+.head {
+  margin-bottom: 40px;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  transition: color var(--dur-mid) var(--ease-out);
+}
+
+.kicker:hover {
+  color: var(--color-accent);
+}
+
+.head h1 {
+  margin-bottom: 14px;
+}
+
+.meta {
+  color: var(--color-text-faint);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
