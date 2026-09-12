@@ -11,6 +11,7 @@ import TagChip from '@/components/TagChip'
 import YouTube from '@/components/YouTube'
 import DiveSidebar from '@/components/DiveSidebar'
 import LessonPager from '@/components/LessonPager'
+import RelatedLinks from '@/components/RelatedLinks'
 import styles from './lesson.module.css'
 
 export function generateStaticParams() {
@@ -87,18 +88,7 @@ export default async function LessonPage({
 
         <Mdx source={lesson.content} />
 
-        {lesson.related.length > 0 && (
-          <section className={styles.related}>
-            <h2 className="t-label">related</h2>
-            <ul>
-              {lesson.related.map((href) => (
-                <li key={href}>
-                  <Link href={href}>{href}</Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <RelatedLinks items={lesson.related} />
 
         <LessonPager
           diveSlug={dive.slug}

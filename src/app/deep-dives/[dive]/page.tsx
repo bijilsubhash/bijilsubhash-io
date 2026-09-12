@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllDeepDives, getDeepDiveBySlug } from '@/lib/deep-dives'
 import { Mdx } from '@/components/Mdx'
+import RelatedLinks from '@/components/RelatedLinks'
 import styles from './dive.module.css'
 
 export function generateStaticParams() {
@@ -92,18 +93,7 @@ export default async function DivePage({
         </p>
       )}
 
-      {dive.related.length > 0 && (
-        <footer className={styles.related}>
-          <h2 className="t-label">related</h2>
-          <ul>
-            {dive.related.map((href) => (
-              <li key={href}>
-                <Link href={href}>{href}</Link>
-              </li>
-            ))}
-          </ul>
-        </footer>
-      )}
+      <RelatedLinks items={dive.related} />
     </article>
   )
 }
