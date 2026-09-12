@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { getAllDeepDives, groupBySubject } from '@/lib/deep-dives'
+import DiveCard from '@/components/DiveCard'
 import styles from './deep-dives.module.css'
 
 export const metadata: Metadata = {
@@ -28,21 +28,7 @@ export default function DeepDivesPage() {
           <h2 className="t-label">{group.subject}</h2>
           <div>
             {group.dives.map((dive) => (
-              <Link
-                key={dive.slug}
-                href={`/deep-dives/${dive.slug}`}
-                className={`${styles.dive} reveal`}
-              >
-                <span className={styles.title}>{dive.title}</span>
-                {dive.description && (
-                  <span className={styles.desc}>{dive.description}</span>
-                )}
-                <span className={`t-meta ${styles.meta}`}>
-                  {dive.lessonCount}{' '}
-                  {dive.lessonCount === 1 ? 'lesson' : 'lessons'} – updated{' '}
-                  {dive.updatedAt}
-                </span>
-              </Link>
+              <DiveCard key={dive.slug} dive={dive} />
             ))}
           </div>
         </section>

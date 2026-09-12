@@ -1,0 +1,52 @@
+/* Deep Dives index card – design.md §4.1 */
+.card {
+  display: block;
+  padding: 15px 0;
+  border-top: 1px solid var(--color-hair);
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    color var(--dur-mid) var(--ease-out);
+}
+
+.card:last-child {
+  border-bottom: 1px solid var(--color-hair);
+}
+
+.title {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--color-text);
+  text-wrap: pretty;
+  transition: color var(--dur-mid) var(--ease-out);
+}
+
+.desc {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-text-body);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.meta {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-text-faint);
+}
+
+.card:hover {
+  transform: translateX(4px);
+}
+
+.card:hover .title {
+  color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+}

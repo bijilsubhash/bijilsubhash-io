@@ -6,10 +6,12 @@ export const OG_CONTENT_TYPE = 'image/png'
 
 /**
  * Shared OG share card (design.md §8): warm bg, accent bar, title in Newsreader,
- * baseline row with the wordmark and the domain.
+ * baseline row with the wordmark and the domain. An optional `kicker` renders a
+ * small accent line above the title, so a lesson share reads "Spark Optimization
+ * / Shuffle" (design.md §5.2).
  */
-export async function renderOgCard(title: string, subtitle: string) {
-  const glyphs = title + subtitle + 'Bijil Subhash bijilsubhash.io'
+export async function renderOgCard(title: string, subtitle: string, kicker?: string) {
+  const glyphs = title + subtitle + (kicker ?? '') + 'Bijil Subhash bijilsubhash.io'
 
   const fonts: { name: string; data: ArrayBuffer; weight: 400 | 500; style: 'normal' }[] = []
   try {
@@ -39,8 +41,28 @@ export async function renderOgCard(title: string, subtitle: string) {
       >
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div
-            style={{ width: 160, height: 3, background: '#24625f', marginBottom: 40 }}
+            style={{
+              width: 160,
+              height: 3,
+              background: '#24625f',
+              marginBottom: kicker ? 28 : 40,
+            }}
           />
+          {kicker && (
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 30,
+                letterSpacing: '0.01em',
+                color: '#24625f',
+                fontWeight: 500,
+                marginBottom: 14,
+                maxWidth: 1000,
+              }}
+            >
+              {kicker}
+            </div>
+          )}
           <div
             style={{
               display: 'flex',
