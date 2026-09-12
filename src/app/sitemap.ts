@@ -1,15 +1,24 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts, getAllTags } from '@/lib/posts'
 import { getAllDeepDives } from '@/lib/deep-dives'
+import { isGateEnabled } from '@/lib/deep-dives-gate'
 import { site } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // While the section is gated, keep every /deep-dives URL out of the sitemap.
+  const gated = isGateEnabled()
   const posts = getAllPosts()
   const tags = getAllTags()
-  const dives = getAllDeepDives()
+  const dives = gated ? [] : getAllDeepDives()
   const now = new Date()
 
-  const staticRoutes = ['', '/writing', '/deep-dives', '/about', '/cv'].map(
+  const staticRoutes = [
+    '',
+    '/writing',
+    ...(gated ? [] : ['/deep-dives']),
+    '/about',
+    '/cv',
+  ].map(
     (path) => ({
       url: `${site.url}${path}`,
       lastModified: now,
