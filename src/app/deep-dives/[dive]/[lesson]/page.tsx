@@ -8,6 +8,9 @@ import {
 } from '@/lib/deep-dives'
 import { Mdx } from '@/components/Mdx'
 import TagChip from '@/components/TagChip'
+import YouTube from '@/components/YouTube'
+import DiveSidebar from '@/components/DiveSidebar'
+import LessonPager from '@/components/LessonPager'
 import styles from './lesson.module.css'
 
 export function generateStaticParams() {
@@ -57,38 +60,52 @@ export default async function LessonPage({
   if (!dive || !lesson) notFound()
 
   return (
-    <article className="container">
-      <header className={`${styles.head} reveal`}>
-        <Link href={`/deep-dives/${dive.slug}`} className={styles.kicker}>
-          {dive.title}
-        </Link>
-        <h1 className="t-post-title">{lesson.title}</h1>
-        <p className={`t-meta ${styles.meta}`}>
-          {lesson.date} – {lesson.readingTime}
-        </p>
-        {lesson.tags.length > 0 && (
-          <div className={styles.tags}>
-            {lesson.tags.map((tag) => (
-              <TagChip key={tag} tag={tag} />
-            ))}
-          </div>
+    <div className={styles.layout}>
+      <DiveSidebar dive={dive} currentSlug={lesson.slug} />
+
+      <article className={styles.main}>
+        <header className={`${styles.head} reveal`}>
+          <Link href={`/deep-dives/${dive.slug}`} className={styles.kicker}>
+            {dive.title}
+          </Link>
+          <h1 className="t-post-title">{lesson.title}</h1>
+          <p className={`t-meta ${styles.meta}`}>
+            {lesson.date} – {lesson.readingTime}
+          </p>
+          {lesson.tags.length > 0 && (
+            <div className={styles.tags}>
+              {lesson.tags.map((tag) => (
+                <TagChip key={tag} tag={tag} />
+              ))}
+            </div>
+          )}
+        </header>
+
+        {lesson.youtube && (
+          <YouTube id={lesson.youtube} title={lesson.title} />
         )}
-      </header>
 
-      <Mdx source={lesson.content} />
+        <Mdx source={lesson.content} />
 
-      {lesson.related.length > 0 && (
-        <footer className={styles.related}>
-          <h2 className="t-label">related</h2>
-          <ul>
-            {lesson.related.map((href) => (
-              <li key={href}>
-                <Link href={href}>{href}</Link>
-              </li>
-            ))}
-          </ul>
-        </footer>
-      )}
-    </article>
+        {lesson.related.length > 0 && (
+          <section className={styles.related}>
+            <h2 className="t-label">related</h2>
+            <ul>
+              {lesson.related.map((href) => (
+                <li key={href}>
+                  <Link href={href}>{href}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <LessonPager
+          diveSlug={dive.slug}
+          diveTitle={dive.title}
+          lesson={lesson}
+        />
+      </article>
+    </div>
   )
 }
