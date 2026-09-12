@@ -265,6 +265,10 @@ Radius scales at roughly `0.14 × size`. At 16px the period is drawn as a separa
 | `/writing` | Full archive, year-grouped |
 | `/writing/[slug]` | Post |
 | `/tags/[tag]` | Archive layout, filtered |
+| `/deep-dives` | Deep Dives index – dive cards grouped by subject |
+| `/deep-dives/[dive]` | Dive landing – intro, table of contents (parts + lessons), related |
+| `/deep-dives/[dive]/[lesson]` | Lesson – sidebar (sticky desktop, collapsible mobile), optional video, body, prev/next |
 | `/about` | About |
 | `/cv` | CV (print-ready) |
+| `/unlock` | Deep Dives password gate – active only while `DEEP_DIVES_PASSWORD` is set, otherwise a no-op |
 | `not-found` | 404 — same chrome, content vertically centred, links to `writing` and `home` |
