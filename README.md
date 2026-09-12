@@ -38,6 +38,45 @@ npm run dev      # http://localhost:3000
   copy button), ` ```mermaid ` diagrams (add `caption="..."` on the fence),
   `<Callout type="note|tip|warning">`, `<YouTube id="..." caption="..." />`,
   images (`![caption](/img/file.png)`), blockquotes, and footnotes.
+- **New deep dive:** create `content/deep-dives/<dive-slug>/` with a `_dive.mdx`
+  index that owns the metadata and the ordered parts-to-lessons list:
+  ```yaml
+  ---
+  title: Spark Optimization
+  subject: spark             # spark | databricks | agents | mlops | ...
+  description: "One-line summary for cards, meta, and OG."
+  youtubePlaylist: PL...     # optional
+  related:                   # optional, internal paths
+    - /writing/from-rdds-to-sdp
+  parts:                     # required and ordered; parts never appear in URLs
+    - title: Foundations
+      lessons: [spark-architecture, execution-model]
+    - title: Memory
+      lessons: [spill, caching]
+  ---
+  Intro paragraph(s) for the dive landing page. Full MDX.
+  ```
+  Lesson order lives here and nowhere else. The folder name is the dive slug.
+  Set `draft: true` to hide the whole dive in production. The build fails if a
+  listed lesson slug has no matching file or is listed twice; a lesson file that
+  exists but is not listed is left unreachable with a build warning.
+- **New lesson:** add `content/deep-dives/<dive-slug>/<lesson-slug>.mdx`, then
+  list its slug under a part in `_dive.mdx`. Front matter is a post's plus an
+  optional YouTube video:
+  ```yaml
+  ---
+  title: Shuffle
+  date: "2026-09-20"
+  description: "One-line summary used for meta and OG cards."
+  tags: [spark, performance]   # optional
+  youtube: dQw4w9WgXcQ         # optional, YouTube video ID only, not a URL
+  related:                     # optional, internal paths
+    - /writing/from-rdds-to-sdp
+  ---
+  ```
+  Same MDX component set as a post. `date` is the lesson's first-published date;
+  the dive's updated date is derived as the newest lesson date. Set
+  `draft: true` to keep a lesson out of production.
 - **About:** edit `content/about.mdx`.
 - **CV:** edit `src/data/cv.ts`.
 - **Images:** put files in `public/img/` and reference them as `/img/<file>`.
