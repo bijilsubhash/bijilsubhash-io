@@ -86,4 +86,3 @@ npm run dev      # http://localhost:3000
 - `CONTEXT.md` — domain glossary
 - `docs/adr/` — architecture decisions
 - `docs/design/design.md` — the design system (source of truth for tokens)
-- `DEPLOY.md` — Vercel setup and the Netlify → DNS cutover
