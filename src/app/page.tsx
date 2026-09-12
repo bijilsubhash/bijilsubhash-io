@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 import { getAllDeepDives } from '@/lib/deep-dives'
+import { isGateEnabled } from '@/lib/deep-dives-gate'
 import PostList from '@/components/PostList'
 import DiveCard from '@/components/DiveCard'
 import styles from './home.module.css'
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5)
-  const dives = getAllDeepDives().slice(0, 3)
+  // Hidden from the public home page while the section is gated.
+  const dives = isGateEnabled() ? [] : getAllDeepDives().slice(0, 3)
   return (
     <div className="container">
       <section className={`${styles.intro} reveal`}>

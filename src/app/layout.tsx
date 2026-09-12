@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { newsreader, inter, jetbrainsMono } from './fonts'
-import { site } from '@/lib/site'
+import { nav, site } from '@/lib/site'
+import { isGateEnabled } from '@/lib/deep-dives-gate'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
@@ -33,13 +34,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // While the section is gated, don't advertise it in the nav.
+  const visibleNav = isGateEnabled()
+    ? nav.filter((item) => item.href !== '/deep-dives')
+    : nav
+
   return (
     <html
       lang="en"
       className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>
-        <Header />
+        <Header items={visibleNav} />
         <main className="main">{children}</main>
         <Footer />
       </body>

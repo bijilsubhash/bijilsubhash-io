@@ -6,7 +6,13 @@ import { useState } from 'react'
 import { nav, site } from '@/lib/site'
 import styles from './Header.module.css'
 
-export default function Header() {
+type NavItem = { href: string; label: string }
+
+export default function Header({
+  items = nav,
+}: {
+  items?: readonly NavItem[]
+}) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
@@ -22,7 +28,7 @@ export default function Header() {
 
         <div className={styles.right}>
           <nav className={styles.nav} aria-label="Primary">
-            {nav.map((item) => (
+            {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -48,7 +54,7 @@ export default function Header() {
 
       {open ? (
         <nav className={styles.panel} aria-label="Mobile">
-          {nav.map((item) => (
+          {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}

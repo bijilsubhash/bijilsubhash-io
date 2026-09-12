@@ -273,6 +273,8 @@ Each phase should build green and be deployable on its own. Open one PR per phas
 3. **Lesson chrome.** `DiveSidebar`, `LessonPager`, video placement, mobile disclosure. Dark mode pass.
 4. **Index and home.** `DiveCard`, subject grouping, home page block, OG images.
 5. **Docs.** README authoring section, design.md routes, remove any leftover TODOs.
+6. **Access gate (temporary).** Keep the section out of public view until it has
+   real content, without deleting routes or the seed. See §10.
 
 Suggested first Claude Code prompt:
 
@@ -303,3 +305,26 @@ Suggested first Claude Code prompt:
 - Per-subject index pages (`/deep-dives/spark`) if the index grows past ~8 dives.
 - Chapter timestamps / transcript on lessons once videos exist.
 - `video: { provider, id }` if you ever host outside YouTube. Mechanical change.
+
+## 10. Access gate (temporary)
+
+The section ships before its content is finished, so `/deep-dives` is held behind
+a password until launch. The gate is driven by a single env var and adds no
+runtime dependency.
+
+- `DEEP_DIVES_PASSWORD` **set** = the section is locked; **unset** = public.
+  Going live is deleting the var in Vercel and redeploying. No code change.
+- `src/middleware.ts` (matcher `/deep-dives`, `/deep-dives/:path*`) redirects
+  requests without a valid access cookie to `/unlock?next=<path>`. When the var
+  is unset it is a no-op.
+- `/unlock` is a styled password page using the site tokens. A server action
+  checks the password, sets an httpOnly cookie holding a SHA-256 of the password
+  (not the password itself, so rotating it invalidates old cookies), then
+  redirects back to `next` (clamped to `/deep-dives` to avoid open redirects).
+- While locked, the build-time surfaces hide the section too: the nav link
+  (`layout.tsx`), the home block (`page.tsx`), and every `/deep-dives` URL in
+  `sitemap.ts`; `robots.ts` disallows `/unlock` always and `/deep-dives` while
+  locked. These read the var at build time, so they flip on the next deploy
+  after it changes; enforcement (middleware) is live per request.
+- Shared helpers live in `src/lib/deep-dives-gate.ts`. Hashing uses Web Crypto,
+  which works in both the middleware and Node server runtimes.
