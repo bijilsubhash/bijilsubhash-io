@@ -29,27 +29,34 @@ export default function DiveSidebar({
         <Link href={`/deep-dives/${dive.slug}`} className={styles.diveTitle}>
           {dive.title}
         </Link>
-        {dive.parts.map((part) => (
-          <div key={part.title} className={styles.part}>
-            <p className={`t-label ${styles.partTitle}`}>{part.title}</p>
-            <ol className={styles.lessons}>
-              {part.lessons.map((lesson) => {
-                const active = lesson.slug === currentSlug
-                return (
-                  <li key={lesson.slug}>
-                    <Link
-                      href={`/deep-dives/${dive.slug}/${lesson.slug}`}
-                      className={`${styles.lesson} ${active ? styles.active : ''}`}
-                      aria-current={active ? 'page' : undefined}
-                    >
-                      {lesson.title}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ol>
-          </div>
-        ))}
+        <ol className={styles.parts}>
+          {dive.parts.map((part, i) => (
+            <li key={part.title} className={styles.part}>
+              <p className={styles.partTitle}>
+                <span className={styles.partNum}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className={styles.partName}>{part.title}</span>
+              </p>
+              <ol className={styles.lessons}>
+                {part.lessons.map((lesson) => {
+                  const active = lesson.slug === currentSlug
+                  return (
+                    <li key={lesson.slug}>
+                      <Link
+                        href={`/deep-dives/${dive.slug}/${lesson.slug}`}
+                        className={`${styles.lesson} ${active ? styles.active : ''}`}
+                        aria-current={active ? 'page' : undefined}
+                      >
+                        {lesson.title}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ol>
+            </li>
+          ))}
+        </ol>
       </nav>
     </details>
   )
