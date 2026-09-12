@@ -1,0 +1,91 @@
+.head {
+  margin-bottom: 40px;
+}
+
+.head h1 {
+  margin-bottom: 14px;
+}
+
+.lede {
+  margin-bottom: 14px;
+}
+
+.meta {
+  color: var(--color-text-faint);
+}
+
+.toc {
+  margin-top: 40px;
+}
+
+.part {
+  margin-bottom: 28px;
+}
+
+.part:last-child {
+  margin-bottom: 0;
+}
+
+.part h2 {
+  margin-bottom: 10px;
+}
+
+.lessons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lesson {
+  display: block;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-hair);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--color-text);
+  text-wrap: pretty;
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    color var(--dur-mid) var(--ease-out);
+}
+
+.lessons li:last-child .lesson {
+  border-bottom: 1px solid var(--color-hair);
+}
+
+.lesson:hover {
+  transform: translateX(4px);
+  color: var(--color-accent);
+}
+
+.playlist {
+  margin-top: 32px;
+}
+
+.related {
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-hair);
+}
+
+.related h2 {
+  margin-bottom: 10px;
+}
+
+.related ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.related li {
+  padding: 4px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson:hover {
+    transform: none;
+  }
+}
