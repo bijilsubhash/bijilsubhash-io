@@ -33,7 +33,7 @@ export const cv = {
   headline: 'Data engineer – Sydney',
   email: 'bijil@nimblestax.com',
   summary:
-    'Forward deployed data engineer with 5+ years building modern data platforms – scalable, reliable, and maintainable. Track record across batch and streaming ingestion, data modelling and transformation, governance, analytics, infrastructure as code, and DataOps, with a focus on measurable business outcomes and enabling AI adoption.',
+    'Data and AI engineer with 5+ years building modern data platforms – scalable, reliable, and maintainable. Track record across batch and streaming ingestion, data modelling and transformation, governance, analytics, infrastructure as code, and DataOps, with a focus on measurable business outcomes and enabling AI adoption.',
 
   experience: [
     {
