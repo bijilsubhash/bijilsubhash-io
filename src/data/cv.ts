@@ -127,9 +127,10 @@ export const cv = {
     {
       issuer: 'Databricks',
       items: [
-        { name: 'Professional Data Engineer', year: '2024' },
+        { name: 'Professional Data Engineer', year: '2026' },
         { name: 'Associate Machine Learning Engineer', year: '2024' },
-        { name: 'Associate Data Engineer', year: '2024' },
+        { name: 'Associate Data Engineer', year: '2026' },
+        { name: 'Associate Developer for Apache Spark', year: '2026' },
       ],
     },
     {
