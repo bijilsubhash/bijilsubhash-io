@@ -16,7 +16,7 @@ We are now entering a new era in the world of data, where decisions that used to
 [^4]: [The State of AI Agents](https://www.databricks.com/resources/ebook/state-of-ai-agents)
 [^5]: [Towards Data Systems for the Agentic Era](https://arxiv.org/pdf/2509.00997)
 
-## Database Split
+## The Great Divide
 
 Once you move past simple use cases (chatbots, text-to-SQL generation etc), agentic workloads require highly concurrent random point-lookups with millisecond latency, which is incompatible with lakehouse architectures that are optimised for large, sequential, columnar analytical scans. In other words, you need two separate systems that are optimised for update heavy and short-lived operations (OLTP; online transaction processing), and read-heavy and bandwidth-intensive operations (OLAP; online analytical processing). The OLTP and OLAP split is not new, and has been the norm for decades. For a very long time, the split made sense, given the transactional and analytical workloads have very different needs, query patterns, and performance requirements. Engineers are used to building pipelines that kept both systems in sync. However, the main drawbacks with the split-system are data duplication, stale data, and the overhead to manage the pipelines.
 
