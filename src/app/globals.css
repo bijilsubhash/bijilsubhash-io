@@ -7,10 +7,10 @@
 :root {
   color-scheme: dark;
 
-  /* --- Color (design.md §2, pitch-black ground — the site is dark-only) --- */
-  --color-bg: #000000;
-  --color-surface: #0e0e0e;
-  --color-code-bg: #121212;
+  /* --- Color (design.md §2, dark ground — the site is dark-only) --- */
+  --color-bg: #171613;
+  --color-surface: #201e1a;
+  --color-code-bg: #1c1a16;
   --color-text: #f4f2ec;
   --color-text-body: #d6d2c7;
   --color-text-muted: #a09b8e;
@@ -18,8 +18,8 @@
   --color-accent: #7cb3ac;
   --color-accent-hover: #95c5bf;
   --color-accent-soft: #33514d;
-  --color-border: #2a2a2a;
-  --color-hair: #1c1c1c;
+  --color-border: #302d27;
+  --color-hair: #26231e;
   --color-verify: #33514d;
   --color-selection: #33514d;
 

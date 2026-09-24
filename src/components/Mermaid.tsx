@@ -5,9 +5,9 @@ import styles from './Mermaid.module.css'
 
 // The site is dark-only, so mermaid always renders against the dark ground.
 const THEME_VARS = {
-  background: '#121212',
-  mainBkg: '#1e1e1e',
-  primaryColor: '#1e1e1e',
+  background: '#1c1a16',
+  mainBkg: '#201e1a',
+  primaryColor: '#201e1a',
   primaryBorderColor: '#7cb3ac',
   nodeBorder: '#7cb3ac',
   primaryTextColor: '#d6d2c7',
