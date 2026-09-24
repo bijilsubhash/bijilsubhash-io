@@ -6,7 +6,7 @@
 .frame {
   border-radius: var(--radius-code);
   overflow: hidden;
-  background: var(--color-surface);
+  background: transparent;
 }
 
 .img {
